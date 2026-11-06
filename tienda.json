@@ -27,7 +27,8 @@
    "Paga cuando recibas: sin riesgos, sin pagos adelantados",
    "Envíos rápidos en Colombia: tu pedido llega directo a tu casa"
   ],
-  "secure": "img/compra-segura.jpg"
+  "secure": "img/compra-segura.jpg",
+  "logoLight": "img/logo-oscuro.png"
  },
  "products": [
   {
