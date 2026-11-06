@@ -32,7 +32,7 @@
  },
  "products": [
   {
-   "id": "dropi-2021763",
+   "id": "T002",
    "name": "Kit de cepillos para taladro x20 piezas",
    "category": "Hogar",
    "price": 91900,
@@ -50,7 +50,7 @@
    ]
   },
   {
-   "id": "dropi-2282211",
+   "id": "T003",
    "name": "Cojín lumbar ergonómico de espuma viscoelástica",
    "category": "Salud y bienestar",
    "price": 57900,
@@ -67,7 +67,7 @@
    ]
   },
   {
-   "id": "dropi-2170273",
+   "id": "T004",
    "name": "Cargador canguro ergonómico para bebé",
    "category": "Bebés",
    "price": 59900,
@@ -91,7 +91,7 @@
    ]
   },
   {
-   "id": "dropi-1085586",
+   "id": "T005",
    "name": "Combo 2 rodilleras + 2 tobilleras de compresión",
    "category": "Deportes",
    "price": 70900,
@@ -107,7 +107,7 @@
    ]
   },
   {
-   "id": "dropi-1120414",
+   "id": "T001",
    "name": "Máquina afeitadora VGR V-332 inalámbrica",
    "category": "Cuidado personal",
    "price": 89900,
@@ -125,7 +125,7 @@
    }
   },
   {
-   "id": "dropi-2136565",
+   "id": "T006",
    "name": "Molino de carne manual tipo prensa",
    "category": "Cocina",
    "price": 76900,
@@ -141,7 +141,7 @@
    ]
   },
   {
-   "id": "dropi-1285462",
+   "id": "T007",
    "name": "Ducha portátil recargable",
    "category": "Hogar",
    "price": 68900,
@@ -159,7 +159,7 @@
    ]
   },
   {
-   "id": "dropi-1904237",
+   "id": "T008",
    "name": "Lámpara de pared 360° magnética recargable",
    "category": "Hogar",
    "price": 64900,
@@ -184,7 +184,7 @@
    ]
   },
   {
-   "id": "dropi-1862172",
+   "id": "T009",
    "name": "Martillo multiusos 12 en 1",
    "category": "Herramientas",
    "price": 59900,
@@ -199,7 +199,7 @@
    ]
   },
   {
-   "id": "dropi-195105",
+   "id": "T010",
    "name": "Estabilizador de mano para cámara y celular",
    "category": "Tecnología",
    "price": 86900,
@@ -213,6 +213,87 @@
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/195105/17023037791702303779Dise%C3%B1o%20sin%20t%C3%ADtulo%20(55).png",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/195105/17023037791702303779Dise%C3%B1o%20sin%20t%C3%ADtulo%20(54).png"
    ]
+  },
+  {
+   "name": "Cámara infantil para fotos y video 1080p",
+   "category": "Niños y juguetes",
+   "price": 111900,
+   "featured": true,
+   "origin": "Bogotá D.C.",
+   "desc": "El regalo perfecto para que los niños descubran la fotografía.\n\n• Doble cámara: para fotos y selfies\n• Graba video en 1080p\n• Diseño rosado con detalles 3D de fresas y osito\n• Recomendada para niñas de 3 a 11 años\n\nIdeal para cumpleaños y Navidad.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2280183/f67ef789-6462-4e32-9330-78416fd146d7.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2280183/f485baea-77e4-4bea-9e10-bb365e1b3baf.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2280183/03f5d5b0-e477-48c4-a6e1-1601026dffd4.webp"
+   ],
+   "id": "T011",
+   "oldPrice": 0,
+   "available": true
+  },
+  {
+   "name": "Reloj digital de pared grande 48 × 25 cm",
+   "category": "Hogar",
+   "price": 109900,
+   "featured": false,
+   "origin": "Bogotá D.C.",
+   "desc": "Moderno, grande y fácil de leer desde cualquier punto del espacio.\n\n• Pantalla LED de 48 × 25 cm\n• Muestra hora, fecha y temperatura\n• Ideal para sala, cocina, oficina, gimnasio o negocio\n• Para colgar en la pared",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282241/d66f1d6e-7a49-4dab-bb37-d562424e2200.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282241/915400bd-dd08-4f12-8d85-a85cb9ee331e.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282241/999eb145-0254-472e-a893-8ce67c948003.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282241/2799e2e6-3842-436e-8a61-ce6dbacb4985.webp"
+   ],
+   "id": "T012",
+   "oldPrice": 0,
+   "available": true
+  },
+  {
+   "name": "Patineta scooter gusano con luces LED",
+   "category": "Niños y juguetes",
+   "price": 119900,
+   "featured": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Diversión al aire libre con un diseño que a los niños les encanta.\n\n• Diseño de gusano con luces LED\n• Se impulsa con el movimiento del cuerpo, sin baterías\n• Ayuda a desarrollar equilibrio y coordinación\n• Para jugar en patios, parques y andenes\n\nUsar siempre con supervisión de un adulto.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/566078/17028482291701291817monopatin%20gusano.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/566078/17028482291701291817monopatin%20gusano%20(1).png"
+   ],
+   "id": "T013",
+   "oldPrice": 0,
+   "available": true
+  },
+  {
+   "name": "Lámpara de nube 3D LED RGB con música",
+   "category": "Hogar",
+   "price": 79900,
+   "featured": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una nube de luz que transforma el ambiente de cualquier cuarto.\n\n• Miles de colores, controlados desde el celular con app\n• Las luces se mueven al ritmo de la música\n• Ideal para habitación, sala gamer o fiestas\n• Efecto 3D decorativo",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/967221/1780437348nuve%20de%20luz%20portada.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/967221/1782145999ChatGPT%20Image%2022%20jun%202026,%2011_17_50%20a.m..png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/967221/1782145999ChatGPT%20Image%2022%20jun%202026,%2011_17_41%20a.m..png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/967221/1782145999ChatGPT%20Image%2022%20jun%202026,%2011_17_56%20a.m..png"
+   ],
+   "id": "T014",
+   "oldPrice": 0,
+   "available": true
+  },
+  {
+   "name": "Lámparas solares LED para baranda x2",
+   "category": "Jardín y exterior",
+   "price": 58900,
+   "featured": false,
+   "origin": "Bogotá D.C.",
+   "desc": "Ilumina tu terraza, escalera o jardín sin cables ni gastar energía.\n\n• Se cargan con el sol durante el día\n• Encienden solas al oscurecer\n• Se instalan fácil en barandas, muros o cercas\n• Resistentes a la intemperie\n\nEl paquete trae 2 lámparas.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1683819/1740413498LUZ%20LED%20SOLAR%20X2%20DECORATIVA.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1683819/174041349881mgfQlXsXL._AC_SL1500_.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1683819/174041349871AUBoCeQkL._AC_SL1500_.jpg"
+   ],
+   "id": "T015",
+   "oldPrice": 0,
+   "available": true
   }
  ]
 }
