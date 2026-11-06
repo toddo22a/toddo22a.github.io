@@ -263,16 +263,27 @@ var CAPITALS = {"Amazonas":"Leticia","Antioquia":"Medellín","Arauca":"Arauca","
 var REMOTE = ["Amazonas","Guainía","Guaviare","Vaupés","Vichada","San Andrés y Providencia","Putumayo","Chocó","Caquetá","Arauca"];
 var EXTRA_CITIES = ["soledad","malambo","puerto colombia","bello","envigado","itagui","sabaneta","palmira","jamundi","yumbo","floridablanca","giron","piedecuesta","dosquebradas","chia","zipaquira","facatativa","fusagasuga","mosquera","madrid","funza","cajica","turbaco"];
 function norm(s){ return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim(); }
+var REGION = {"Atlántico":"caribe","Bolívar":"caribe","Magdalena":"caribe","Cesar":"caribe","La Guajira":"caribe","Córdoba":"caribe","Sucre":"caribe",
+ "Bogotá D.C.":"centro","Cundinamarca":"centro","Boyacá":"centro","Tolima":"centro","Huila":"centro","Meta":"centro","Casanare":"centro",
+ "Antioquia":"antioquia","Caldas":"antioquia","Risaralda":"antioquia","Quindío":"antioquia",
+ "Santander":"santanderes","Norte de Santander":"santanderes",
+ "Valle del Cauca":"pacifico","Cauca":"pacifico","Nariño":"pacifico"};
+function isMainCity(dept, city){ var c=norm(city), cap=norm(CAPITALS[dept]); return dept==="Bogotá D.C." || c===cap || (cap && c.indexOf(cap)===0) || EXTRA_CITIES.indexOf(c)>-1; }
+// Each product ships from its supplier's warehouse (p.origin = department) with its own rates (p.ship = {local, regional, nacional}).
+function lineShip(p, dept, city){
+  var sh=S.shipping||{}, r=p.ship||{}, o=p.origin||sh.defaultOrigin||"Bogotá D.C.";
+  var local=r.local||sh.local||16000, regional=r.regional||sh.regional||18000, nacional=r.nacional||sh.nacional||20000;
+  var v = (o===dept) ? local : (REGION[o] && REGION[o]===REGION[dept]) ? regional : nacional;
+  if(!isMainCity(dept, city)) v += (sh.municipioExtra||4000);
+  return v;
+}
 function shipQuote(dept, city){
-  var sh = S.shipping || {principal:20000, municipio:24000};
   if(!dept) return {state:"pending"};
   if(REMOTE.indexOf(dept)>-1) return {state:"confirm"};
   if(!city) return {state:"pending"};
-  var c=norm(city), cap=norm(CAPITALS[dept]);
-  var main = c===cap || (dept==="Bogotá D.C.") || (cap && c.indexOf(cap)===0) || EXTRA_CITIES.indexOf(c)>-1;
-  var lines = cartLines().length || 1;
-  var per = main ? sh.principal : sh.municipio;
-  return {state:"ok", value: per*lines, per: per, lines: lines, main: main};
+  var lines=cartLines(), total=0;
+  lines.forEach(function(x){ total+=lineShip(x.p, dept, city); });
+  return {state:"ok", value: total, lines: lines.length||1};
 }
 function shipSummaryHtml(){
   var q=shipQuote(customer.dept, customer.city), sub=cartTotal(), h='<div class="ship-box" id="ship-box"><div class="tot sm"><span>Productos</span><span class="num">'+cop(sub)+'</span></div>';

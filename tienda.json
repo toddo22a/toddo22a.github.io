@@ -8,8 +8,11 @@
   "shippingNote": "Envíos a toda Colombia. El valor del envío se calcula con tu ciudad y lo pagas al recibir.",
   "city": "Fundación, Magdalena",
   "shipping": {
-   "principal": 20000,
-   "municipio": 24000
+   "local": 16000,
+   "regional": 18000,
+   "nacional": 20000,
+   "municipioExtra": 4000,
+   "defaultOrigin": "Bogotá D.C."
   }
  },
  "brand": {
@@ -39,7 +42,11 @@
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1120414/1724711077VGR%20332%202.jpg"
    ],
    "available": true,
-   "featured": true
+   "featured": true,
+   "origin": "Bogotá D.C.",
+   "ship": {
+    "nacional": 21000
+   }
   },
   {
    "id": "ej1",
