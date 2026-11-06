@@ -123,6 +123,96 @@
    "ship": {
     "nacional": 21000
    }
+  },
+  {
+   "id": "dropi-2136565",
+   "name": "Molino de carne manual tipo prensa",
+   "category": "Cocina",
+   "price": 76900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Muele tu propia carne fresca en casa para hamburguesas, albóndigas o salchichas.\n\n• Cuerpo de hierro estañado, resistente y duradero\n• Ajuste tipo prensa para fijarlo al mesón\n• Manivela manual, sin electricidad\n• También sirve para moler maíz, coco o verduras\n\nIdeal para el hogar o un negocio pequeño.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2136565/17769773781759956341WhatsApp%20Image%202025-10-08%20at%203.45.05%20PM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2136565/17769773781759956341WhatsApp%20Image%202025-10-08%20at%203.45.16%20PM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2136565/17769773781759956341WhatsApp%20Image%202025-10-08%20at%203.45.11%20PM.jpeg"
+   ]
+  },
+  {
+   "id": "dropi-1285462",
+   "name": "Ducha portátil recargable",
+   "category": "Hogar",
+   "price": 68900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una ducha que llevas a donde quieras: solo metes la bomba en un balde o tanque de agua.\n\n• Batería recargable, sin cables mientras la usas\n• Regadera tipo lluvia con soporte\n• Perfecta para paseos, finca, camping, playa o cuando se va el agua\n• También sirve para bañar mascotas o lavar la bicicleta\n\nFácil de guardar y transportar.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1285462/1727823113IMG-20241001-WA0040.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1285462/1727823113IMG-20241001-WA0042.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1285462/1727823113IMG-20241001-WA0041.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1285462/1727823113IMG-20241001-WA0044.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1285462/1727823113IMG-20241001-WA0043.jpg"
+   ]
+  },
+  {
+   "id": "dropi-1904237",
+   "name": "Lámpara de pared 360° magnética recargable",
+   "category": "Hogar",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "options": {
+    "label": "Color",
+    "values": [
+     "Blanca",
+     "Negra"
+    ]
+   },
+   "desc": "Luz para leer en la cama, iluminar un pasillo o decorar, sin hacer instalaciones eléctricas.\n\n• Doble luz: enciende un lado o los dos a la vez\n• Base magnética que gira 360° para dirigir la luz\n• Control remoto y táctil: brillo, tono de luz y temporizador\n• Recargable por USB\n\nDisponible en blanca y negra.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1904237/1755751635IMG_4046.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1904237/1757098267IMG_4307.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1904237/1757098264IMG_4306.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1904237/1757098264IMG_4304.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1904237/1755751635IMG_4051%202.jpg"
+   ]
+  },
+  {
+   "id": "dropi-1862172",
+   "name": "Martillo multiusos 12 en 1",
+   "category": "Herramientas",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una caja de herramientas en la palma de tu mano.\n\n• Martillo con saca clavos\n• Alicate, pinza y cortador de alambre\n• Destornillador, cuchillo, sierra plegable, lima y destapador\n• Compacto: ideal para la casa, el carro o la moto\n\nUn regalo práctico para cualquier persona.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1862172/1750972088PLANTILLA%20ONIX%20%20-%202025-06-26T160727.881.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1862172/1750972088HOJA%20BLANCO%20ONIX%20(97).png"
+   ]
+  },
+  {
+   "id": "dropi-195105",
+   "name": "Estabilizador de mano para cámara y celular",
+   "category": "Tecnología",
+   "price": 86900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Graba videos más firmes y profesionales para tus redes, eventos o viajes.\n\n• Asas acolchadas en forma de U para sujetar con las dos manos\n• Rosca estándar para cámaras réflex, de video y deportivas\n• Ayuda a reducir el movimiento al caminar o grabar\n• Liviano y fácil de llevar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/195105/17023037791702303779Dise%C3%B1o%20sin%20t%C3%ADtulo%20(56).png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/195105/17023037791702303779Dise%C3%B1o%20sin%20t%C3%ADtulo%20(55).png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/195105/17023037791702303779Dise%C3%B1o%20sin%20t%C3%ADtulo%20(54).png"
+   ]
   }
  ]
 }
