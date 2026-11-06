@@ -32,6 +32,81 @@
  },
  "products": [
   {
+   "id": "dropi-2021763",
+   "name": "Kit de cepillos para taladro x20 piezas",
+   "category": "Hogar",
+   "price": 91900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Convierte tu taladro o atornillador en una máquina de limpieza profunda.\n\n• 20 piezas: cepillos de distintas durezas, esponjas y almohadillas\n• Ideal para baños, cocina, baldosas, rines, tapicería y exteriores\n• Se ajusta a la mayoría de taladros inalámbricos y atornilladores de impacto\n• Ahorra tiempo y esfuerzo en las limpiezas difíciles\n\nNo incluye taladro.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2021763/176563659702.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2021763/176563659704.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2021763/176563659703.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2021763/176563659708.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2021763/176563659707.jpeg"
+   ]
+  },
+  {
+   "id": "dropi-2282211",
+   "name": "Cojín lumbar ergonómico de espuma viscoelástica",
+   "category": "Salud y bienestar",
+   "price": 57900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Soporte para la zona baja de la espalda mientras trabajas, estudias o manejas.\n\n• Espuma viscoelástica (memory foam) que se adapta a la curva de tu espalda\n• Inserto removible para ajustar el nivel de soporte\n• Funciona en silla de oficina, comedor o carro\n• Funda lavable\n\nColor gris oscuro.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282211/a35485b8-45d2-415d-8c89-d5cfd035a956.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282211/e73984cf-cca0-4182-997f-d1f680a346fa.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282211/89ddf079-393a-4464-b43c-25e067de65de.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282211/91768c96-229f-434a-b2bf-318b849ad2e3.webp"
+   ]
+  },
+  {
+   "id": "dropi-2170273",
+   "name": "Cargador canguro ergonómico para bebé",
+   "category": "Bebés",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro",
+     "Rosa"
+    ]
+   },
+   "desc": "Lleva a tu bebé cerca y con las manos libres.\n\n• Correas cruzadas en X que reparten el peso sobre los hombros\n• Correa adicional de seguridad\n• Tela suave y cómoda para el bebé\n• Ideal para salir, hacer vueltas o calmar al bebé en casa\n\nDisponible en negro y rosa.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2170273/1780676946FF.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2170273/178067694619e75474230-dgtech-2f3jbnzqkue-fh29v80s8n6.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2170273/178067694619da1a5b4aa-dgtech-2f3jbnzqkue-vfxkumno1fb.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2170273/178067694619da1a5bfab-dgtech-2f3jbnzqkue-stcji7dwlw.jpeg"
+   ]
+  },
+  {
+   "id": "dropi-1085586",
+   "name": "Combo 2 rodilleras + 2 tobilleras de compresión",
+   "category": "Deportes",
+   "price": 70900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Soporte para rodillas y tobillos en el deporte, el trabajo o el día a día.\n\n• Compresión que da firmeza a la articulación\n• Tiras cruzadas con velcro para ajustar a tu medida\n• Tejido elástico y transpirable\n• El combo trae 2 rodilleras y 2 tobilleras",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1085586/1768068016Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202026-01-10T125634.022.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1085586/1768068016p4yPuayXQUdrnfow5zC4AmiwsT9wdCYxlcjr3vSQ_480x480.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1085586/17680680162.png"
+   ]
+  },
+  {
    "id": "dropi-1120414",
    "name": "Máquina afeitadora VGR V-332 inalámbrica",
    "category": "Cuidado personal",
