@@ -32,6 +32,23 @@
  },
  "products": [
   {
+   "id": "T016",
+   "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
+   "category": "Cuidado personal",
+   "price": 284900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Máquina de corte profesional para barberías, peluquerías o para cortar en casa.\n\n• Motor BLDC de 7.000 a 9.000 RPM, potente y silencioso\n• Cuchilla con recubrimiento cerámico y DLC\n• Batería de 4.600 mAh: de 260 a 300 minutos de uso\n• Cuerpo metálico\n• Palanca de ajuste y 10 peines guía de 1,5 a 24 mm\n• Carga rápida en 3 horas",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2032827/1767886583WhatsApp%20Image%202026-01-08%20at%2010.17.43%20AM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2032827/1767886583WhatsApp%20Image%202026-01-08%20at%2010.34.56%20AM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2032827/1767886583WhatsApp%20Image%202026-01-07%20at%2010.41.36%20AM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2032827/1767886583WhatsApp%20Image%202026-01-08%20at%2010.34.55%20AM.jpeg"
+   ]
+  },
+  {
    "id": "T002",
    "name": "Kit de cepillos para taladro x20 piezas",
    "category": "Hogar",
