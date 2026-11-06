@@ -150,6 +150,8 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .qty span{min-width:22px;text-align:center}
 .tot{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;font-size:16px}
 .tot .price{font-size:24px}
+.tot.sm{font-size:14px;font-weight:500;color:var(--muted)}
+.ship-box{display:grid;gap:8px}
 .btn{border:0;border-radius:14px;padding:14px 18px;font-weight:700;background:var(--y);color:var(--y-ink);text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:15px}
 .btn:hover{background:var(--y-2)}
 .btn.wa{background:var(--wa);color:#04200f}
@@ -257,6 +259,33 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 var DATA = JSON.parse(document.getElementById("store-data").textContent);
 var S = DATA.settings, P = DATA.products, B = DATA.brand || {banners:[]};
 var DEPTS = ["Amazonas","Antioquia","Arauca","Atlántico","Bogotá D.C.","Bolívar","Boyacá","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Córdoba","Cundinamarca","Guainía","Guaviare","Huila","La Guajira","Magdalena","Meta","Nariño","Norte de Santander","Putumayo","Quindío","Risaralda","San Andrés y Providencia","Santander","Sucre","Tolima","Valle del Cauca","Vaupés","Vichada"];
+var CAPITALS = {"Amazonas":"Leticia","Antioquia":"Medellín","Arauca":"Arauca","Atlántico":"Barranquilla","Bogotá D.C.":"Bogotá","Bolívar":"Cartagena","Boyacá":"Tunja","Caldas":"Manizales","Caquetá":"Florencia","Casanare":"Yopal","Cauca":"Popayán","Cesar":"Valledupar","Chocó":"Quibdó","Córdoba":"Montería","Cundinamarca":"Soacha","Guainía":"Inírida","Guaviare":"San José del Guaviare","Huila":"Neiva","La Guajira":"Riohacha","Magdalena":"Santa Marta","Meta":"Villavicencio","Nariño":"Pasto","Norte de Santander":"Cúcuta","Putumayo":"Mocoa","Quindío":"Armenia","Risaralda":"Pereira","San Andrés y Providencia":"San Andrés","Santander":"Bucaramanga","Sucre":"Sincelejo","Tolima":"Ibagué","Valle del Cauca":"Cali","Vaupés":"Mitú","Vichada":"Puerto Carreño"};
+var REMOTE = ["Amazonas","Guainía","Guaviare","Vaupés","Vichada","San Andrés y Providencia","Putumayo","Chocó","Caquetá","Arauca"];
+var EXTRA_CITIES = ["soledad","malambo","puerto colombia","bello","envigado","itagui","sabaneta","palmira","jamundi","yumbo","floridablanca","giron","piedecuesta","dosquebradas","chia","zipaquira","facatativa","fusagasuga","mosquera","madrid","funza","cajica","turbaco"];
+function norm(s){ return String(s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z ]/g," ").replace(/\s+/g," ").trim(); }
+function shipQuote(dept, city){
+  var sh = S.shipping || {principal:20000, municipio:24000};
+  if(!dept) return {state:"pending"};
+  if(REMOTE.indexOf(dept)>-1) return {state:"confirm"};
+  if(!city) return {state:"pending"};
+  var c=norm(city), cap=norm(CAPITALS[dept]);
+  var main = c===cap || (dept==="Bogotá D.C.") || (cap && c.indexOf(cap)===0) || EXTRA_CITIES.indexOf(c)>-1;
+  var lines = cartLines().length || 1;
+  var per = main ? sh.principal : sh.municipio;
+  return {state:"ok", value: per*lines, per: per, lines: lines, main: main};
+}
+function shipSummaryHtml(){
+  var q=shipQuote(customer.dept, customer.city), sub=cartTotal(), h='<div class="ship-box" id="ship-box"><div class="tot sm"><span>Productos</span><span class="num">'+cop(sub)+'</span></div>';
+  if(q.state==="ok"){
+    h+='<div class="tot sm"><span>Envío a '+esc(customer.city)+(q.lines>1?' ('+q.lines+' productos, se despachan por separado)':'')+'</span><span class="num">'+cop(q.value)+'</span></div>'+
+      '<div class="tot"><span>Total a pagar al recibir</span><span class="price num">'+cop(sub+q.value)+'</span></div><span class="small">Valor de envío estimado. Te confirmamos el valor final por WhatsApp antes de despachar.</span>';
+  } else if(q.state==="confirm"){
+    h+='<div class="tot sm"><span>Envío</span><span>Por confirmar</span></div><div class="tot"><span>Total productos</span><span class="price num">'+cop(sub)+'</span></div><span class="small">Para '+esc(customer.dept)+' te confirmamos el valor del envío por WhatsApp.</span>';
+  } else {
+    h+='<div class="tot sm"><span>Envío</span><span class="small">Elige departamento y ciudad</span></div><div class="tot"><span>Total</span><span class="price num">'+cop(sub)+' + envío</span></div>';
+  }
+  return h+'</div>';
+}
 var CARRIERS = ["Me da igual, la que llegue más rápido","Interrapidísimo","Servientrega","Coordinadora","Envía","Domina","Veloces","99minutos","Otra (la escribo en indicaciones)"];
 var ui = { cat:"Todo", q:"", sort:"destacados", view:null, imgIdx:0, cartOpen:false, checkout:false, admin:false, editId:null, canEdit:false, dirty:false, saving:false, slide:0 };
 var draft = null;
@@ -376,7 +405,7 @@ function productModal(p){
     '<div class="info"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><span class="card-cat">'+esc(p.category)+'</span><button class="x" data-act="close-view" aria-label="Cerrar">×</button></div>'+
     '<h3>'+esc(p.name)+'</h3>'+(p.demo?'<span class="small">Producto de ejemplo</span>':'')+
     '<div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span><span class="save">Ahorras '+cop(p.oldPrice-p.price)+'</span>':'')+'</div>'+
-    (p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
+    (p.available?'<span class="small">+ envío según tu ciudad · pagas todo al recibir</span>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
     (p.available?'<div style="display:grid;gap:10px"><button class="btn" data-buy="'+esc(p.id)+'">Comprar ahora · paga al recibir</button><button class="btn ghost" data-add="'+esc(p.id)+'">Agregar al carrito</button></div>':'<button class="btn ghost" disabled>Agotado por ahora</button>')+
     '<div class="trust"><span>'+ICON.check+'Pagas en efectivo cuando lo recibes</span><span>'+ICON.check+esc(S.shippingNote)+'</span><span>'+ICON.check+'Confirmamos tu pedido por WhatsApp antes de enviarlo</span></div></div></div></div>';
 }
@@ -389,13 +418,13 @@ function cartDrawer(){
       fld("c-city","Ciudad o municipio",customer.city,"text","address-level2")+fld("c-addr","Dirección",customer.addr,"text","street-address")+fld("c-barrio","Barrio",customer.barrio,"text","")+
       '<div class="field"><label for="c-carrier">Transportadora de preferencia (opcional)</label><select id="c-carrier">'+CARRIERS.map(function(c){return '<option'+(customer.carrier===c?' selected':'')+'>'+c+'</option>';}).join('')+'</select><span class="small">La usamos si tiene cobertura en tu ciudad. Si no, te proponemos otra.</span></div>'+
       '<div class="field"><label for="c-notes">Indicaciones (opcional)</label><textarea id="c-notes" placeholder="Ej.: casa de rejas blancas, llamar antes">'+esc(customer.notes||"")+'</textarea></div><div id="c-err" class="err" role="alert"></div>';
-    foot = '<div class="tot"><span>Total a pagar al recibir</span><span class="price num">'+cop(cartTotal())+'</span></div>'+
-      '<button class="btn wa" data-act="send">'+ICON.wa.replace('width="28" height="28"','width="20" height="20"')+'Enviar pedido por WhatsApp</button><button class="btn ghost" data-act="back">Volver al carrito</button>';
+    foot = shipSummaryHtml()+
+      '<button class="btn wa" data-act="send">'+ICON.wa.replace('width="28" height="28"','width="20" height="20"')+'Cerrar pedido por WhatsApp</button><button class="btn ghost" data-act="back">Volver al carrito</button>';
   } else {
     body = lines.length ? lines.map(function(x){ return '<div class="line">'+photo(x.p)+'<div style="min-width:0"><div style="font-weight:600;line-height:1.3">'+esc(x.p.name)+'</div><div class="small num">'+cop(x.p.price)+'</div></div>'+
       '<div class="qty"><button data-dec="'+esc(x.p.id)+'" aria-label="Quitar uno">−</button><span class="num">'+x.c.qty+'</span><button data-inc="'+esc(x.p.id)+'" aria-label="Agregar uno">+</button></div></div>'; }).join('')
       : '<div class="empty">Tu carrito está vacío.<br>Agrega productos para hacer tu pedido.</div>';
-    foot = '<div class="tot"><span>Total</span><span class="price num">'+cop(cartTotal())+'</span></div><span class="small">'+esc(S.shippingNote)+'</span>'+
+    foot = '<div class="tot"><span>Subtotal</span><span class="price num">'+cop(cartTotal())+'</span></div><span class="small">El envío se calcula en el siguiente paso con tu ciudad.</span>'+
       '<button class="btn" data-act="checkout"'+(lines.length?'':' disabled')+'>Continuar con el pedido</button>';
   }
   return '<div class="scrim" data-act="close-cart"><aside class="drawer" role="dialog" aria-modal="true" aria-label="Carrito"><div class="drawer-h"><h3>'+(ui.checkout?'Datos de envío':'Tu carrito')+'</h3><button class="x" data-act="close-cart" aria-label="Cerrar">×</button></div><div class="drawer-b">'+body+'</div><div class="drawer-f">'+foot+'</div></aside></div>';
@@ -406,7 +435,11 @@ function addToCart(id, n){ var c=cart.filter(function(x){return x.id===id;})[0];
 function orderText(){
   var lines=cartLines(), t="¡Hola "+S.name+"! Quiero hacer este pedido (pago contra entrega):\n\n";
   lines.forEach(function(x){ t+="• "+x.c.qty+" x "+x.p.name+" — "+cop(x.p.price*x.c.qty)+"\n"; });
-  t+="\nTotal: "+cop(cartTotal())+"\n\n*Datos de envío*\nNombres: "+customer.name+"\nApellidos: "+customer.last+"\nCelular: "+customer.phone+(customer.email?"\nCorreo: "+customer.email:"")+"\nDepartamento: "+customer.dept+"\nCiudad: "+customer.city+"\nDirección: "+customer.addr+(customer.barrio?"\nBarrio: "+customer.barrio:"")+(customer.carrier&&customer.carrier.indexOf("Me da igual")!==0?"\nTransportadora sugerida: "+customer.carrier:"")+(customer.notes?"\nIndicaciones: "+customer.notes:"");
+  var q=shipQuote(customer.dept, customer.city);
+  t+="\nProductos: "+cop(cartTotal());
+  if(q.state==="ok") t+="\nEnvío estimado: "+cop(q.value)+"\n*Total a pagar al recibir: "+cop(cartTotal()+q.value)+"*";
+  else t+="\nEnvío: por confirmar";
+  t+="\n\n*Datos de envío*\nNombres: "+customer.name+"\nApellidos: "+customer.last+"\nCelular: "+customer.phone+(customer.email?"\nCorreo: "+customer.email:"")+"\nDepartamento: "+customer.dept+"\nCiudad: "+customer.city+"\nDirección: "+customer.addr+(customer.barrio?"\nBarrio: "+customer.barrio:"")+(customer.carrier&&customer.carrier.indexOf("Me da igual")!==0?"\nTransportadora sugerida: "+customer.carrier:"")+(customer.notes?"\nIndicaciones: "+customer.notes:"");
   return t;
 }
 function readCustomer(){
@@ -601,9 +634,11 @@ document.addEventListener("input", function(ev){
   var el=ev.target;
   if(el.classList && el.classList.contains("q")){ ui.q=el.value; var id=el.id, pos=el.selectionStart; render(); var q=document.getElementById(id); if(q){ q.focus(); try{q.setSelectionRange(pos,pos);}catch(e){} } }
   if(/^k-/.test(el.id)) calcPrice();
+  if(el.id==="c-city"||el.id==="c-dept"){ readCustomer(); var sb=document.getElementById("ship-box"); if(sb) sb.outerHTML=shipSummaryHtml(); }
 });
 document.addEventListener("change", async function(ev){
   if(ev.target.id==="sort"){ ui.sort=ev.target.value; render(); }
+  if(ev.target.id==="c-dept"){ readCustomer(); var sb=document.getElementById("ship-box"); if(sb) sb.outerHTML=shipSummaryHtml(); }
   if(ev.target.id==="e-pics"){
     var p=currentEdit(); readEditor(p); var files=[].slice.call(ev.target.files||[]).slice(0,5-p.images.length);
     for(var i=0;i<files.length;i++){ try{ p.images.push(await compress(files[i],900,0.74)); }catch(e){ toast("Una foto no se pudo leer. Prueba con JPG o PNG."); } }

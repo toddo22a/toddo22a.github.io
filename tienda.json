@@ -2,11 +2,15 @@
  "settings": {
   "name": "TODDO",
   "slogan": "Productos virales y útiles. Solo lo que está funcionando de verdad.",
-  "whatsapp": "",
+  "whatsapp": "573133058948",
   "instagram": "",
   "strip": "Envíos a toda Colombia · Paga cuando recibes",
-  "shippingNote": "Envío a toda Colombia. Entrega de 2 a 6 días hábiles según tu ciudad.",
-  "city": "Fundación, Magdalena"
+  "shippingNote": "Envíos a toda Colombia. El valor del envío se calcula con tu ciudad y lo pagas al recibir.",
+  "city": "Fundación, Magdalena",
+  "shipping": {
+   "principal": 20000,
+   "municipio": 24000
+  }
  },
  "brand": {
   "logo": "img/logo.png",
