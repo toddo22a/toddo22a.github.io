@@ -1,0 +1,111 @@
+{
+ "settings": {
+  "name": "TODDO",
+  "slogan": "Productos virales y útiles. Solo lo que está funcionando de verdad.",
+  "whatsapp": "",
+  "instagram": "",
+  "strip": "Envíos a toda Colombia · Paga cuando recibes",
+  "shippingNote": "Envío a toda Colombia. Entrega de 2 a 6 días hábiles según tu ciudad.",
+  "city": "Fundación, Magdalena"
+ },
+ "brand": {
+  "logo": "img/logo.png",
+  "banners": [
+   "img/banner-1.jpg",
+   "img/banner-2.jpg",
+   "img/banner-3.jpg"
+  ],
+  "alts": [
+   "Productos virales y útiles: solo lo que está funcionando de verdad",
+   "Paga cuando recibas: sin riesgos, sin pagos adelantados",
+   "Envíos rápidos en Colombia: tu pedido llega directo a tu casa"
+  ],
+  "secure": "img/compra-segura.jpg"
+ },
+ "products": [
+  {
+   "id": "ej1",
+   "name": "Organizador giratorio de especias 360°",
+   "category": "Hogar",
+   "price": 59900,
+   "oldPrice": 89900,
+   "desc": "Gira 360° y guarda hasta 16 frascos.\nIdeal para cocina, baño o tocador.\nMaterial plástico resistente, fácil de limpiar.",
+   "images": [],
+   "available": true,
+   "featured": true,
+   "demo": true
+  },
+  {
+   "id": "ej2",
+   "name": "Audífonos inalámbricos con estuche de carga",
+   "category": "Tecnología",
+   "price": 79900,
+   "oldPrice": 119900,
+   "desc": "Bluetooth 5.3, hasta 5 horas por carga.\nEstuche con carga extra y micrófono para llamadas.",
+   "images": [],
+   "available": true,
+   "featured": true,
+   "demo": true
+  },
+  {
+   "id": "ej3",
+   "name": "Parlante portátil resistente al agua",
+   "category": "Tecnología",
+   "price": 89900,
+   "oldPrice": 0,
+   "desc": "Sonido potente con bajos profundos.\nResistente a salpicaduras, batería de 8 horas.",
+   "images": [],
+   "available": true,
+   "featured": true,
+   "demo": true
+  },
+  {
+   "id": "ej4",
+   "name": "Masajeador facial de cuarzo rosa",
+   "category": "Belleza",
+   "price": 45900,
+   "oldPrice": 0,
+   "desc": "Rodillo doble para rostro y cuello.\nAyuda a desinflamar y a aplicar tus cremas.",
+   "images": [],
+   "available": true,
+   "featured": false,
+   "demo": true
+  },
+  {
+   "id": "ej5",
+   "name": "Botella térmica deportiva 1 litro",
+   "category": "Deportes",
+   "price": 49900,
+   "oldPrice": 69900,
+   "desc": "Acero inoxidable, mantiene frío 24 h y caliente 12 h.\nTapa a prueba de fugas.",
+   "images": [],
+   "available": true,
+   "featured": false,
+   "demo": true
+  },
+  {
+   "id": "ej6",
+   "name": "Lámpara LED con sensor de movimiento",
+   "category": "Hogar",
+   "price": 39900,
+   "oldPrice": 0,
+   "desc": "Se enciende sola al detectar movimiento.\nRecargable por USB, se pega con imán o adhesivo.",
+   "images": [],
+   "available": true,
+   "featured": false,
+   "demo": true
+  },
+  {
+   "id": "ej7",
+   "name": "Kit de 12 brochas de maquillaje",
+   "category": "Belleza",
+   "price": 42900,
+   "oldPrice": 59900,
+   "desc": "Cerdas suaves sintéticas y estuche de viaje.",
+   "images": [],
+   "available": false,
+   "featured": false,
+   "demo": true
+  }
+ ]
+}
