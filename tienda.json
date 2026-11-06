@@ -24,6 +24,20 @@
  },
  "products": [
   {
+   "id": "dropi-1120414",
+   "name": "Máquina afeitadora VGR V-332 inalámbrica",
+   "category": "Cuidado personal",
+   "price": 89900,
+   "oldPrice": 0,
+   "desc": "Corta, perfila y afeita sin cables. Ideal para barba, cabello y detalles.\n\n• Cuchilla de acero inoxidable de precisión con recubrimiento de titanio\n• Longitud de corte ajustable y cuchilla fácil de retirar para limpiar\n• Batería recargable: carga completa en 1,5 horas\n• Luz indicadora de carga\n• Color dorado con negro\n\nIncluye: peines guía, cepillo de limpieza, aceite, tijeras y peine.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1120414/1724711077VGR%20332.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1120414/1724711077VGR%20332%202.jpg"
+   ],
+   "available": true,
+   "featured": true
+  },
+  {
    "id": "ej1",
    "name": "Organizador giratorio de especias 360°",
    "category": "Hogar",
