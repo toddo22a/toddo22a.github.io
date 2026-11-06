@@ -166,6 +166,13 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .tot .price{font-size:24px}
 .tot.sm{font-size:14px;font-weight:500;color:var(--muted)}
 .ship-box{display:grid;gap:8px}
+.osum{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;gap:10px}
+.osum-h{display:flex;justify-content:space-between;align-items:center}
+.osum-edit{background:none;border:0;color:var(--y-fg);font-weight:600;padding:0;text-decoration:underline}
+.osum-l{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;align-items:center}
+.osum-l .ph{border-radius:8px}.osum-l .ph .glyph{font-size:18px}
+.osum-n{font-weight:600;font-size:14px;line-height:1.3}
+.osum-p{font-weight:700}
 .btn{border:0;border-radius:14px;padding:14px 18px;font-weight:700;background:var(--y);color:var(--y-ink);text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:15px}
 .btn:hover{background:var(--y-2)}
 .btn.wa{background:var(--wa);color:#04200f}
@@ -310,10 +317,18 @@ function cityField(){
   if(MUN && !customer.dept) return '<div class="field" id="c-city-wrap"><label for="c-city">Municipio</label><select id="c-city" disabled><option value="">Primero elige el departamento</option></select></div>';
   return '<div class="field" id="c-city-wrap"><label for="c-city">Ciudad o municipio</label><input id="c-city" type="text" autocomplete="address-level2" value="'+esc(customer.city||"")+'"></div>';
 }
+function orderSumHtml(){
+  var q=shipQuote(customer.dept, customer.city), lines=cartLines();
+  return '<div class="osum" id="order-sum"><div class="osum-h"><b>Tu pedido</b><button class="admin-link osum-edit" data-act="back">Editar</button></div>'+lines.map(function(x){
+    var sh = q.state==="ok" ? lineShip(x.p, customer.dept, customer.city) : null;
+    return '<div class="osum-l">'+photo(x.p)+'<div class="osum-t"><div class="osum-n">'+esc(lineName(x))+'</div><div class="small num">'+x.c.qty+' × '+cop(x.p.price)+(sh!==null?' · envío '+cop(sh):'')+'</div></div><div class="num osum-p">'+cop(x.p.price*x.c.qty)+'</div></div>';
+  }).join('')+'</div>';
+}
+function refreshCheckout(){ var sb=document.getElementById("ship-box"); if(sb) sb.outerHTML=shipSummaryHtml(); var os=document.getElementById("order-sum"); if(os) os.outerHTML=orderSumHtml(); }
 function shipSummaryHtml(){
   var q=shipQuote(customer.dept, customer.city), sub=cartTotal(), h='<div class="ship-box" id="ship-box"><div class="tot sm"><span>Productos</span><span class="num">'+cop(sub)+'</span></div>';
   if(q.state==="ok"){
-    h+='<div class="tot sm"><span>Envío a '+esc(customer.city)+(q.lines>1?' ('+q.lines+' productos, se despachan por separado)':'')+'</span><span class="num">'+cop(q.value)+'</span></div>'+
+    h+='<div class="tot sm"><span>Envío a '+esc(customer.city)+(q.lines>1?' ('+q.lines+' paquetes)':'')+'</span><span class="num">'+cop(q.value)+'</span></div>'+
       '<div class="tot"><span>Total a pagar al recibir</span><span class="price num">'+cop(sub+q.value)+'</span></div><span class="small">Valor de envío estimado. Te confirmamos el valor final por WhatsApp antes de despachar.</span>';
   } else if(q.state==="confirm"){
     h+='<div class="tot sm"><span>Envío</span><span>Por confirmar</span></div><div class="tot"><span>Total productos</span><span class="price num">'+cop(sub)+'</span></div><span class="small">Para '+esc(customer.dept)+' te confirmamos el valor del envío por WhatsApp.</span>';
@@ -454,7 +469,7 @@ function productModal(p){
 function cartDrawer(){
   var lines=cartLines(), body, foot;
   if(ui.checkout){
-    body = '<p class="small" style="margin:0">Llena tus datos de envío. Te llevamos a WhatsApp con el pedido listo y lo confirmamos contigo.</p>'+
+    body = orderSumHtml()+'<p class="small" style="margin:0">Llena tus datos de envío. Te llevamos a WhatsApp con el pedido listo y lo confirmamos contigo.</p>'+
       '<div class="row2">'+fld("c-name","Nombres",customer.name,"text","given-name")+fld("c-last","Apellidos",customer.last,"text","family-name")+'</div>'+fld("c-phone","Celular (WhatsApp)",customer.phone,"tel","tel")+fld("c-email","Correo electrónico (opcional)",customer.email,"email","email")+
       '<div class="field"><label for="c-dept">Departamento</label><select id="c-dept"><option value="">Elige…</option>'+DEPTS.map(function(d){return '<option'+(customer.dept===d?' selected':'')+'>'+d+'</option>';}).join('')+'</select></div>'+
       cityField()+fld("c-addr","Dirección",customer.addr,"text","street-address")+fld("c-barrio","Barrio",customer.barrio,"text","")+
@@ -679,12 +694,12 @@ document.addEventListener("input", function(ev){
   var el=ev.target;
   if(el.classList && el.classList.contains("q")){ ui.q=el.value; var id=el.id, pos=el.selectionStart; render(); var q=document.getElementById(id); if(q){ q.focus(); try{q.setSelectionRange(pos,pos);}catch(e){} } }
   if(/^k-/.test(el.id)) calcPrice();
-  if(el.id==="c-city"||el.id==="c-dept"){ readCustomer(); var sb=document.getElementById("ship-box"); if(sb) sb.outerHTML=shipSummaryHtml(); }
+  if(el.id==="c-city"||el.id==="c-dept"){ readCustomer(); refreshCheckout(); }
 });
 document.addEventListener("change", async function(ev){
   if(ev.target.id==="sort"){ ui.sort=ev.target.value; render(); }
-  if(ev.target.id==="c-dept"){ readCustomer(); var cw=document.getElementById("c-city-wrap"); if(cw) cw.outerHTML=cityField(); var sb=document.getElementById("ship-box"); if(sb) sb.outerHTML=shipSummaryHtml(); }
-  if(ev.target.id==="c-city"){ readCustomer(); var sb2=document.getElementById("ship-box"); if(sb2) sb2.outerHTML=shipSummaryHtml(); }
+  if(ev.target.id==="c-dept"){ readCustomer(); var cw=document.getElementById("c-city-wrap"); if(cw) cw.outerHTML=cityField(); refreshCheckout(); }
+  if(ev.target.id==="c-city"){ readCustomer(); refreshCheckout(); }
   if(ev.target.id==="e-pics"){
     var p=currentEdit(); readEditor(p); var files=[].slice.call(ev.target.files||[]).slice(0,5-p.images.length);
     for(var i=0;i<files.length;i++){ try{ p.images.push(await compress(files[i],900,0.74)); }catch(e){ toast("Una foto no se pudo leer. Prueba con JPG o PNG."); } }
