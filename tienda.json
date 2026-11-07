@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T057",
+   "name": "Soporte magnético plegable de celular para carro con ventosa",
+   "category": "Vehículos",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Tu celular siempre a la vista para usar el GPS o contestar llamadas, sin estorbar en el tablero.\n\n• Imán: pegas el celular y queda firme; lo retiras con una mano\n• Ventosa al vacío con perilla de giro (TIGHT / OPEN) para fijarlo y soltarlo sin dejar residuos\n• Brazo plegable con ajuste en 3 puntos: gira e inclina para el ángulo que quieras\n• Se dobla y queda compacto cuando no lo usas\n• Sirve en el tablero, la consola o el vidrio\n\nIncluye: soporte, anillo magnético para celulares o fundas que no son magnéticos, y almohadilla adhesiva para superficies con textura.\n\nRecomendación: instálalo sobre una superficie lisa y limpia. En tableros con textura usa la almohadilla incluida. No lo pongas donde tape la vista del conductor ni la salida de los airbags.",
+   "images": [
+    "img/productos/T057-1.jpg",
+    "img/productos/T057-2.jpg"
+   ]
+  },
+  {
    "id": "T056",
    "name": "Depiladora eléctrica recargable de doble cabezal",
    "category": "Belleza",
