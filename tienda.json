@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T056",
+   "name": "Depiladora eléctrica recargable de doble cabezal",
+   "category": "Belleza",
+   "price": 36900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Retira el vello de forma rápida y práctica, en casa o de viaje, sin cera ni cuchillas sueltas.\n\n• Doble cabezal para diferentes zonas del cuerpo y el rostro\n• Inalámbrica y recargable por cable USB (incluido)\n• Botón de encendido de un solo toque\n• Pequeña y liviana: cabe en el bolso o el neceser\n• Color lila\n\nIncluye: depiladora, cepillo de limpieza y cable USB.\n\nRecomendaciones: úsala sobre la piel limpia y seca, sin presionar fuerte. Limpia el cabezal después de cada uso. Por higiene, es de uso personal.",
+   "images": [
+    "img/productos/T056-1.jpg",
+    "img/productos/T056-2.jpg"
+   ]
+  },
+  {
    "id": "T055",
    "name": "Candado antirrobo de volante al cinturón de seguridad",
    "category": "Vehículos",
