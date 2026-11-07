@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T027",
+   "name": "Soporte articulado de pared para TV de 14 a 55 pulgadas",
+   "category": "Hogar",
+   "price": 54900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Instala tu televisor en la pared y muévelo hacia donde lo necesites: sácalo, gíralo e inclínalo para verlo desde la cama, el sofá o el comedor.\n\n• Para televisores de 14 a 55 pulgadas\n• Soporta hasta 50 kg\n• Brazo articulado que se extiende, gira hacia los lados e inclina la pantalla\n• Compatible con patrones VESA de 75 × 75 hasta 400 × 400 mm\n• Incluye tornillería y llave para la instalación\n• Modelo HDL-117B-2\n\nAntes de comprar, revisa en la parte de atrás de tu TV la distancia entre sus huecos (patrón VESA) y su peso. Instálalo en una pared firme, de concreto o ladrillo.",
+   "images": [
+    "img/productos/T027-1.jpg",
+    "img/productos/T027-2.jpg"
+   ]
+  },
+  {
    "id": "T026",
    "name": "Cesto doble para ropa con estructura metálica",
    "category": "Hogar",
