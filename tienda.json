@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T046",
+   "name": "Proyector de luces galaxia con parlante Bluetooth y control",
+   "category": "Hogar",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Convierte el techo de tu cuarto en un cielo estrellado con nubes de colores, ideal para relajarte, dormir o ambientar una fiesta.\n\n• Proyecta estrellas, nubes de colores y luna sobre el techo y las paredes\n• Colores LED combinables y brillo ajustable\n• Velocidad de giro ajustable\n• Parlante incorporado para poner tu música\n• Control remoto (1 a 5 metros) y modo por voz\n• Temporizador de apagado: 30 min, 1 h o 2 h\n• Tamaño: 14 × 14 × 6 cm · funciona a 5 V\n\nIncluye: proyector, control remoto, stickers decorativos y manual.\n\nTiene un láser verde para el efecto de estrellas: no lo mires directamente ni lo apuntes a los ojos. Si lo usan niños, que sea con supervisión de un adulto.",
+   "images": [
+    "img/productos/T046-1.jpg"
+   ]
+  },
+  {
    "id": "T045",
    "name": "Dispensador automático de agua para botellón",
    "category": "Cocina",
