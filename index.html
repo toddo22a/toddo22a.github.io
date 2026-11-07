@@ -115,6 +115,24 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 
 /* grid + cards */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.subnav{border-top:1px solid var(--line)}
+.subnav-in{display:flex;gap:6px;align-items:center;padding-block:6px;overflow:visible;flex-wrap:wrap}
+.sn-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:0;color:var(--fg);font-weight:600;font-size:14px;padding:8px 12px;border-radius:10px}
+.sn-btn:hover,.sn-btn[aria-expanded="true"]{background:var(--surface)}
+.sn-btn[aria-pressed="true"]{color:var(--y-fg)}
+.sn-btn svg{color:var(--y-fg)}
+.sn-count{background:var(--y);color:var(--y-ink);border-radius:999px;font-size:11px;padding:1px 7px;font-weight:800}
+.menu-wrap{position:relative}
+.catmenu{position:absolute;top:calc(100% + 6px);left:0;z-index:45;min-width:250px;max-width:calc(100vw - 32px);max-height:70vh;overflow:auto;background:#1c1c1c;color:#f6f6f4;border:1px solid var(--line-2);border-radius:14px;padding:8px;box-shadow:0 18px 40px rgba(0,0,0,.45);display:grid}
+.catmenu button{display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:0;color:inherit;text-align:left;padding:11px 14px;border-radius:10px;font-size:15px}
+.catmenu button:hover,.catmenu button:focus-visible{background:rgba(253,186,9,.16);color:#fdba09}
+.catmenu small{opacity:.55;font-size:12px}
+.card-wrap{position:relative;display:flex;min-width:0}
+.card-wrap .card{flex:1;width:100%}
+.fav{position:absolute;top:8px;right:8px;z-index:3;width:36px;height:36px;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:rgba(255,255,255,.92);color:#b9b9b4;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.fav svg path{fill:transparent;stroke:#8d8d88}
+.fav:hover svg path{stroke:#fdba09}
+.fav.on svg path{fill:#fdba09;stroke:#d99a00}
 .rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,260px);gap:16px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;position:relative;color:var(--fg)}
 .card:hover{border-color:var(--y);box-shadow:0 10px 40px -18px var(--y-glow)}
@@ -341,6 +359,11 @@ function shipSummaryHtml(){
 var CARRIERS = ["Me da igual, la que llegue más rápido","Interrapidísimo","Servientrega","Coordinadora","Envía","Domina","Veloces","99minutos","Otra (la escribo en indicaciones)"];
 var ui = { cat:"Todo", q:"", sort:"destacados", view:null, imgIdx:0, cartOpen:false, checkout:false, admin:false, editId:null, canEdit:false, dirty:false, saving:false, slide:0 };
 var draft = null;
+var favs = [];
+try { favs = JSON.parse(localStorage.getItem("toddo-favs") || "[]") || []; } catch(e){ favs = []; }
+function isFav(id){ return favs.indexOf(id)>-1; }
+function toggleFav(id){ if(isFav(id)) favs=favs.filter(function(x){return x!==id;}); else favs.push(id); try{ localStorage.setItem("toddo-favs", JSON.stringify(favs)); }catch(e){} }
+var STAR='<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.3L12 17.1l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>';
 var cart = [];
 try { cart = JSON.parse(localStorage.getItem("toddo-cart") || "[]") || []; } catch(e){ cart = []; }
 var customer = {};
@@ -379,9 +402,10 @@ var app = document.getElementById("app");
 var searchBox = function(id){ return '<div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="'+id+'" class="q" type="search" placeholder="¿Qué estás buscando?" aria-label="Buscar productos" value="'+esc(ui.q)+'"></div>'; };
 
 function render(){
-  pruneCart();
+  pruneCart(); favs=favs.filter(function(id){return byId(id);});
   var list = P.filter(function(p){
-    if(ui.cat!=="Todo" && p.category!==ui.cat) return false;
+    if(ui.cat==="__fav"){ if(!isFav(p.id)) return false; }
+    else if(ui.cat!=="Todo" && p.category!==ui.cat) return false;
     if(ui.q){ var q=ui.q.toLowerCase(); return (p.name+" "+p.category+" "+(p.desc||"")).toLowerCase().indexOf(q)>-1; }
     return true;
   });
@@ -400,7 +424,13 @@ function render(){
     '<div class="desk-search">'+searchBox("q")+'</div>'+
     '<div class="top-actions"><button class="ibtn theme-btn" data-act="theme" aria-label="'+(effTheme()==="light"?"Activar modo noche":"Activar modo día")+'" title="'+(effTheme()==="light"?"Modo noche":"Modo día")+'">'+(effTheme()==="light"?MOON:SUN)+'</button>'+(ui.canEdit?'<button class="ibtn" data-act="admin" aria-label="Administrar tienda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span class="lbl">Administrar</span></button>':'')+
     '<button class="ibtn cart" data-act="cart" aria-label="Ver carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/></svg><span class="lbl">Carrito</span>'+(cartCount()?'<span class="count num">'+cartCount()+'</span>':'')+'</button></div>'+
-  '</div><div class="msearch">'+searchBox("q2")+'</div></div></header>';
+  '</div><div class="msearch">'+searchBox("q2")+'</div></div>'+
+  '<nav class="subnav" aria-label="Navegación de la tienda"><div class="wrap gut subnav-in">'+
+    '<div class="menu-wrap"><button class="sn-btn" data-act="catmenu" aria-expanded="'+(!!ui.catMenu)+'" aria-haspopup="true">Categorías <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>'+
+    (ui.catMenu?'<div class="catmenu" role="menu"><button role="menuitem" data-cat="Todo">Todos los productos<small>'+P.length+'</small></button>'+c.map(function(x){ return '<button role="menuitem" data-cat="'+esc(x[0])+'">'+esc(x[0])+'<small>'+x[1]+'</small></button>'; }).join('')+'</div>':'')+'</div>'+
+    '<button class="sn-btn" data-cat="__fav" aria-pressed="'+(ui.cat==="__fav")+'">'+STAR+' Favoritos'+(favs.length?' <span class="sn-count num">'+favs.length+'</span>':'')+'</button>'+
+    (featured.length?'<button class="sn-btn" data-act="go-viral">Lo más viral</button>':'')+
+  '</div></nav></header>';
   h += '<main id="inicio">';
   if(browsing){
     var bs=B.banners||[];
@@ -410,14 +440,14 @@ function render(){
       '</div>'+(bs.length>1?'<button class="cbtn prev" data-act="prev" aria-label="Anterior">‹</button><button class="cbtn next" data-act="next" aria-label="Siguiente">›</button><div class="dots">'+bs.map(function(_,i){return '<button data-slide="'+i+'" aria-label="Ir a la promoción '+(i+1)+'" aria-current="'+(i===ui.slide)+'"></button>';}).join('')+'</div>':'')+'</div>'+
       '<div class="trust-strip"><div class="ts">'+ICON.cash+'<div><b>Paga cuando recibas</b><span>Sin pagos adelantados</span></div></div><div class="ts">'+ICON.truck+'<div><b>Envíos a toda Colombia</b><span>Directo a tu casa</span></div></div><div class="ts">'+ICON.shield+'<div><b>Compra sin preocupaciones</b><span>Confirmamos cada pedido</span></div></div></div></section>';
     if(featured.length){
-      h += '<section class="sec wrap gut" aria-label="Destacados"><div class="sec-head"><div><span class="eyebrow">Lo que está funcionando</span><h2>Productos <span class="y">virales</span></h2><div class="rule"></div></div></div><div class="rail">'+featured.map(cardHtml).join('')+'</div></section>';
+      h += '<section class="sec wrap gut" id="virales" aria-label="Destacados"><div class="sec-head"><div><span class="eyebrow">Lo que está funcionando</span><h2>Productos <span class="y">virales</span></h2><div class="rule"></div></div></div><div class="rail">'+featured.map(cardHtml).join('')+'</div></section>';
     }
   }
-  h += '<section class="sec wrap gut" id="catalogo" aria-label="Catálogo"><div class="sec-head"><div><span class="eyebrow">Catálogo</span><h2>'+(ui.q?'Resultados para “'+esc(ui.q)+'”':esc(ui.cat==="Todo"?"Todo en TODDO":ui.cat))+'</h2><div class="rule"></div></div>'+
+  h += '<section class="sec wrap gut" id="catalogo" aria-label="Catálogo"><div class="sec-head"><div><span class="eyebrow">Catálogo</span><h2>'+(ui.q?'Resultados para “'+esc(ui.q)+'”':esc(ui.cat==="Todo"?"Todo en TODDO":ui.cat==="__fav"?"Tus favoritos":ui.cat))+'</h2><div class="rule"></div></div>'+
     '<select id="sort" aria-label="Ordenar"><option value="destacados">Destacados</option><option value="menor">Menor precio</option><option value="mayor">Mayor precio</option><option value="descuento">Mayor descuento</option></select></div>';
   h += '<nav class="chips" aria-label="Categorías"><button class="chip" data-cat="Todo" aria-pressed="'+(ui.cat==="Todo")+'">Todo<small>'+P.length+'</small></button>'+
     c.map(function(x){ return '<button class="chip" data-cat="'+esc(x[0])+'" aria-pressed="'+(ui.cat===x[0])+'">'+esc(x[0])+'<small>'+x[1]+'</small></button>'; }).join('')+'</nav>';
-  h += '<div class="grid">'+(list.length? list.map(cardHtml).join('') : '<div class="empty">'+(P.length?'No encontramos productos con esa búsqueda.':'Muy pronto: estamos subiendo los productos.')+'</div>')+'</div></section>';
+  h += '<div class="grid">'+(list.length? list.map(cardHtml).join('') : '<div class="empty">'+(ui.cat==="__fav"?'Aún no tienes favoritos. Toca la estrella de un producto para guardarlo aquí.':P.length?'No encontramos productos con esa búsqueda.':'Muy pronto: estamos subiendo los productos.')+'</div>')+'</div></section>';
   if(browsing){
     h += '<section class="wrap gut"><div class="band">'+(B.secure?'<img src="'+B.secure+'" alt="Escudo con candado: compra segura" loading="lazy">':'')+
       '<div class="band-txt"><span class="eyebrow">Así compras en '+esc(S.name)+'</span><h2>Compra sin <span class="y">preocupaciones</span></h2><ol class="steps">'+
@@ -435,8 +465,8 @@ function render(){
 }
 function cardHtml(p){
   var d=off(p);
-  return '<button class="card" data-view="'+esc(p.id)+'" aria-label="Ver '+esc(p.name)+'"><div class="badges">'+(p.demo?'<span class="badge demo">Ejemplo</span>':'')+(d?'<span class="badge">-'+d+'%</span>':'')+(p.featured&&!d?'<span class="badge hot">Viral</span>':'')+(!p.available?'<span class="badge out">Agotado</span>':'')+'</div>'+photo(p)+
-    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+'</div><span class="cod">Paga al recibir</span></div></button>';
+  return '<div class="card-wrap"><button class="fav'+(isFav(p.id)?' on':'')+'" data-fav="'+esc(p.id)+'" aria-pressed="'+isFav(p.id)+'" aria-label="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'" title="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'">'+STAR+'</button><button class="card" data-view="'+esc(p.id)+'" aria-label="Ver '+esc(p.name)+'"><div class="badges">'+(p.demo?'<span class="badge demo">Ejemplo</span>':'')+(d?'<span class="badge">-'+d+'%</span>':'')+(p.featured&&!d?'<span class="badge hot">Viral</span>':'')+(!p.available?'<span class="badge out">Agotado</span>':'')+'</div>'+photo(p)+
+    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+'</div><span class="cod">Paga al recibir</span></div></button></div>';
 }
 
 /* carousel */
@@ -638,12 +668,14 @@ async function publish(){
 
 /* ---------- EVENTS ---------- */
 document.addEventListener("click", function(ev){
-  var t=ev.target.closest("[data-act],[data-cat],[data-view],[data-add],[data-buy],[data-inc],[data-dec],[data-img],[data-edit],[data-delpic],[data-delban],[data-up],[data-slide]");
+  if(ui.catMenu && !ev.target.closest(".menu-wrap")){ ui.catMenu=false; render(); }
+  var t=ev.target.closest("[data-fav],[data-act],[data-cat],[data-view],[data-add],[data-buy],[data-inc],[data-dec],[data-img],[data-edit],[data-delpic],[data-delban],[data-up],[data-slide]");
   if(!t) return;
   if(t.classList.contains("scrim") && ev.target!==t) return;
   var a=t.dataset;
+  if(a.fav){ toggleFav(a.fav); var keep=window.scrollY; render(); window.scrollTo(0,keep); toast(isFav(a.fav)?"Guardado en favoritos":"Quitado de favoritos"); return; }
   if(a.slide){ goSlide(Number(a.slide)); startAuto(); return; }
-  if(a.cat){ ui.cat=a.cat; render(); var cat=document.getElementById("catalogo"); if(cat && a.cat!=="Todo") cat.scrollIntoView({block:"start"}); return; }
+  if(a.cat){ ui.cat=a.cat; ui.catMenu=false; render(); var cat=document.getElementById("catalogo"); if(cat && a.cat!=="Todo") cat.scrollIntoView({block:"start"}); return; }
   if(a.view){ ui.view=a.view; ui.imgIdx=0; renderOverlays(); return; }
   if(a.img){ ui.imgIdx=Number(a.img); renderOverlays(); return; }
   if(a.add){ addToCart(a.add,1,chosenOpt(byId(a.add))); ui.view=null; toast("Agregado al carrito"); render(); return; }
@@ -657,6 +689,8 @@ document.addEventListener("click", function(ev){
   switch(a.act){
     case "home": ev.preventDefault(); ui.cat="Todo"; ui.q=""; render(); window.scrollTo(0,0); break;
     case "theme": setTheme(effTheme()==="light"?"dark":"light"); render(); break;
+    case "catmenu": ui.catMenu=!ui.catMenu; render(); break;
+    case "go-viral": ui.cat="Todo"; ui.q=""; ui.catMenu=false; render(); var vv=document.getElementById("virales"); if(vv) vv.scrollIntoView({block:"start"}); break;
     case "prev": goSlide(ui.slide-1); startAuto(); break;
     case "next": goSlide(ui.slide+1); startAuto(); break;
     case "cart": ui.cartOpen=true; ui.checkout=false; renderOverlays(); break;
@@ -714,7 +748,7 @@ document.addEventListener("change", async function(ev){
     renderOverlays();
   }
 });
-document.addEventListener("keydown", function(ev){ if(ev.key==="Escape"){ if(ui.view){ui.view=null;renderOverlays();} else if(ui.cartOpen){ui.cartOpen=false;ui.checkout=false;render();} } });
+document.addEventListener("keydown", function(ev){ if(ev.key==="Escape"&&ui.catMenu){ ui.catMenu=false; render(); return; } if(ev.key==="Escape"){ if(ui.view){ui.view=null;renderOverlays();} else if(ui.cartOpen){ui.cartOpen=false;ui.checkout=false;render();} } });
 
 if(DATA.src){
   app.innerHTML='<div class="empty" style="padding:120px 16px">Cargando la tienda…</div>';
