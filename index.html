@@ -228,6 +228,10 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .badge{background:var(--y);color:var(--y-ink);font-size:11px;font-weight:800;border-radius:8px;padding:3px 8px}
 .badge.demo{background:#fff;color:#111}
 .badge.out{background:var(--line-2);color:var(--fg)}
+.pnote{font-size:12px;color:var(--muted);font-weight:600}
+.deal-note{border:1px solid #e5322d;background:rgba(229,50,45,.08);border-radius:12px;padding:10px 14px;display:grid;gap:2px}
+.deal-note b{color:#e5322d;font-size:14px}
+.deal-note span{font-size:13px;color:var(--muted)}
 .badge.deal{background:#e5322d;color:#fff}
 .sn-btn.deal{color:#fff;background:#e5322d;border-color:#e5322d}
 .sn-btn.deal[aria-pressed="true"]{outline:2px solid var(--y);outline-offset:1px}
@@ -440,12 +444,14 @@ function orderSumHtml(){
   }).join('')+'</div>';
 }
 function refreshCheckout(){ var sb=document.getElementById("ship-box"); if(sb) sb.outerHTML=shipSummaryHtml(); var os=document.getElementById("order-sum"); if(os) os.outerHTML=orderSumHtml(); }
-function payMode(){ return customer.pay==="full"?"full":"envio"; }
+function hasDeal(){ return cartLines().some(function(x){ return x.p.deal; }); }
+function payMode(){ return (hasDeal()||customer.pay==="full")?"full":"envio"; }
 function discPct(){ var d=Number(S.prepayDiscount); return isNaN(d)?5:d; }
 function payCalc(){
   var q=shipQuote(customer.dept, customer.city), sub=cartTotal(), mode=payMode();
   var ship = q.state==="ok" ? q.value : null;
-  var disc = mode==="full" ? Math.round(sub*discPct()/100/100)*100 : 0;
+  var dsub = cartLines().reduce(function(a,x){ return a+(x.p.deal?0:x.p.price*x.c.qty); },0);
+  var disc = mode==="full" ? Math.round(dsub*discPct()/100/100)*100 : 0;
   var prod = sub-disc;
   var now = mode==="full" ? (ship!==null? prod+ship : null) : ship;
   var later = mode==="full" ? 0 : prod;
@@ -453,6 +459,9 @@ function payCalc(){
 }
 function payChoiceHtml(){
   var m=payMode();
+  if(hasDeal()) return '<fieldset class="pay" id="pay-box"><legend>¿Cómo quieres pagar?</legend>'+
+    '<label class="pay-opt on"><input type="radio" name="pay" value="full" checked disabled><span><b>Pago total por adelantado</b><small>Tu pedido incluye productos en <b>oferta</b>: su precio especial aplica solo con pago anticipado.'+(cartLines().some(function(x){return !x.p.deal;})?' Los demás productos sí tienen el '+discPct()+'% de descuento.':'')+'</small></span></label>'+
+    '<span class="small">Pagos por Nequi, Daviplata o transferencia Bancolombia. Te enviamos los datos de pago por WhatsApp al confirmar tu pedido.</span></fieldset>';
   return '<fieldset class="pay" id="pay-box"><legend>¿Cómo quieres pagar?</legend>'+
     '<label class="pay-opt'+(m==="envio"?' on':'')+'"><input type="radio" name="pay" value="envio"'+(m==="envio"?' checked':'')+'><span><b>Pago del envío por adelantado</b><small>Pagas solo el envío ahora y el producto cuando lo recibas.</small></span></label>'+
     '<label class="pay-opt'+(m==="full"?' on':'')+'"><input type="radio" name="pay" value="full"'+(m==="full"?' checked':'')+'><span><b>Pago total por adelantado <em class="pay-badge">'+discPct()+'% de descuento</em></b><small>Pagas todo ahora y te descontamos el '+discPct()+'% en los productos.</small></span></label>'+
@@ -490,6 +499,7 @@ var POLICIES={
   ["Cobertura","Enviamos a casi todos los municipios de Colombia a través de transportadoras aliadas. En zonas apartadas confirmamos la cobertura por WhatsApp antes de despachar."],
   ["Costo","El costo del envío depende del municipio de destino, del producto y del peso. Lo ves calculado en el resumen de tu pedido y se paga por adelantado por Nequi, Daviplata o transferencia. El valor final se confirma por WhatsApp."],
   ["Tiempos","Despachamos después de confirmar tu pedido y recibir el pago del envío (o el pago total). La entrega suele tardar entre 2 y 6 días hábiles según la ciudad. Los tiempos dependen de la transportadora y pueden variar en temporadas altas, días festivos o por situaciones de orden público o clima."],
+  ["Productos en oferta","Los productos marcados como Oferta tienen un precio especial que aplica solo con pago total anticipado y hasta agotar las unidades disponibles. Conservan la garantía por defectos de fábrica y el derecho de retracto como cualquier otra compra."],
   ["Un producto, un envío","Nuestros productos salen de bodegas diferentes. Por eso, por lo general, cada producto se despacha como un pedido aparte, con su propio envío y su propia guía, y pueden llegar en días distintos. Si compras varias unidades del mismo producto, normalmente van juntas. Si dos productos diferentes se pueden enviar en un solo paquete, te lo confirmamos por WhatsApp y te ajustamos el valor del envío."],
   ["Recepción","Al recibir, paga al transportador el valor pendiente (si lo hay) y revisa el paquete. Si llega dañado o incompleto, escríbenos dentro de las siguientes 48 horas con fotos. Si el pedido no se recibe o se rechaza sin motivo, el valor del envío pagado no es reembolsable, porque la transportadora ya hizo el servicio."]]],
  "garantia":["Garantía y devoluciones",[
@@ -668,7 +678,7 @@ function productUrl(p){ return SITE+"#p-"+p.id; }
 function cardHtml(p){
   var d=off(p);
   return '<div class="card-wrap"><button class="fav'+(isFav(p.id)?' on':'')+'" data-fav="'+esc(p.id)+'" aria-pressed="'+isFav(p.id)+'" aria-label="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'" title="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'">'+STAR+'</button><button class="card" data-view="'+esc(p.id)+'" aria-label="Ver '+esc(p.name)+'"><div class="badges">'+(p.demo?'<span class="badge demo">Ejemplo</span>':'')+(d?'<span class="badge">-'+d+'%</span>':'')+(p.deal?'<span class="badge deal">Oferta</span>':'')+(p.featured&&!d&&!p.deal?'<span class="badge hot">Viral</span>':'')+(!p.available?'<span class="badge out">Agotado</span>':'')+'</div>'+photo(p)+
-    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+'</div><span class="cod">Envío aparte · '+discPct()+'% off pagando antes</span></div></button>'+(p.available?'<button class="quick" data-quick="'+esc(p.id)+'" aria-label="Agregar '+esc(p.name)+' al carrito" title="Agregar al carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/><path d="M14 4v6M11 7h6"/></svg></button>':'')+'</div>';
+    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+(p.note?'<span class="pnote">'+esc(p.note)+'</span>':'')+'</div><span class="cod">'+(p.deal?'Precio especial · Solo pago anticipado':'Envío aparte · '+discPct()+'% off pagando antes')+'</span></div></button>'+(p.available?'<button class="quick" data-quick="'+esc(p.id)+'" aria-label="Agregar '+esc(p.name)+' al carrito" title="Agregar al carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/><path d="M14 4v6M11 7h6"/></svg></button>':'')+'</div>';
 }
 
 /* carousel */
@@ -696,7 +706,8 @@ function productModal(p){
     '<div class="gal">'+photo(p,i)+(imgs.length>1?'<div class="thumbs">'+imgs.map(function(src,k){return '<button data-img="'+k+'" aria-pressed="'+(k===i)+'" aria-label="Foto '+(k+1)+'"><img alt="" src="'+src+'"></button>';}).join('')+'</div>':'')+'</div>'+
     '<div class="info"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><span class="card-cat">'+esc(p.category)+'</span><button class="x" data-act="close-view" aria-label="Cerrar">×</button></div>'+
     '<h3>'+esc(p.name)+'</h3>'+(p.demo?'<span class="small">Producto de ejemplo</span>':'')+
-    '<div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span><span class="save">Ahorras '+cop(p.oldPrice-p.price)+'</span>':'')+'</div>'+
+    '<div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span><span class="save">Ahorras '+cop(p.oldPrice-p.price)+'</span>':'')+(p.note?'<span class="pnote">'+esc(p.note)+'</span>':'')+'</div>'+
+    (p.deal&&p.available?'<div class="deal-note"><b>Precio especial · Unidades limitadas</b><span>Este precio de oferta aplica solo con pago total anticipado.</span></div>':'')+
     (p.available?'<div class="ship-note">'+ICON.truck.replace('width="34" height="34"','width="22" height="22"')+'<div><b>El envío no está incluido en este precio.</b><span>Se calcula según tu municipio al hacer el pedido y se paga por adelantado para despachar. Cada producto se envía por separado, con su propio envío.</span></div></div>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
     (p.available&&p.options?'<div class="field"><label for="p-opt">'+esc(p.options.label)+'</label><select id="p-opt">'+p.options.values.map(function(v){return '<option>'+esc(v)+'</option>';}).join('')+'</select></div>':'')+
     (p.available?'<div class="cta"><button class="btn" data-buy="'+esc(p.id)+'">Comprar ahora</button><button class="btn ghost" data-add="'+esc(p.id)+'">Agregar al carrito</button></div>':'<button class="btn ghost" disabled>Agotado por ahora</button>')+
@@ -749,7 +760,7 @@ function orderText(){
   t+="\nProductos: "+cop(c.sub);
   if(c.disc) t+="\nDescuento pago anticipado ("+discPct()+"%): -"+cop(c.disc);
   t+="\nEnvío estimado: "+(c.ship!==null?cop(c.ship):"por confirmar")+(distinctCount()>1?" ("+distinctCount()+" envíos, uno por producto)":"");
-  t+="\n\n*Forma de pago:* "+(c.mode==="full"?"Pago total por adelantado ("+discPct()+"% de descuento)":"Pago del envío por adelantado");
+  t+="\n\n*Forma de pago:* "+(c.mode==="full"?"Pago total por adelantado"+(hasDeal()?" (incluye productos en oferta)":"")+(c.disc?(hasDeal()?" ("+discPct()+"% de descuento en productos sin oferta)":" ("+discPct()+"% de descuento)"):""):"Pago del envío por adelantado");
   t+="\n*Pago ahora:* "+(c.now!==null?cop(c.now):(c.mode==="full"?cop(c.prod)+" + envío":"valor del envío"));
   t+="\n*Pago al recibir:* "+(c.mode==="full"?"$0":cop(c.later));
   t+="\n\nQuedo atento(a) a los datos de pago.";
