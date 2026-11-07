@@ -148,6 +148,22 @@
    ]
   },
   {
+   "id": "T024",
+   "name": "Kit extractor de abolladuras con 18 ventosas",
+   "category": "Vehículos",
+   "price": 71900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Repara abolladuras pequeñas y medianas de tu carro o moto sin dañar la pintura.\n\n• Martillo deslizante metálico de 49 cm con mango en \"T\" para un agarre firme\n• 18 ventosas adhesivas de diferentes formas y tamaños, para golpes redondos, alargados o en zonas difíciles\n• Las ventosas se cambian fácil gracias a su acople de rosca\n• No necesita electricidad\n• Sirve en carros, motos y otras superficies metálicas\n\nImportante: funciona mejor en abolladuras donde la pintura está intacta. Para pegar las ventosas necesitas pistola de silicona caliente y barras de silicona, que no vienen incluidas. El resultado depende del tamaño y la ubicación del golpe.",
+   "images": [
+    "img/productos/T024-1.jpg",
+    "img/productos/T024-2.jpg",
+    "img/productos/T024-3.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
