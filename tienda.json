@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T052",
+   "name": "Olla eléctrica calentadora de cera para depilación",
+   "category": "Belleza",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Derrite la cera en casa de forma pareja y rápida para depilarte sin ir al salón.\n\n• Recipiente metálico removible, fácil de limpiar\n• Mango largo para manejarla con comodidad y sin quemarte\n• Pico para servir la cera sin regar\n• Base eléctrica que calienta de manera uniforme\n• Compacta: 18,5 × 11 × 9,5 cm\n• Enchufe tipo americano, como los de Colombia\n\nSirve para cera en perlas, en bloque o en lata. La cera no viene incluida.\n\nImportante: antes de aplicar, prueba siempre la temperatura de la cera en la parte interna de la muñeca para evitar quemaduras. No la dejes encendida sin vigilancia y mantenla lejos del alcance de los niños.",
+   "images": [
+    "img/productos/T052-1.jpg",
+    "img/productos/T052-2.jpg"
+   ]
+  },
+  {
    "id": "T051",
    "name": "Set x3 bandas de resistencia en tela para glúteos y piernas",
    "category": "Deportes",
