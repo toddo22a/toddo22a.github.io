@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T045",
+   "name": "Dispensador automático de agua para botellón",
+   "category": "Cocina",
+   "price": 26900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Sirve agua del botellón con solo presionar un botón: sin levantarlo ni inclinarlo.\n\n• Se pone encima de la boca del botellón\n• Botón en la parte de arriba para servir y parar\n• Boquilla curva para llenar el vaso sin regar\n• Diseño compacto en blanco y negro\n• Práctico para la casa o la oficina\n\nVenta por unidad. No incluye botellón ni vaso. Revisa que la boca de tu botellón sea la estándar.",
+   "images": [
+    "img/productos/T045-1.jpg",
+    "img/productos/T045-2.jpg"
+   ]
+  },
+  {
    "id": "T044",
    "name": "Rizador automático de cabello con pantalla y 6 temperaturas",
    "category": "Belleza",
