@@ -36,6 +36,31 @@
  },
  "products": [
   {
+   "id": "T032",
+   "name": "Combo smartwatch X9 + audífonos inalámbricos + 2 correas",
+   "category": "Tecnología",
+   "price": 84900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "options": {
+    "label": "Color",
+    "values": [
+     "Plateado con correas naranja y blanca",
+     "Negro con correas negras",
+     "Plateado con correas gris y beige",
+     "Plateado con correas grises"
+    ]
+   },
+   "desc": "Un combo completo para regalar o para estrenar: reloj inteligente, audífonos inalámbricos y todo lo necesario para cargarlos.\n\n• Haz y recibe llamadas desde el reloj y recibe notificaciones de WhatsApp y redes sociales\n• Música por Bluetooth, cámara remota para el celular y función para encontrar tu teléfono\n• Modos deportivos, conteo de pasos y monitoreo del sueño\n• Pantalla de 2,3\" con carátulas personalizables y 7 estilos de menú\n• Linterna, alarma, cronómetro, calendario, calculadora y clima\n• Carga inalámbrica; la batería dura de 1 a 3 días según el uso\n\nEl combo incluye: reloj X9, audífonos inalámbricos con estuche de carga, 2 correas, base de carga inalámbrica para el reloj, cable para los audífonos, cargador de pared y funda protectora para el reloj.\n\nLas mediciones de ritmo cardíaco, presión y oxígeno son solo de referencia: no reemplazan un equipo médico.",
+   "images": [
+    "img/productos/T032-1.jpg",
+    "img/productos/T032-2.jpg",
+    "img/productos/T032-3.jpg"
+   ]
+  },
+  {
    "id": "T031",
    "name": "Depiladora IPL de luz pulsada para uso en casa",
    "category": "Belleza",
