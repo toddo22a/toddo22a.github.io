@@ -47,6 +47,21 @@
    ]
   },
   {
+   "id": "T018",
+   "name": "Pack x3 extracto de pepino con colágeno y ácido hialurónico",
+   "category": "Belleza",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Atlántico",
+   "desc": "Pack de 3 sprays para hidratar y refrescar la piel y el cabello. Úsalos tú o compártelos.\n\n• Extracto de pepino con colágeno y ácido hialurónico\n• Sensación de frescura inmediata\n• Ayuda a hidratar y suavizar la piel\n• Sirve para rostro, cuerpo y cabello\n• Presentación en spray de 60 mL cada uno\n\nEl pack trae 3 unidades. Uso cosmético externo.",
+   "images": [
+    "img/productos/T018-1.jpg",
+    "img/productos/T018-2.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
