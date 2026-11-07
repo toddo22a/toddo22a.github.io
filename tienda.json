@@ -36,6 +36,29 @@
  },
  "products": [
   {
+   "id": "T031",
+   "name": "Depiladora IPL de luz pulsada para uso en casa",
+   "category": "Belleza",
+   "price": 94900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "options": {
+    "label": "Color",
+    "values": [
+     "Rosado",
+     "Blanco",
+     "Negro"
+    ]
+   },
+   "desc": "Reduce el crecimiento del vello desde tu casa con tecnología de luz pulsada (IPL), sin cuchillas ni cera en cada sesión.\n\n• 5 niveles de intensidad para ajustar según tu piel y tu vello\n• Hasta 500.000 disparos de luz, según el fabricante: no usa cartuchos ni recargas\n• Funciona conectada a la corriente, sin baterías\n• Para piernas, brazos, axilas, zona de bikini, espalda y rostro (evitando la zona de los ojos)\n• Tamaño compacto: 12,4 × 8,3 × 4,85 cm\n\nIncluye: depiladora, adaptador de corriente, gafas de protección, rasuradora y manual.\n\nImportante: los resultados son graduales y dependen del tipo de piel y de vello; se necesitan varias sesiones. Funciona mejor en vello oscuro sobre piel clara o media. No se recomienda en pieles muy oscuras, en vello blanco, canoso, rubio o pelirrojo, sobre tatuajes ni lunares. Usa siempre las gafas de protección y haz primero una prueba en una zona pequeña. Si tienes una condición de la piel o estás en embarazo, consulta antes con un médico.",
+   "images": [
+    "img/productos/T031-1.jpg",
+    "img/productos/T031-2.jpg"
+   ]
+  },
+  {
    "id": "T030",
    "name": "Zapatero organizador metálico de 6 niveles",
    "category": "Hogar",
