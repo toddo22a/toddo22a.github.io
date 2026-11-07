@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T061",
+   "name": "Máquina para hacer perros calientes coreanos (corn dogs) Sokany",
+   "category": "Cocina",
+   "price": 79900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Prepara corn dogs, salchichas apanadas y snacks en casa, varios al mismo tiempo y sin aceite de freír.\n\n• Moldes para preparar varias porciones a la vez\n• Placas antiadherentes: no se pega la masa y se limpia fácil\n• Calienta rápido y cocina parejo\n• Ideal para onces, fiestas infantiles, reuniones o para vender\n• Compacta, se guarda en cualquier gabinete\n\nNo incluye ingredientes ni palitos de madera.",
+   "images": [
+    "img/productos/T061-1.jpg"
+   ]
+  },
+  {
    "id": "T060",
    "name": "Zapatero vertical de 10 niveles para 27 pares",
    "category": "Hogar",
