@@ -36,6 +36,33 @@
  },
  "products": [
   {
+   "id": "T054",
+   "name": "Jean levanta cola tiro alto con correa para dama",
+   "category": "Moda",
+   "price": 114900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Norte de Santander",
+   "options": {
+    "label": "Talla",
+    "values": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ]
+   },
+   "desc": "Jean de horma colombiana que realza la cola, marca la cintura y estiliza las piernas.\n\n• Efecto levanta cola\n• Tiro alto que moldea la cintura\n• Tela con elasticidad para un ajuste cómodo\n• Correa con hebilla dorada incluida\n• Color azul oscuro\n• Fabricado en Colombia\n\nTallas: 6, 8, 10, 12, 14 y 16. Si tienes dudas con tu talla, escríbenos por WhatsApp antes de pedir y te ayudamos a escogerla.",
+   "images": [
+    "img/productos/T054-1.jpg",
+    "img/productos/T054-2.jpg",
+    "img/productos/T054-3.jpg"
+   ]
+  },
+  {
    "id": "T053",
    "name": "Cepillo eléctrico giratorio de limpieza 9 en 1 con mango extensible",
    "category": "Hogar",
