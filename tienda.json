@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T059",
+   "name": "Encendedor eléctrico recargable de cuello flexible",
+   "category": "Cocina",
+   "price": 32900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Prende la estufa, el horno, el asador o las velas sin fósforos ni gas: funciona con batería recargable.\n\n• Encendido por arco eléctrico: sin llama ni combustible\n• Cuello flexible que se dobla para llegar a velas en frascos o quemadores difíciles\n• Recargable por USB, con indicador de batería\n• Botón de seguridad para evitar que se encienda por accidente\n• Cuerpo de aluminio, liviano y elegante\n\nColor según disponibilidad.\n\nPor seguridad: guárdalo fuera del alcance de los niños y no lo acerques a la piel, la ropa ni a materiales que se quemen fácil.",
+   "images": [
+    "img/productos/T059-1.jpg"
+   ]
+  },
+  {
    "id": "T058",
    "name": "Máquina afeitadora y recortadora 3 en 1 Geemy GM-566",
    "category": "Cuidado personal",
