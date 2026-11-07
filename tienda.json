@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T049",
+   "name": "Set de organizadores de ropa interior para cajón",
+   "category": "Hogar",
+   "price": 29900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Ordena tus cajones y encuentra todo a la vista: brasieres, ropa interior, medias y accesorios, cada cosa en su lugar.\n\n• Cajas de tela tipo malla con divisiones, para que nada se revuelva\n• Una caja con compartimentos amplios para brasieres y otras con divisiones para ropa interior y medias\n• Estructura que se mantiene firme y no se deforma\n• Lavables y transpirables\n• Se pliegan cuando no las usas\n\nIdeal para cajones, clósets y maletas de viaje.",
+   "images": [
+    "img/productos/T049-1.jpg"
+   ]
+  },
+  {
    "id": "T048",
    "name": "Toma corriente inteligente WiFi compatible con Alexa y Google",
    "category": "Tecnología",
