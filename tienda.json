@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T033",
+   "name": "Cámara de seguridad solar WiFi con doble lente y sirena",
+   "category": "Tecnología",
+   "price": 184900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Vigila la entrada de tu casa, finca o negocio desde el celular, sin cables de corriente: se carga con su propio panel solar.\n\n• Dos lentes: uno fijo con vista amplia y otro que gira 355° a los lados y 90° hacia arriba y abajo, con zoom digital\n• Ves las dos imágenes al tiempo en la app del celular (V380 Pro, para Android y iPhone)\n• Seguimiento automático: la cámara sigue el movimiento\n• Sensor de movimiento con aviso al celular y sirena con luces para espantar intrusos\n• Visión nocturna infrarroja y modo nocturno a color\n• Audio de doble vía: escuchas y hablas desde el celular\n• Resistente al agua y al polvo (IP66), para exteriores\n• Graba en memoria micro SD de hasta 128 GB (no incluida) o en la nube\n\nIncluye: cámara, panel solar, soporte, tornillos, chazos y manual.\n\nImportante: se conecta por WiFi, así que necesita buena señal de tu red en el sitio donde la instales. El panel debe recibir sol directo durante el día.",
+   "images": [
+    "img/productos/T033-1.jpg",
+    "img/productos/T033-2.jpg"
+   ]
+  },
+  {
    "id": "T032",
    "name": "Combo smartwatch X9 + audífonos inalámbricos + 2 correas",
    "category": "Tecnología",
