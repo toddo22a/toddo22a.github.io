@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T064",
+   "name": "Kit taladro inalámbrico con 2 baterías y 31 piezas en maletín",
+   "category": "Herramientas",
+   "price": 124900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Todo lo que necesitas para arreglos en casa en un solo maletín: taladro inalámbrico, dos baterías y herramientas de mano.\n\n• Taladro atornillador inalámbrico con mandril de ajuste rápido\n• 2 baterías recargables: mientras usas una, cargas la otra\n• Control de torque para atornillar sin dañar el tornillo\n• Brocas y puntas para perforar y atornillar\n• Herramientas de mano: alicate, destornilladores, bisturí, probador de corriente, copas y extensión flexible\n• Maletín para guardar y transportar todo (35 × 25 cm)\n\nIncluye: taladro, 2 baterías, cargador, accesorios (31 piezas en total) y maletín.\n\nPara perforar concreto o ladrillo duro se recomienda un taladro percutor de mayor potencia. Usa gafas de protección.",
+   "images": [
+    "img/productos/T064-1.jpg",
+    "img/productos/T064-2.jpg"
+   ]
+  },
+  {
    "id": "T063",
    "name": "Cepillo secador y moldeador 3 en 1 de 2000 W",
    "category": "Belleza",
