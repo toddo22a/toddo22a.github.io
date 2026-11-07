@@ -62,30 +62,20 @@
    "available": true,
    "origin": "Valle del Cauca",
    "options": {
-    "label": "Medida y color",
+    "label": "Medida",
     "values": [
-     "Sencilla 100×190 · Blanco",
-     "Sencilla 100×190 · Gris",
-     "Semidoble 120×190 · Blanco",
-     "Semidoble 120×190 · Gris",
-     "Doble 140×190 · Blanco",
-     "Doble 140×190 · Gris",
-     "Queen 160×190 · Blanco",
-     "Queen 160×190 · Gris",
-     "King 200×200 · Blanco",
-     "King 200×200 · Gris"
+     "Sencilla 100×190",
+     "Semidoble 120×190",
+     "Doble 140×190",
+     "Queen 160×190",
+     "King 200×200"
     ],
     "prices": {
-     "Sencilla 100×190 · Blanco": 84900,
-     "Sencilla 100×190 · Gris": 84900,
-     "Semidoble 120×190 · Blanco": 89900,
-     "Semidoble 120×190 · Gris": 89900,
-     "Doble 140×190 · Blanco": 94900,
-     "Doble 140×190 · Gris": 94900,
-     "Queen 160×190 · Blanco": 99900,
-     "Queen 160×190 · Gris": 99900,
-     "King 200×200 · Blanco": 109900,
-     "King 200×200 · Gris": 109900
+     "Sencilla 100×190": 84900,
+     "Semidoble 120×190": 89900,
+     "Doble 140×190": 94900,
+     "Queen 160×190": 99900,
+     "King 200×200": 109900
     }
    },
    "desc": "Protege tu colchón y tus almohadas de manchas, sudor, orines y derrames, y alarga su vida útil.\n\n• Parte de arriba en tela tipo toalla, suave y fresca\n• Parte de abajo en poliuretano que no deja pasar líquidos\n• Cubre la parte de arriba y los lados del colchón, con resorte alrededor para que no se corra\n• Para colchones de hasta 30 cm de alto\n• Fácil de lavar\n• Fabricado en Colombia\n\nIncluye: 1 protector de colchón + 2 protectores de almohada (70 × 50 cm, con cremallera).\n\nMedidas del protector: sencilla 100×190, semidoble 120×190, doble 140×190, queen 160×190 y king 200×200 cm. El precio cambia según la medida que elijas.",
@@ -94,7 +84,14 @@
     "img/productos/T062-2.jpg",
     "img/productos/T062-3.jpg",
     "img/productos/T062-4.jpg"
-   ]
+   ],
+   "options2": {
+    "label": "Color",
+    "values": [
+     "Blanco",
+     "Gris"
+    ]
+   }
   },
   {
    "id": "T061",
