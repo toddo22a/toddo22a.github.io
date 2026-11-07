@@ -152,6 +152,16 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .ship-note svg{flex:none;color:var(--y-fg);margin-top:1px}
 .ship-note b{display:block;font-size:14px;color:var(--fg)}
 .ship-note span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.quote{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;background:var(--surface);border:1px solid var(--y);border-radius:24px;padding:28px;box-shadow:0 18px 50px -30px var(--y-glow)}
+.quote-txt{display:grid;gap:10px;align-content:start}
+.quote-txt h2{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,3.2vw,34px);line-height:1.08;margin:0;letter-spacing:-.02em;text-wrap:balance}
+.quote-txt p{margin:0;color:var(--muted)}
+.quote-steps{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px}
+.quote-steps li{display:flex;gap:10px;align-items:center;font-weight:600;font-size:14px}
+.quote-steps svg{color:var(--y-fg);flex:none}
+.quote-form{display:grid;gap:12px;align-content:start}
+.quote-form textarea{min-height:76px}
+@media (max-width:860px){.quote{grid-template-columns:1fr;padding:20px}}
 .share{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .share-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:transparent;color:var(--fg);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;text-decoration:none}
 .share-btn:hover{border-color:var(--y)}
@@ -492,6 +502,7 @@ function render(){
     (ui.catMenu?'<div class="catmenu" role="menu"><button role="menuitem" data-cat="Todo">Todos los productos<small>'+P.length+'</small></button>'+c.map(function(x){ return '<button role="menuitem" data-cat="'+esc(x[0])+'">'+esc(x[0])+'<small>'+x[1]+'</small></button>'; }).join('')+'</div>':'')+'</div>'+
     '<button class="sn-btn" data-cat="__fav" aria-pressed="'+(ui.cat==="__fav")+'">'+STAR+' Favoritos'+(favs.length?' <span class="sn-count num">'+favs.length+'</span>':'')+'</button>'+
     (featured.length?'<button class="sn-btn" data-act="go-viral">Lo más viral</button>':'')+
+    '<button class="sn-btn" data-act="go-quote">Te lo conseguimos</button>'+
   '</div></nav></header>';
   h += '<main id="inicio">';
   if(browsing){
@@ -509,7 +520,7 @@ function render(){
     '<select id="sort" aria-label="Ordenar"><option value="destacados">Destacados</option><option value="menor">Menor precio</option><option value="mayor">Mayor precio</option><option value="descuento">Mayor descuento</option></select></div>';
   h += '<nav class="chips" aria-label="Categorías"><button class="chip" data-cat="Todo" aria-pressed="'+(ui.cat==="Todo")+'">Todo<small>'+P.length+'</small></button>'+
     c.map(function(x){ return '<button class="chip" data-cat="'+esc(x[0])+'" aria-pressed="'+(ui.cat===x[0])+'">'+esc(x[0])+'<small>'+x[1]+'</small></button>'; }).join('')+'</nav>';
-  h += '<div class="grid">'+(list.length? list.map(cardHtml).join('') : '<div class="empty">'+(ui.cat==="__fav"?'Aún no tienes favoritos. Toca la estrella de un producto para guardarlo aquí.':P.length?'No encontramos productos con esa búsqueda.':'Muy pronto: estamos subiendo los productos.')+'</div>')+'</div></section>';
+  h += '<div class="grid">'+(list.length? list.map(cardHtml).join('') : '<div class="empty">'+(ui.cat==="__fav"?'Aún no tienes favoritos. Toca la estrella de un producto para guardarlo aquí.':P.length?'No encontramos productos con esa búsqueda. <button class="admin-link" data-act="go-quote" style="background:none;border:0;color:var(--y-fg);font-weight:700;text-decoration:underline;padding:0">Pídenos que te lo busquemos</button>':'Muy pronto: estamos subiendo los productos.')+'</div>')+'</div></section>';
   if(browsing){
     h += '<section class="wrap gut"><div class="band">'+(B.secure?'<img src="'+B.secure+'" alt="Escudo con candado: compra segura" loading="lazy">':'')+
       '<div class="band-txt"><span class="eyebrow">Así compras en '+esc(S.name)+'</span><h2>Compra sin <span class="y">preocupaciones</span></h2><ol class="steps">'+
@@ -517,6 +528,7 @@ function render(){
       '<li><div><b>Te confirmamos</b>Te escribimos para confirmar datos y dirección antes de despachar.</div></li>'+
       '<li><div><b>Recibe y paga</b>Pagas en efectivo al transportador cuando el pedido llega.</div></li></ol></div></div></section>';
   }
+  h += quoteHtml();
   if(browsing){
     h += '<section class="sec wrap gut" id="faq" aria-label="Preguntas frecuentes"><div class="sec-head"><div><span class="eyebrow">Resolvemos tus dudas</span><h2>Preguntas <span class="y">frecuentes</span></h2><div class="rule"></div></div></div><div class="faq">'+
       FAQ.map(function(f){ return '<details><summary>'+esc(f[0])+'</summary><p>'+esc(f[1])+'</p></details>'; }).join('')+
@@ -529,6 +541,29 @@ function render(){
   app.innerHTML = h;
   var so=document.getElementById("sort"); if(so) so.value=ui.sort;
   renderOverlays();
+}
+function quoteHtml(){
+  return '<section class="sec wrap gut" id="cotiza" aria-label="Cotiza un producto"><div class="quote"><div class="quote-txt"><span class="eyebrow">¿No lo encuentras?</span><h2>Te lo <span class="y">buscamos</span> y te lo cotizamos</h2><p>Cuéntanos qué producto quieres y lo buscamos por ti. Te respondemos por WhatsApp con el precio y las fotos, sin compromiso.</p>'+
+    '<ul class="quote-steps"><li>'+ICON.check+'Escribe qué buscas</li><li>'+ICON.check+'Lo buscamos con nuestros proveedores</li><li>'+ICON.check+'Te enviamos precio y fotos por WhatsApp</li></ul></div>'+
+    '<form class="quote-form" id="quote-form" novalidate>'+
+      '<div class="field"><label for="qt-prod">¿Qué producto buscas?</label><input id="qt-prod" placeholder="Ej.: freidora de aire de 5 litros" value="'+esc(ui.qtProd||ui.q||"")+'"></div>'+
+      '<div class="field"><label for="qt-det">Detalles (opcional)</label><textarea id="qt-det" placeholder="Color, tamaño, marca, para qué lo necesitas o el link de una foto">'+esc(ui.qtDet||"")+'</textarea></div>'+
+      '<div class="row2"><div class="field"><label for="qt-name">Tu nombre</label><input id="qt-name" autocomplete="given-name" value="'+esc(customer.name||"")+'"></div><div class="field"><label for="qt-city">Ciudad o municipio</label><input id="qt-city" autocomplete="address-level2" value="'+esc(customer.city||"")+'"></div></div>'+
+      '<div id="qt-err" class="err" role="alert"></div>'+
+      '<button type="submit" class="btn wa">'+ICON.wa.replace('width="28" height="28"','width="20" height="20"')+'Pedir cotización por WhatsApp</button>'+
+      '<span class="small">Si tienes una foto del producto, puedes enviarla en el mismo chat de WhatsApp.</span>'+
+    '</form></div></section>';
+}
+function sendQuote(){
+  var prod=document.getElementById("qt-prod").value.trim(), det=document.getElementById("qt-det").value.trim(), name=document.getElementById("qt-name").value.trim(), city=document.getElementById("qt-city").value.trim();
+  ui.qtProd=prod; ui.qtDet=det;
+  var err=document.getElementById("qt-err");
+  if(!prod){ err.textContent="Escribe qué producto buscas."; return; }
+  if(name){ customer.name=name; } if(city){ customer.city=city; } try{ localStorage.setItem("toddo-cliente", JSON.stringify(customer)); }catch(e){}
+  var msg="¡Hola "+S.name+"! No encontré este producto en la tienda y quiero que me lo coticen:\n\n*Producto:* "+prod+(det?"\n*Detalles:* "+det:"")+(name?"\n*Nombre:* "+name:"")+(city?"\n*Ciudad:* "+city:"");
+  if(!S.whatsapp){ err.textContent="Muy pronto habilitaremos esta opción."; return; }
+  var a=document.createElement("a"); a.href=waUrl(msg); a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove();
+  err.innerHTML='<span class="ok">Abrimos WhatsApp con tu solicitud. Solo tienes que enviarla.</span>';
 }
 function policyHtml(k){
   var pol=POLICIES[k];
@@ -777,6 +812,7 @@ document.addEventListener("click", function(ev){
   switch(a.act){
     case "home": ev.preventDefault(); ui.cat="Todo"; ui.q=""; render(); window.scrollTo(0,0); break;
     case "theme": setTheme(effTheme()==="light"?"dark":"light"); render(); break;
+    case "go-quote": ui.catMenu=false; var qf=document.getElementById("cotiza"); if(!qf){ ui.qtProd=ui.q; render(); qf=document.getElementById("cotiza"); } if(qf){ qf.scrollIntoView({block:"start"}); var qi=document.getElementById("qt-prod"); if(qi){ if(ui.q && !qi.value) qi.value=ui.q; setTimeout(function(){ try{qi.focus({preventScroll:true});}catch(e){} },300); } } break;
     case "catmenu": ui.catMenu=!ui.catMenu; render(); break;
     case "go-viral": ui.cat="Todo"; ui.q=""; ui.catMenu=false; render(); var vv=document.getElementById("virales"); if(vv) vv.scrollIntoView({block:"start"}); break;
     case "prev": goSlide(ui.slide-1); startAuto(); break;
@@ -819,6 +855,7 @@ document.addEventListener("click", function(ev){
 function scrollEditor(){ var e=document.getElementById("editor"); if(e) e.scrollIntoView({block:"start"}); }
 document.addEventListener("input", function(ev){
   var el=ev.target;
+  if(el.id==="qt-prod") ui.qtProd=el.value; if(el.id==="qt-det") ui.qtDet=el.value;
   if(el.classList && el.classList.contains("q")){ ui.q=el.value; var id=el.id, pos=el.selectionStart; render(); var q=document.getElementById(id); if(q){ q.focus(); try{q.setSelectionRange(pos,pos);}catch(e){} } }
   if(/^k-/.test(el.id)) calcPrice();
   if(el.id==="c-city"||el.id==="c-dept"){ readCustomer(); refreshCheckout(); }
@@ -838,6 +875,7 @@ document.addEventListener("change", async function(ev){
     renderOverlays();
   }
 });
+document.addEventListener("submit", function(ev){ if(ev.target && ev.target.id==="quote-form"){ ev.preventDefault(); sendQuote(); } });
 document.addEventListener("keydown", function(ev){ if(ev.key==="Escape"&&ui.page){ ui.page=null; renderOverlays(); return; } if(ev.key==="Escape"&&ui.catMenu){ ui.catMenu=false; render(); return; } if(ev.key==="Escape"){ if(ui.view){ui.view=null;renderOverlays();} else if(ui.cartOpen){ui.cartOpen=false;ui.checkout=false;render();} } });
 
 if(DATA.src){
