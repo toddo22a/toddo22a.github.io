@@ -36,6 +36,20 @@
  },
  "products": [
   {
+   "id": "T038",
+   "name": "Combo gimnasio en casa: rueda abdominal + bandas de resistencia + tabla de flexiones",
+   "category": "Deportes",
+   "price": 114900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Todo lo que necesitas para entrenar en casa, en un solo pedido y con un solo envío.\n\n1. Rueda abdominal de rebote automático: con apoyos para los codos, soporte para el celular y contador digital. Te ayuda a regresar a la posición inicial para trabajar abdomen y core con más control.\n\n2. Kit de bandas de resistencia: 5 bandas de diferentes tensiones, 2 manijas, 2 tobilleras, anclaje para puerta y bolsa para guardarlas. Sirven para brazos, espalda, pecho, glúteos y piernas.\n\n3. Tabla de flexiones (push up) plegable: con agarres y posiciones marcadas por colores para enfocar el trabajo en pecho, hombros, tríceps o espalda.\n\nIdeal para principiantes y para quienes ya entrenan. Si tienes alguna lesión, consulta antes con un profesional.",
+   "images": [
+    "img/productos/T038-1.jpg"
+   ]
+  },
+  {
    "id": "T037",
    "name": "Máquina para sándwiches y hamburguesas de desayuno",
    "category": "Cocina",
