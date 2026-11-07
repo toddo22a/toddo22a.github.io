@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T026",
+   "name": "Cesto doble para ropa con estructura metálica",
+   "category": "Hogar",
+   "price": 74900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Separa la ropa clara de la oscura desde el cesto y ahorra tiempo el día de lavado.\n\n• Dos compartimentos amplios en tela TNT, que se sueltan de la estructura para llevar la ropa a la lavadora\n• Estructura metálica resistente y estable\n• Diseño moderno que se ve bien en el cuarto de ropas, el baño o la habitación\n• Medidas: 57 cm de alto × 57 cm de ancho × 28 cm de fondo\n• Materiales: tela TNT, plástico y metal",
+   "images": [
+    "img/productos/T026-1.jpg",
+    "img/productos/T026-2.jpg",
+    "img/productos/T026-3.jpg"
+   ]
+  },
+  {
    "id": "T025",
    "name": "Ejercitador de resistencia con pedales y barra",
    "category": "Deportes",
