@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T028",
+   "name": "Molde para hacer sushi en casa con guía de corte",
+   "category": "Cocina",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Haz rollos de sushi parejos y bien apretados en minutos, sin esterilla y sin experiencia.\n\n• Pones el alga y el arroz con tus ingredientes, cierras la tapa y presionas: el rollo sale firme y uniforme\n• Ranuras de corte para sacar porciones del mismo tamaño con un cuchillo\n• Plástico de grado alimenticio, fácil de lavar y reutilizable\n• Compacto: se guarda en cualquier cajón de la cocina\n\nIdeal para preparar sushi en familia o para vender. No incluye cuchillo ni ingredientes.",
+   "images": [
+    "img/productos/T028-1.jpg",
+    "img/productos/T028-2.jpg",
+    "img/productos/T028-3.jpg"
+   ]
+  },
+  {
    "id": "T027",
    "name": "Soporte articulado de pared para TV de 14 a 55 pulgadas",
    "category": "Hogar",
