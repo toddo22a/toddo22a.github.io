@@ -108,6 +108,29 @@
    ]
   },
   {
+   "id": "T022",
+   "name": "Cosmetiquera con espejo LED y organizador",
+   "category": "Belleza",
+   "price": 72900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "options": {
+    "label": "Color",
+    "values": [
+     "Rosado",
+     "Negro"
+    ]
+   },
+   "desc": "Lleva tu maquillaje ordenado y maquíllate con buena luz donde estés.\n\n• Espejo con luz LED de 3 tonos: fría, natural y cálida\n• Brillo regulable con botón táctil; recuerda tu último nivel de luz\n• Batería recargable de 2.000 mAh\n• Divisiones ajustables para organizar brochas, bases y paletas\n• Exterior en cuero sintético, resistente al agua y fácil de limpiar\n• Asa para llevarla a la mano\n\nIdeal para viajes, maquilladoras y como regalo. Disponible en rosado y negro.",
+   "images": [
+    "img/productos/T022-1.jpg",
+    "img/productos/T022-2.jpg",
+    "img/productos/T022-3.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
