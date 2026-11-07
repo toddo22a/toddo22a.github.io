@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T041",
+   "name": "Kit facial de vitamina C Bioaqua 6 piezas en caja de regalo",
+   "category": "Belleza",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una rutina facial completa de 6 pasos con vitamina C, en una caja rígida lista para regalar.\n\nEl kit incluye:\n• Limpiador facial (100 g)\n• Tónico hidratante (120 ml)\n• Loción o emulsión hidratante (120 ml)\n• Sérum (15 ml)\n• Crema facial (50 g)\n• Contorno de ojos (20 g)\n\nPensado para hidratar y dar luminosidad a la piel como parte de tu rutina de día y de noche. Los resultados dependen de cada tipo de piel y del uso constante.\n\nImportante: es de uso externo. Antes de usarlo por primera vez, haz una prueba en una zona pequeña de la piel (por ejemplo, detrás de la oreja) y espera 24 horas. Si notas enrojecimiento, ardor o picazón, suspende el uso. Evita el contacto con los ojos. Las etiquetas del empaque vienen en chino e inglés.",
+   "images": [
+    "img/productos/T041-1.jpg",
+    "img/productos/T041-2.jpg"
+   ]
+  },
+  {
    "id": "T039",
    "name": "Luces LED solares de 10 metros para exteriores",
    "category": "Jardín y exterior",
