@@ -36,6 +36,23 @@
  },
  "products": [
   {
+   "id": "T058",
+   "name": "Máquina afeitadora y recortadora 3 en 1 Geemy GM-566",
+   "category": "Cuidado personal",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Tres herramientas en una para tu arreglo personal: afeita, recorta la barba o el cabello y quita el vello de la nariz y las orejas.\n\n• Cabezal de afeitar para un afeitado al ras\n• Cabezal recortador para barba, patillas y perfilado\n• Cabezal para vello de nariz y orejas\n• Cuchillas de acero inoxidable\n• Inalámbrica y recargable\n• Liviana (unos 250 g) y fácil de limpiar\n\nIncluye: máquina, 3 cabezales intercambiables, peine guía, cepillo de limpieza, aceite lubricante y cable de carga.",
+   "images": [
+    "img/productos/T058-1.jpg",
+    "img/productos/T058-2.jpg",
+    "img/productos/T058-3.jpg"
+   ]
+  },
+  {
    "id": "T057",
    "name": "Soporte magnético plegable de celular para carro con ventosa",
    "category": "Vehículos",
