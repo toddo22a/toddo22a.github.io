@@ -36,6 +36,37 @@
  },
  "products": [
   {
+   "id": "T039",
+   "name": "Luces LED solares de 10 metros para exteriores",
+   "category": "Jardín y exterior",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Ilumina el jardín, el balcón, la terraza o el árbol de Navidad sin cables ni recibo de luz: se carga con el sol.\n\n• 10 metros de luces LED en alambre de cobre flexible: se enrolla fácil en árboles, barandas y matas\n• Panel solar con estaca para clavarlo en la tierra\n• Se prende sola al anochecer y se apaga al amanecer\n• Varios modos de luz: fija, intermitente y ondas\n• Luz cálida, ideal para decoración navideña y reuniones al aire libre\n• Para exteriores: aguanta la lluvia\n\nEl panel debe recibir sol directo durante el día para cargar.\n\n¿Quieres decorar más? Llévate el pack x2 con mejor precio y un solo envío.",
+   "images": [
+    "img/productos/T039-1.jpg"
+   ]
+  },
+  {
+   "id": "T040",
+   "name": "Pack x2 luces LED solares de 10 metros",
+   "category": "Jardín y exterior",
+   "price": 74900,
+   "oldPrice": 89800,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Llévate dos y decora más espacios con un solo envío.\n\nIlumina el jardín, el balcón, la terraza o el árbol de Navidad sin cables ni recibo de luz: se carga con el sol.\n\n• 10 metros de luces LED en alambre de cobre flexible: se enrolla fácil en árboles, barandas y matas\n• Panel solar con estaca para clavarlo en la tierra\n• Se prende sola al anochecer y se apaga al amanecer\n• Varios modos de luz: fija, intermitente y ondas\n• Luz cálida, ideal para decoración navideña y reuniones al aire libre\n• Para exteriores: aguanta la lluvia\n\nEl panel debe recibir sol directo durante el día para cargar.\n\nIncluye: 2 guirnaldas de 10 m, cada una con su panel solar.",
+   "images": [
+    "img/productos/T040-1.jpg",
+    "img/productos/T039-1.jpg"
+   ]
+  },
+  {
    "id": "T038",
    "name": "Combo gimnasio en casa: rueda abdominal + bandas de resistencia + tabla de flexiones",
    "category": "Deportes",
@@ -209,7 +240,7 @@
    "id": "T028",
    "name": "Molde para hacer sushi en casa con guía de corte",
    "category": "Cocina",
-   "price": 44900,
+   "price": 29900,
    "oldPrice": 0,
    "featured": false,
    "available": true,
@@ -219,7 +250,8 @@
     "img/productos/T028-1.jpg",
     "img/productos/T028-2.jpg",
     "img/productos/T028-3.jpg"
-   ]
+   ],
+   "deal": true
   },
   {
    "id": "T027",
