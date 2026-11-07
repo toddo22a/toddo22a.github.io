@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T060",
+   "name": "Zapatero vertical de 10 niveles para 27 pares",
+   "category": "Hogar",
+   "price": 36900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Guarda hasta 27 pares de zapatos ocupando poco espacio en el piso: crece hacia arriba.\n\n• 10 niveles; cada uno sostiene unos 3 pares\n• Para tenis, tacones, sandalias y chanclas\n• Estructura de tubos metálicos con uniones plásticas reforzadas\n• Fácil de limpiar con un paño húmedo\n• Medidas aproximadas: 158 cm de alto × 60 cm de ancho × 28 cm de fondo\n• Cada nivel soporta hasta unos 3 kg\n\nLlega desarmado y se arma a presión, sin herramientas. Color según disponibilidad (negro o blanco).",
+   "images": [
+    "img/productos/T060-1.jpg",
+    "img/productos/T060-2.jpg"
+   ]
+  },
+  {
    "id": "T059",
    "name": "Encendedor eléctrico recargable de cuello flexible",
    "category": "Cocina",
