@@ -62,6 +62,20 @@
    ]
   },
   {
+   "id": "T019",
+   "name": "Masajeador facial con luz LED y vibración",
+   "category": "Belleza",
+   "price": 62900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Tu rutina de cuidado facial en casa, con luz y masaje.\n\n• 3 tipos de luz LED: roja, azul y naranja\n• Masaje con vibración y calor suave\n• Ayuda a que tus cremas y sérums se absorban mejor\n• Modo para el contorno de ojos\n• Recargable por USB (incluye cable)\n• Incluye manual de uso\n\nProducto cosmético de uso en casa; no reemplaza tratamientos médicos o dermatológicos.",
+   "images": [
+    "img/productos/T019-1.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
