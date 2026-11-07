@@ -148,6 +148,10 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .page-in h3{font-family:var(--f-display);font-weight:800;font-size:26px;margin:0}
 .page-in h4{margin:0 0 4px;font-size:16px}
 .page-in p{margin:0;color:var(--muted)}
+.ship-note{display:flex;gap:12px;align-items:flex-start;background:rgba(253,186,9,.14);border:1px solid rgba(253,186,9,.55);border-radius:12px;padding:12px 14px}
+.ship-note svg{flex:none;color:var(--y-fg);margin-top:1px}
+.ship-note b{display:block;font-size:14px;color:var(--fg)}
+.ship-note span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
 .share{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .share-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:transparent;color:var(--fg);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;text-decoration:none}
 .share-btn:hover{border-color:var(--y)}
@@ -544,7 +548,7 @@ function productUrl(p){ return SITE+"#p-"+p.id; }
 function cardHtml(p){
   var d=off(p);
   return '<div class="card-wrap"><button class="fav'+(isFav(p.id)?' on':'')+'" data-fav="'+esc(p.id)+'" aria-pressed="'+isFav(p.id)+'" aria-label="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'" title="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'">'+STAR+'</button><button class="card" data-view="'+esc(p.id)+'" aria-label="Ver '+esc(p.name)+'"><div class="badges">'+(p.demo?'<span class="badge demo">Ejemplo</span>':'')+(d?'<span class="badge">-'+d+'%</span>':'')+(p.featured&&!d?'<span class="badge hot">Viral</span>':'')+(!p.available?'<span class="badge out">Agotado</span>':'')+'</div>'+photo(p)+
-    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+'</div><span class="cod">Paga al recibir</span></div></button></div>';
+    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+'</div><span class="cod">Envío aparte · paga al recibir</span></div></button></div>';
 }
 
 /* carousel */
@@ -573,7 +577,7 @@ function productModal(p){
     '<div class="info"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><span class="card-cat">'+esc(p.category)+'</span><button class="x" data-act="close-view" aria-label="Cerrar">×</button></div>'+
     '<h3>'+esc(p.name)+'</h3>'+(p.demo?'<span class="small">Producto de ejemplo</span>':'')+
     '<div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span><span class="save">Ahorras '+cop(p.oldPrice-p.price)+'</span>':'')+'</div>'+
-    (p.available?'<span class="small">+ envío según tu ciudad · pagas todo al recibir</span>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
+    (p.available?'<div class="ship-note">'+ICON.truck.replace('width="34" height="34"','width="22" height="22"')+'<div><b>El envío no está incluido en este precio.</b><span>Se calcula según tu municipio al hacer el pedido y lo pagas junto con el producto cuando lo recibas.</span></div></div>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
     (p.available&&p.options?'<div class="field"><label for="p-opt">'+esc(p.options.label)+'</label><select id="p-opt">'+p.options.values.map(function(v){return '<option>'+esc(v)+'</option>';}).join('')+'</select></div>':'')+
     (p.available?'<div style="display:grid;gap:10px"><button class="btn" data-buy="'+esc(p.id)+'">Comprar ahora · paga al recibir</button><button class="btn ghost" data-add="'+esc(p.id)+'">Agregar al carrito</button></div>':'<button class="btn ghost" disabled>Agotado por ahora</button>')+
     '<div class="trust"><span>'+ICON.check+'Pagas en efectivo cuando lo recibes</span><span>'+ICON.check+esc(S.shippingNote)+'</span><span>'+ICON.check+'Confirmamos tu pedido por WhatsApp antes de enviarlo</span></div>'+
