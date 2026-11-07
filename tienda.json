@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T029",
+   "name": "Freidora de aire digital 8 litros + 100 papeles protectores",
+   "category": "Cocina",
+   "price": 224900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Prepara papas, pollo, carnes, pescado, pizza y hasta postres con poco o nada de aceite, con menos salpicaduras y menos olor en la cocina.\n\n• Capacidad de 8 litros: alcanza para cocinar para toda la familia\n• Panel digital táctil con programas listos para cada tipo de comida\n• Temperatura ajustable de 60 °C a 200 °C y temporizador con apagado automático\n• Ventana para ver la comida mientras se cocina, sin abrir la canasta\n• Canasta removible con recubrimiento antiadherente, fácil de lavar\n• Potencia: 2400 W\n• Color: negro\n\nIncluye: freidora + 100 papeles protectores desechables para la canasta + enlace para descargar un recetario digital en español.",
+   "images": [
+    "img/productos/T029-1.jpg",
+    "img/productos/T029-2.jpg",
+    "img/productos/T029-3.jpg"
+   ]
+  },
+  {
    "id": "T028",
    "name": "Molde para hacer sushi en casa con guía de corte",
    "category": "Cocina",
