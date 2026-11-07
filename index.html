@@ -363,7 +363,8 @@ function photo(p, i){ var src=p.images&&p.images[i||0]; return '<div class="ph">
 function off(p){ return p.oldPrice>p.price ? Math.round((1-p.price/p.oldPrice)*100) : 0; }
 function toast(msg){ var t=document.createElement("div"); t.className="toast"; t.setAttribute("role","status"); t.textContent=msg; document.body.appendChild(t); setTimeout(function(){ t.remove(); }, 3200); }
 function cats(list){ var m={}; list.forEach(function(p){ if(p.category) m[p.category]=(m[p.category]||0)+1; }); return Object.keys(m).sort().map(function(k){return [k,m[k]];}); }
-function cartCount(){ return cart.reduce(function(a,c){return a+c.qty;},0); }
+function pruneCart(){ var n=cart.length; cart=cart.filter(function(c){ var p=byId(c.id); return p && p.available && c.qty>0; }); if(cart.length!==n) saveCart(); }
+function cartCount(){ return cartLines().reduce(function(a,x){return a+x.c.qty;},0); }
 function cartLines(){ return cart.map(function(c){ return {c:c,p:byId(c.id)}; }).filter(function(x){return x.p && x.p.available;}); }
 function cartTotal(){ return cartLines().reduce(function(a,x){return a+x.p.price*x.c.qty;},0); }
 function logo(h){ if(!B.logo) return '<span class="txt">'+esc(S.name)+'</span>'; var st=' style="height:'+(h||30)+'px"'; return '<img class="logo-d" src="'+B.logo+'" alt="'+esc(S.name)+'"'+st+'>'+(B.logoLight?'<img class="logo-l" src="'+B.logoLight+'" alt="'+esc(S.name)+'"'+st+'>':''); }
@@ -378,6 +379,7 @@ var app = document.getElementById("app");
 var searchBox = function(id){ return '<div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="'+id+'" class="q" type="search" placeholder="¿Qué estás buscando?" aria-label="Buscar productos" value="'+esc(ui.q)+'"></div>'; };
 
 function render(){
+  pruneCart();
   var list = P.filter(function(p){
     if(ui.cat!=="Todo" && p.category!==ui.cat) return false;
     if(ui.q){ var q=ui.q.toLowerCase(); return (p.name+" "+p.category+" "+(p.desc||"")).toLowerCase().indexOf(q)>-1; }
@@ -397,7 +399,7 @@ function render(){
     '<a class="brand" href="#inicio" data-act="home" aria-label="'+esc(S.name)+', inicio">'+logo()+'</a>'+
     '<div class="desk-search">'+searchBox("q")+'</div>'+
     '<div class="top-actions"><button class="ibtn theme-btn" data-act="theme" aria-label="'+(effTheme()==="light"?"Activar modo noche":"Activar modo día")+'" title="'+(effTheme()==="light"?"Modo noche":"Modo día")+'">'+(effTheme()==="light"?MOON:SUN)+'</button>'+(ui.canEdit?'<button class="ibtn" data-act="admin" aria-label="Administrar tienda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span class="lbl">Administrar</span></button>':'')+
-    '<button class="ibtn cart" data-act="cart" aria-label="Ver carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/></svg><span class="lbl">Carrito</span><span class="count num">'+cartCount()+'</span></button></div>'+
+    '<button class="ibtn cart" data-act="cart" aria-label="Ver carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/></svg><span class="lbl">Carrito</span>'+(cartCount()?'<span class="count num">'+cartCount()+'</span>':'')+'</button></div>'+
   '</div><div class="msearch">'+searchBox("q2")+'</div></div></header>';
   h += '<main id="inicio">';
   if(browsing){
