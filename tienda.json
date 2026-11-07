@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T050",
+   "name": "Bolso pechera antirrobo con candado y puerto USB",
+   "category": "Accesorios",
+   "price": 36900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Lleva tu celular, billetera, llaves y documentos seguros y a la mano, cruzado al pecho o a la espalda.\n\n• Cierre con candado de clave numérica para más seguridad en la calle y el transporte\n• Puerto USB para cargar el celular mientras caminas (conectando tu propia batería portátil adentro)\n• Varios bolsillos con cremallera para organizar tus cosas\n• Correa ajustable y acolchada, cómoda para todo el día\n• Material sintético resistente y fácil de limpiar\n• Diseño moderno en gris con detalles café\n\nNo incluye batería portátil.",
+   "images": [
+    "img/productos/T050-1.jpg"
+   ]
+  },
+  {
    "id": "T049",
    "name": "Set de organizadores de ropa interior para cajón",
    "category": "Hogar",
