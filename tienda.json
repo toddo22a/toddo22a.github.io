@@ -36,6 +36,67 @@
  },
  "products": [
   {
+   "id": "T063",
+   "name": "Cepillo secador y moldeador 3 en 1 de 2000 W",
+   "category": "Belleza",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Seca, alisa y da volumen al mismo tiempo: un cepillo y un secador en una sola herramienta.\n\n• Potencia de 2000 W para secar rápido\n• 3 niveles de temperatura (alta, media y baja) y aire frío para fijar el peinado\n• Recubrimiento cerámico y cerdas mixtas que desenredan sin tirones\n• Diseño ovalado para dar forma y volumen desde la raíz\n• Sirve con el cabello húmedo o seco\n• Cable giratorio de 360° para moverte con libertad\n\nIncluye: cepillo secador y manual.\n\nRecomendación: empieza con la temperatura baja y no lo dejes mucho tiempo en el mismo mechón.",
+   "images": [
+    "img/productos/T063-1.jpg",
+    "img/productos/T063-2.jpg",
+    "img/productos/T063-3.jpg"
+   ]
+  },
+  {
+   "id": "T062",
+   "name": "Protector de colchón impermeable + 2 protectores de almohada",
+   "category": "Hogar",
+   "price": 84900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "options": {
+    "label": "Medida y color",
+    "values": [
+     "Sencilla 100×190 · Blanco",
+     "Sencilla 100×190 · Gris",
+     "Semidoble 120×190 · Blanco",
+     "Semidoble 120×190 · Gris",
+     "Doble 140×190 · Blanco",
+     "Doble 140×190 · Gris",
+     "Queen 160×190 · Blanco",
+     "Queen 160×190 · Gris",
+     "King 200×200 · Blanco",
+     "King 200×200 · Gris"
+    ],
+    "prices": {
+     "Sencilla 100×190 · Blanco": 84900,
+     "Sencilla 100×190 · Gris": 84900,
+     "Semidoble 120×190 · Blanco": 89900,
+     "Semidoble 120×190 · Gris": 89900,
+     "Doble 140×190 · Blanco": 94900,
+     "Doble 140×190 · Gris": 94900,
+     "Queen 160×190 · Blanco": 99900,
+     "Queen 160×190 · Gris": 99900,
+     "King 200×200 · Blanco": 109900,
+     "King 200×200 · Gris": 109900
+    }
+   },
+   "desc": "Protege tu colchón y tus almohadas de manchas, sudor, orines y derrames, y alarga su vida útil.\n\n• Parte de arriba en tela tipo toalla, suave y fresca\n• Parte de abajo en poliuretano que no deja pasar líquidos\n• Cubre la parte de arriba y los lados del colchón, con resorte alrededor para que no se corra\n• Para colchones de hasta 30 cm de alto\n• Fácil de lavar\n• Fabricado en Colombia\n\nIncluye: 1 protector de colchón + 2 protectores de almohada (70 × 50 cm, con cremallera).\n\nMedidas del protector: sencilla 100×190, semidoble 120×190, doble 140×190, queen 160×190 y king 200×200 cm. El precio cambia según la medida que elijas.",
+   "images": [
+    "img/productos/T062-1.jpg",
+    "img/productos/T062-2.jpg",
+    "img/productos/T062-3.jpg",
+    "img/productos/T062-4.jpg"
+   ]
+  },
+  {
    "id": "T061",
    "name": "Máquina para hacer perros calientes coreanos (corn dogs) Sokany",
    "category": "Cocina",
