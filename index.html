@@ -27,17 +27,17 @@
   --ok:#29c46a; --wa:#25d366; --danger:#ff5d52; --warn:#ffb057;
   --f-display:"Poppins","Arial Black",system-ui,sans-serif;
   --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --r:16px; --y-fg:#fdba09; --head-bg:rgba(10,10,10,.86); --ph1:#242424; --ph2:#121212; --hot-bg:#111111;
+  --r:16px; --y-fg:#fdba09; --head-bg:rgba(10,10,10,.86); --ph1:#242424; --ph2:#121212; --hot-bg:#111111; --ct-bg:rgba(253,186,9,.12); --ct-ink:#fdba09;
   color-scheme:dark;
 }
 @media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
   --bg:#f6f5f1; --surface:#ffffff; --surface-2:#f1efe8; --line:#e4e1d8; --line-2:#d3cfc3;
   --fg:#111111; --muted:#5f5d57; --y-fg:#946500; --y-glow:rgba(253,186,9,.45); --ok:#16884a; --danger:#d23a2f; --warn:#b4600b;
-  --head-bg:rgba(246,245,241,.88); --ph1:#ffffff; --ph2:#efece4; --hot-bg:#fff7dc; color-scheme:light}}
+  --head-bg:rgba(246,245,241,.88); --ph1:#ffffff; --ph2:#efece4; --hot-bg:#fff7dc; --ct-bg:rgba(253,186,9,.18); --ct-ink:#1a1a1a; color-scheme:light}}
 :root[data-theme="light"]{
   --bg:#f6f5f1; --surface:#ffffff; --surface-2:#f1efe8; --line:#e4e1d8; --line-2:#d3cfc3;
   --fg:#111111; --muted:#5f5d57; --y-fg:#946500; --y-glow:rgba(253,186,9,.45); --ok:#16884a; --danger:#d23a2f; --warn:#b4600b;
-  --head-bg:rgba(246,245,241,.88); --ph1:#ffffff; --ph2:#efece4; --hot-bg:#fff7dc; color-scheme:light}
+  --head-bg:rgba(246,245,241,.88); --ph1:#ffffff; --ph2:#efece4; --hot-bg:#fff7dc; --ct-bg:rgba(253,186,9,.18); --ct-ink:#1a1a1a; color-scheme:light}
 img.logo-l,.brand img.logo-l{display:none}
 @media (prefers-color-scheme: light){:root:not([data-theme="dark"]) img.logo-d{display:none}:root:not([data-theme="dark"]) img.logo-l{display:block}}
 :root[data-theme="light"] img.logo-d{display:none}:root[data-theme="light"] img.logo-l{display:block}
@@ -182,16 +182,18 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .cta{display:grid;gap:10px;position:sticky;bottom:0;background:var(--surface);padding:10px 0;margin:-10px 0;z-index:2}
 .cta .btn{font-size:16px;padding:15px 18px}
 .cat-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
-.cat-tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px 10px 12px;display:grid;gap:4px;justify-items:center;text-align:center;color:var(--fg)}
+.cat-tile{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 10px 14px;display:grid;gap:4px;justify-items:center;text-align:center;color:var(--fg)}
 .cat-tile:hover{border-color:var(--y);transform:translateY(-2px)}
-.ct-img{width:84px;height:84px;border-radius:999px;overflow:hidden;background:var(--surface-2);border:2px solid var(--y);display:block;margin-bottom:4px}
-.ct-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ct-ico{width:68px;height:68px;border-radius:999px;background:var(--ct-bg);color:var(--ct-ink);display:grid;place-items:center;margin-bottom:6px;transition:background .2s,color .2s}
+.ct-ico svg{width:32px;height:32px}
+.cat-tile:hover .ct-ico,.cat-tile:focus-visible .ct-ico{background:var(--y);color:#111}
+.cm-ico{display:inline-flex;align-items:center;gap:10px}.cm-ico svg{width:18px;height:18px;flex:none;color:#fdba09}
 .ct-name{font-weight:700;font-size:14px;line-height:1.2}
 .ct-n{font-size:12px;color:var(--muted)}
 .toast-cart{display:flex;align-items:center;gap:14px;font-weight:600}
 .toast-cart svg{vertical-align:-3px}
 .toast-cart button{border:0;background:var(--y-ink);color:var(--y);border-radius:10px;padding:8px 12px;font-weight:700;white-space:nowrap}
-@media (max-width:460px){.cat-tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.ct-img{width:64px;height:64px}.ct-name{font-size:12px}.quick{width:36px;height:36px;right:8px;bottom:8px}.card-wrap .card-body{padding-right:48px}}
+@media (max-width:460px){.cat-tiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.ct-ico{width:56px;height:56px}.ct-ico svg{width:26px;height:26px}.ct-name{font-size:12px}.quick{width:36px;height:36px;right:8px;bottom:8px}.card-wrap .card-body{padding-right:48px}}
 @media (prefers-reduced-motion:reduce){.quick:hover,.cat-tile:hover{transform:none}}
 .share{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .share-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:transparent;color:var(--fg);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;text-decoration:none}
@@ -513,6 +515,8 @@ function cartCount(){ return cartLines().reduce(function(a,x){return a+x.c.qty;}
 function cartLines(){ return cart.map(function(c){ return {c:c,p:byId(c.id)}; }).filter(function(x){return x.p && x.p.available;}); }
 function cartTotal(){ return cartLines().reduce(function(a,x){return a+x.p.price*x.c.qty;},0); }
 function logo(h){ if(!B.logo) return '<span class="txt">'+esc(S.name)+'</span>'; var st=' style="height:'+(h||30)+'px"'; return '<img class="logo-d" src="'+B.logo+'" alt="'+esc(S.name)+'"'+st+'>'+(B.logoLight?'<img class="logo-l" src="'+B.logoLight+'" alt="'+esc(S.name)+'"'+st+'>':''); }
+var CAT_ICONS={"Bebés": "<path d=\"M10 2h4v3h-4z\"/><path d=\"M9 5h6l1 3v12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8z\"/><path d=\"M8 11h3M8 14h3M8 17h3\"/>", "Belleza": "<path d=\"M9 22h6a1 1 0 0 0 1-1v-8H8v8a1 1 0 0 0 1 1z\"/><path d=\"M9 13V9h6v4\"/><path d=\"M10 9V5l4-3v7\"/>", "Cocina": "<path d=\"M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z\"/><path d=\"M2 12h2M20 12h2\"/><path d=\"M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2\"/>", "Cuidado personal": "<path d=\"M14 4a5 5 0 1 0 0 10h6V4z\"/><circle cx=\"14\" cy=\"9\" r=\"1.6\"/><path d=\"M11 13.5 9.5 21h3.5l1-7\"/><path d=\"M20 6.5h2M20 11.5h2\"/>", "Deportes": "<path d=\"M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11\"/>", "Herramientas": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"12\" rx=\"2\"/><path d=\"M9 8V5h6v3\"/><path d=\"M3 13h18\"/><path d=\"M10 12v2.5h4V12\"/>", "Hogar": "<path d=\"M3 11l9-7 9 7\"/><path d=\"M5 10v10h14V10\"/><path d=\"M10 20v-5h4v5\"/>", "Jardín y exterior": "<path d=\"M7 14h10l-1.5 7h-7z\"/><path d=\"M12 14V8\"/><path d=\"M12 9c0-3 2-5 5-5 0 3-2 5-5 5z\"/><path d=\"M12 11c0-2.5-1.8-4-4.5-4 0 2.5 1.8 4 4.5 4z\"/>", "Niños y juguetes": "<circle cx=\"12\" cy=\"13\" r=\"7\"/><circle cx=\"6\" cy=\"6.5\" r=\"2.5\"/><circle cx=\"18\" cy=\"6.5\" r=\"2.5\"/><path d=\"M10 15.5c1 1 3 1 4 0\"/><circle cx=\"9.5\" cy=\"11.5\" r=\".5\"/><circle cx=\"14.5\" cy=\"11.5\" r=\".5\"/>", "Salud y bienestar": "<path d=\"M20.8 8.6a5 5 0 0 0-8.8-3.2 5 5 0 0 0-8.8 3.2c0 5.6 8.8 11.4 8.8 11.4s8.8-5.8 8.8-11.4z\"/><path d=\"M5 12h3l1.5-2.5 2 5 1.5-2.5h6\"/>", "Tecnología": "<rect x=\"7\" y=\"2\" width=\"10\" height=\"20\" rx=\"2\"/><path d=\"M11 18.5h2\"/>", "Vehículos": "<path d=\"M5 11l1.6-4.6A1.5 1.5 0 0 1 8 5.5h8a1.5 1.5 0 0 1 1.4.9L19 11\"/><rect x=\"3\" y=\"11\" width=\"18\" height=\"6\" rx=\"2\"/><path d=\"M6 17v2M18 17v2\"/><circle cx=\"7.5\" cy=\"14\" r=\".6\"/><circle cx=\"16.5\" cy=\"14\" r=\".6\"/>", "_": "<path d=\"M3 7l9-4 9 4v10l-9 4-9-4z\"/><path d=\"M3 7l9 4 9-4M12 11v10\"/>"};
+function catIcon(c){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(CAT_ICONS[c]||CAT_ICONS._)+'</svg>'; }
 function effTheme(){ var a=document.documentElement.getAttribute("data-theme"); if(a) return a; return (window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches)?"light":"dark"; }
 function setTheme(v){ document.documentElement.setAttribute("data-theme",v); try{localStorage.setItem("toddo-theme",v);}catch(e){} var m=document.querySelector('meta[name="theme-color"]'); if(m) m.setAttribute("content", v==="light"?"#f6f5f1":"#0a0a0a"); }
 (function(){ try{ var v=localStorage.getItem("toddo-theme"); if(v==="light"||v==="dark") setTheme(v); }catch(e){} })();
@@ -549,7 +553,7 @@ function render(){
   '</div><div class="msearch">'+searchBox("q2")+'</div></div>'+
   '<nav class="subnav" aria-label="Navegación de la tienda"><div class="wrap gut subnav-in">'+
     '<div class="menu-wrap"><button class="sn-btn" data-act="catmenu" aria-expanded="'+(!!ui.catMenu)+'" aria-haspopup="true">Categorías <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>'+
-    (ui.catMenu?'<div class="catmenu" role="menu"><button role="menuitem" data-cat="Todo">Todos los productos<small>'+P.length+'</small></button>'+c.map(function(x){ return '<button role="menuitem" data-cat="'+esc(x[0])+'">'+esc(x[0])+'<small>'+x[1]+'</small></button>'; }).join('')+'</div>':'')+'</div>'+
+    (ui.catMenu?'<div class="catmenu" role="menu"><button role="menuitem" data-cat="Todo">Todos los productos<small>'+P.length+'</small></button>'+c.map(function(x){ return '<button role="menuitem" data-cat="'+esc(x[0])+'"><span class="cm-ico">'+catIcon(x[0])+esc(x[0])+'</span><small>'+x[1]+'</small></button>'; }).join('')+'</div>':'')+'</div>'+
     '<button class="sn-btn" data-cat="__fav" aria-pressed="'+(ui.cat==="__fav")+'">'+STAR+' Favoritos'+(favs.length?' <span class="sn-count num">'+favs.length+'</span>':'')+'</button>'+
     (featured.length?'<button class="sn-btn" data-act="go-viral">Lo más viral</button>':'')+
     '<button class="sn-btn" data-act="go-quote">Te lo conseguimos</button>'+
@@ -564,7 +568,7 @@ function render(){
       '<div class="trust-strip"><div class="ts">'+ICON.cash+'<div><b>Paga el producto al recibir</b><span>Solo adelantas el envío</span></div></div><div class="ts">'+ICON.truck+'<div><b>Envíos a toda Colombia</b><span>Directo a tu casa</span></div></div><div class="ts">'+ICON.shield+'<div><b>Compra sin preocupaciones</b><span>Confirmamos cada pedido</span></div></div></div></section>';
     var tiles=c.map(function(x){ var pp=P.filter(function(p){return p.category===x[0]&&p.images&&p.images.length;}); var f=pp.filter(function(p){return p.featured;})[0]||pp[0]; return [x[0],x[1],f]; }).filter(function(x){return x[2];});
     if(tiles.length>2) h += '<section class="sec wrap gut" aria-label="Compra por categoría"><div class="sec-head"><div><span class="eyebrow">Explora</span><h2>Compra por <span class="y">categoría</span></h2><div class="rule"></div></div></div><div class="cat-tiles">'+
-      tiles.map(function(x){ return '<button class="cat-tile" data-cat="'+esc(x[0])+'"><span class="ct-img"><img src="'+x[2].images[0]+'" alt="" loading="lazy"></span><span class="ct-name">'+esc(x[0])+'</span><span class="ct-n">'+x[1]+' producto'+(x[1]>1?'s':'')+'</span></button>'; }).join('')+'</div></section>';
+      tiles.map(function(x){ return '<button class="cat-tile" data-cat="'+esc(x[0])+'"><span class="ct-ico">'+catIcon(x[0])+'</span><span class="ct-name">'+esc(x[0])+'</span><span class="ct-n">'+x[1]+' producto'+(x[1]>1?'s':'')+'</span></button>'; }).join('')+'</div></section>';
     if(featured.length){
       h += '<section class="sec wrap gut" id="virales" aria-label="Destacados"><div class="sec-head"><div><span class="eyebrow">Lo que está funcionando</span><h2>Productos <span class="y">virales</span></h2><div class="rule"></div></div></div><div class="rail">'+featured.map(cardHtml).join('')+'</div></section>';
     }
