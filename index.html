@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="img/icono.png">
 <style>:root{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>TODDO Tienda</title>
-<meta name="description" content="TODDO: productos virales y útiles con pago contra entrega y envíos a toda Colombia.">
+<meta name="description" content="TODDO: productos virales y útiles con envíos a toda Colombia.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <style id="toddo-style">
 /* Layout: black storefront — glass header with logo, banner carousel as hero, yellow-icon trust strip, category rail, dark product cards with yellow prices, security band, footer; cart as side drawer, admin as full sheet. Single dark theme by brand choice. */
@@ -152,6 +152,16 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .page-in h3{font-family:var(--f-display);font-weight:800;font-size:26px;margin:0}
 .page-in h4{margin:0 0 4px;font-size:16px}
 .page-in p{margin:0;color:var(--muted)}
+.pay{border:1px solid var(--line-2);border-radius:14px;padding:12px;display:grid;gap:10px;margin:0}
+.pay legend{font-weight:700;font-size:14px;padding:0 6px}
+.pay-opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer;background:var(--surface)}
+.pay-opt.on{border-color:var(--y);background:rgba(253,186,9,.10)}
+.pay-opt input{accent-color:var(--y);margin-top:3px;width:18px;height:18px;flex:none}
+.pay-opt b{display:block;font-size:14px}
+.pay-opt small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.pay-badge{font-style:normal;background:var(--y);color:var(--y-ink);border-radius:6px;padding:1px 6px;font-size:11px;font-weight:800;margin-left:4px;white-space:nowrap}
+.pay-split{display:grid;gap:4px;border-top:1px dashed var(--line-2);padding-top:8px}
+.tot.disc span:last-child{color:var(--ok);font-weight:700}
 .ship-note{display:flex;gap:12px;align-items:flex-start;background:rgba(253,186,9,.14);border:1px solid rgba(253,186,9,.55);border-radius:12px;padding:12px 14px}
 .ship-note svg{flex:none;color:var(--y-fg);margin-top:1px}
 .ship-note b{display:block;font-size:14px;color:var(--fg)}
@@ -407,16 +417,33 @@ function orderSumHtml(){
   }).join('')+'</div>';
 }
 function refreshCheckout(){ var sb=document.getElementById("ship-box"); if(sb) sb.outerHTML=shipSummaryHtml(); var os=document.getElementById("order-sum"); if(os) os.outerHTML=orderSumHtml(); }
+function payMode(){ return customer.pay==="full"?"full":"envio"; }
+function discPct(){ var d=Number(S.prepayDiscount); return isNaN(d)?5:d; }
+function payCalc(){
+  var q=shipQuote(customer.dept, customer.city), sub=cartTotal(), mode=payMode();
+  var ship = q.state==="ok" ? q.value : null;
+  var disc = mode==="full" ? Math.round(sub*discPct()/100/100)*100 : 0;
+  var prod = sub-disc;
+  var now = mode==="full" ? (ship!==null? prod+ship : null) : ship;
+  var later = mode==="full" ? 0 : prod;
+  return {q:q, sub:sub, ship:ship, disc:disc, prod:prod, now:now, later:later, mode:mode};
+}
+function payChoiceHtml(){
+  var m=payMode();
+  return '<fieldset class="pay" id="pay-box"><legend>¿Cómo quieres pagar?</legend>'+
+    '<label class="pay-opt'+(m==="envio"?' on':'')+'"><input type="radio" name="pay" value="envio"'+(m==="envio"?' checked':'')+'><span><b>Pago del envío por adelantado</b><small>Pagas solo el envío ahora y el producto cuando lo recibas.</small></span></label>'+
+    '<label class="pay-opt'+(m==="full"?' on':'')+'"><input type="radio" name="pay" value="full"'+(m==="full"?' checked':'')+'><span><b>Pago total por adelantado <em class="pay-badge">'+discPct()+'% de descuento</em></b><small>Pagas todo ahora y te descontamos el '+discPct()+'% en los productos.</small></span></label>'+
+    '<span class="small">Pagos por Nequi, Daviplata o transferencia Bancolombia. Te enviamos los datos de pago por WhatsApp al confirmar tu pedido.</span></fieldset>';
+}
 function shipSummaryHtml(){
-  var q=shipQuote(customer.dept, customer.city), sub=cartTotal(), h='<div class="ship-box" id="ship-box"><div class="tot sm"><span>Productos</span><span class="num">'+cop(sub)+'</span></div>';
-  if(q.state==="ok"){
-    h+='<div class="tot sm"><span>Envío a '+esc(customer.city)+(q.lines>1?' ('+q.lines+' paquetes)':'')+'</span><span class="num">'+cop(q.value)+'</span></div>'+
-      '<div class="tot"><span>Total a pagar al recibir</span><span class="price num">'+cop(sub+q.value)+'</span></div><span class="small">Valor de envío estimado. Te confirmamos el valor final por WhatsApp antes de despachar.</span>';
-  } else if(q.state==="confirm"){
-    h+='<div class="tot sm"><span>Envío</span><span>Por confirmar</span></div><div class="tot"><span>Total productos</span><span class="price num">'+cop(sub)+'</span></div><span class="small">Para '+esc(customer.dept)+' te confirmamos el valor del envío por WhatsApp.</span>';
-  } else {
-    h+='<div class="tot sm"><span>Envío</span><span class="small">Elige departamento y ciudad</span></div><div class="tot"><span>Total</span><span class="price num">'+cop(sub)+' + envío</span></div>';
-  }
+  var c=payCalc(), q=c.q, h='<div class="ship-box" id="ship-box"><div class="tot sm"><span>Productos</span><span class="num">'+cop(c.sub)+'</span></div>';
+  if(c.disc) h+='<div class="tot sm disc"><span>Descuento pago anticipado ('+discPct()+'%)</span><span class="num">− '+cop(c.disc)+'</span></div>';
+  if(q.state==="ok") h+='<div class="tot sm"><span>Envío a '+esc(customer.city)+(q.lines>1?' ('+q.lines+' paquetes)':'')+'</span><span class="num">'+cop(c.ship)+'</span></div>';
+  else if(q.state==="confirm") h+='<div class="tot sm"><span>Envío</span><span>Por confirmar</span></div>';
+  else h+='<div class="tot sm"><span>Envío</span><span class="small">Elige departamento y municipio</span></div>';
+  h+='<div class="pay-split"><div class="tot"><span>Pagas ahora</span><span class="price num">'+(c.now!==null?cop(c.now):(c.mode==="full"?cop(c.prod)+' + envío':'Valor del envío'))+'</span></div>'+
+     '<div class="tot sm"><span>Pagas al recibir</span><span class="num">'+(c.mode==="full"?'$0':cop(c.later))+'</span></div></div>';
+  h+='<span class="small">'+(q.state==="confirm"?'Para '+esc(customer.dept)+' te confirmamos el valor del envío por WhatsApp. ':'Valor de envío estimado; te confirmamos el valor final por WhatsApp. ')+'Despachamos cuando recibamos tu pago.</span>';
   return h+'</div>';
 }
 var CARRIERS = ["Me da igual, la que llegue más rápido","Interrapidísimo","Servientrega","Coordinadora","Envía","Domina","Veloces","99minutos","Otra (la escribo en indicaciones)"];
@@ -424,22 +451,23 @@ var ui = { cat:"Todo", q:"", sort:"destacados", view:null, imgIdx:0, cartOpen:fa
 var draft = null;
 var SITE="https://toddo22a.github.io/";
 var FAQ=[
- ["¿Cómo pago mi pedido?","Pagas en efectivo cuando el pedido llega a tu casa (pago contra entrega). No tienes que pagar nada por adelantado ni dar datos de tarjetas."],
- ["¿Cuánto cuesta el envío?","Depende de tu municipio y del producto. Lo ves calculado antes de cerrar tu pedido, en el resumen. Te confirmamos el valor final por WhatsApp antes de despachar."],
+ ["¿Cómo pago mi pedido?","Tienes dos opciones: 1) Pagas solo el envío por adelantado y el producto cuando lo recibas, o 2) pagas todo por adelantado y te damos un descuento en los productos. Recibimos Nequi, Daviplata y transferencia Bancolombia; te enviamos los datos por WhatsApp al confirmar tu pedido."],
+ ["¿Por qué debo pagar el envío por adelantado?","Porque las transportadoras cobran el envío aunque el pedido no se reciba. Al pagarlo antes, nos aseguras que el pedido sí será recibido y podemos ofrecerte mejores precios. El producto lo sigues pagando cuando te llega."],
+ ["¿Cuánto cuesta el envío?","Depende de tu municipio y del producto. Lo ves calculado antes de cerrar tu pedido, en el resumen, y se paga por adelantado. Te confirmamos el valor final por WhatsApp."],
  ["¿Cuánto tarda en llegar?","Normalmente entre 2 y 6 días hábiles, según tu ciudad. A zonas apartadas puede tardar un poco más. Cuando se despache, te compartimos la guía para que sigas tu pedido."],
  ["¿Cómo hago mi pedido?","Agrega los productos al carrito, llena tus datos de envío y toca \"Cerrar pedido por WhatsApp\". Se abre WhatsApp con tu pedido listo: solo tienes que enviarlo. Nosotros te escribimos para confirmar."],
  ["¿Hacen envíos a todo el país?","Sí, enviamos a casi todos los municipios de Colombia por transportadoras como Interrapidísimo, Servientrega, Coordinadora y Envía. Para zonas muy apartadas confirmamos la cobertura por WhatsApp."],
- ["¿Puedo revisar el producto antes de pagar?","Las transportadoras normalmente piden el pago antes de entregar el paquete. Al recibirlo, revísalo de inmediato: si llega dañado o incompleto, escríbenos por WhatsApp dentro de las siguientes 48 horas con fotos y te ayudamos."],
+ ["¿Puedo revisar el producto antes de pagar?","Si pagas el producto al recibir, la transportadora normalmente pide el pago antes de entregar el paquete. Al recibirlo, revísalo de inmediato: si llega dañado o incompleto, escríbenos por WhatsApp dentro de las siguientes 48 horas con fotos y te ayudamos."],
  ["¿Qué pasa si el producto sale defectuoso?","Todos nuestros productos tienen garantía por defectos de fábrica. Escríbenos por WhatsApp con fotos o video del problema y gestionamos el cambio. Revisa los detalles en nuestra política de garantía."],
  ["¿Puedo cancelar o cambiar mi pedido?","Sí, mientras no se haya despachado. Escríbenos por WhatsApp lo antes posible. Si ya salió, puedes ejercer el derecho de retracto como explicamos en la política de devoluciones."]
 ];
 var POLICIES={
  "envios":["Política de envíos",[
   ["Cobertura","Enviamos a casi todos los municipios de Colombia a través de transportadoras aliadas. En zonas apartadas confirmamos la cobertura por WhatsApp antes de despachar."],
-  ["Costo","El costo del envío depende del municipio de destino, del producto y del peso. Lo ves calculado en el resumen de tu pedido y lo pagas junto con el producto al recibirlo. El valor final se confirma por WhatsApp."],
-  ["Tiempos","Despachamos después de confirmar tu pedido por WhatsApp. La entrega suele tardar entre 2 y 6 días hábiles según la ciudad. Los tiempos dependen de la transportadora y pueden variar en temporadas altas, días festivos o por situaciones de orden público o clima."],
+  ["Costo","El costo del envío depende del municipio de destino, del producto y del peso. Lo ves calculado en el resumen de tu pedido y se paga por adelantado por Nequi, Daviplata o transferencia. El valor final se confirma por WhatsApp."],
+  ["Tiempos","Despachamos después de confirmar tu pedido y recibir el pago del envío (o el pago total). La entrega suele tardar entre 2 y 6 días hábiles según la ciudad. Los tiempos dependen de la transportadora y pueden variar en temporadas altas, días festivos o por situaciones de orden público o clima."],
   ["Varios productos","Algunos productos salen de bodegas diferentes. En ese caso pueden llegar en paquetes separados y cada uno tiene su propio envío, como se muestra en tu resumen."],
-  ["Recepción","Al recibir, paga al transportador y revisa el paquete. Si llega dañado o incompleto, escríbenos dentro de las siguientes 48 horas con fotos. Si nadie recibe el pedido o el pedido es rechazado sin motivo, podremos negar futuros pedidos contra entrega."]]],
+  ["Recepción","Al recibir, paga al transportador el valor pendiente (si lo hay) y revisa el paquete. Si llega dañado o incompleto, escríbenos dentro de las siguientes 48 horas con fotos. Si el pedido no se recibe o se rechaza sin motivo, el valor del envío pagado no es reembolsable, porque la transportadora ya hizo el servicio."]]],
  "garantia":["Garantía y devoluciones",[
   ["Garantía por defectos de fábrica","Todos los productos tienen garantía por defectos de fábrica. El tiempo de garantía depende de cada producto; si tienes dudas, pregúntanos antes de comprar. La garantía no cubre daños por mal uso, golpes, humedad, instalación incorrecta ni el desgaste normal."],
   ["Cómo hacer efectiva la garantía","Escríbenos por WhatsApp con tu nombre, el producto y fotos o video del problema. Revisamos tu caso y te indicamos cómo enviar el producto. Debe estar completo, con sus accesorios y, en lo posible, en su empaque original."],
@@ -533,7 +561,7 @@ function render(){
       (bs.length? bs.map(function(src,i){ return '<div class="slide" aria-roledescription="diapositiva" aria-label="'+(i+1)+' de '+bs.length+'"><img src="'+src+'" alt="'+esc((B.alts||[])[i]||S.name)+'"'+(i?' loading="lazy"':'')+'></div>'; }).join('')
         : '<div class="slide"><div class="fallback"><h2>Productos <span class="y">virales</span><br>y útiles</h2><p class="small">'+esc(S.slogan)+'</p></div></div>')+
       '</div>'+(bs.length>1?'<button class="cbtn prev" data-act="prev" aria-label="Anterior">‹</button><button class="cbtn next" data-act="next" aria-label="Siguiente">›</button><div class="dots">'+bs.map(function(_,i){return '<button data-slide="'+i+'" aria-label="Ir a la promoción '+(i+1)+'" aria-current="'+(i===ui.slide)+'"></button>';}).join('')+'</div>':'')+'</div>'+
-      '<div class="trust-strip"><div class="ts">'+ICON.cash+'<div><b>Paga cuando recibas</b><span>Sin pagos adelantados</span></div></div><div class="ts">'+ICON.truck+'<div><b>Envíos a toda Colombia</b><span>Directo a tu casa</span></div></div><div class="ts">'+ICON.shield+'<div><b>Compra sin preocupaciones</b><span>Confirmamos cada pedido</span></div></div></div></section>';
+      '<div class="trust-strip"><div class="ts">'+ICON.cash+'<div><b>Paga el producto al recibir</b><span>Solo adelantas el envío</span></div></div><div class="ts">'+ICON.truck+'<div><b>Envíos a toda Colombia</b><span>Directo a tu casa</span></div></div><div class="ts">'+ICON.shield+'<div><b>Compra sin preocupaciones</b><span>Confirmamos cada pedido</span></div></div></div></section>';
     var tiles=c.map(function(x){ var pp=P.filter(function(p){return p.category===x[0]&&p.images&&p.images.length;}); var f=pp.filter(function(p){return p.featured;})[0]||pp[0]; return [x[0],x[1],f]; }).filter(function(x){return x[2];});
     if(tiles.length>2) h += '<section class="sec wrap gut" aria-label="Compra por categoría"><div class="sec-head"><div><span class="eyebrow">Explora</span><h2>Compra por <span class="y">categoría</span></h2><div class="rule"></div></div></div><div class="cat-tiles">'+
       tiles.map(function(x){ return '<button class="cat-tile" data-cat="'+esc(x[0])+'"><span class="ct-img"><img src="'+x[2].images[0]+'" alt="" loading="lazy"></span><span class="ct-name">'+esc(x[0])+'</span><span class="ct-n">'+x[1]+' producto'+(x[1]>1?'s':'')+'</span></button>'; }).join('')+'</div></section>';
@@ -551,7 +579,7 @@ function render(){
       '<div class="band-txt"><span class="eyebrow">Así compras en '+esc(S.name)+'</span><h2>Compra sin <span class="y">preocupaciones</span></h2><ol class="steps">'+
       '<li><div><b>Elige y haz tu pedido</b>Agrega al carrito y envíanos el pedido por WhatsApp.</div></li>'+
       '<li><div><b>Te confirmamos</b>Te escribimos para confirmar datos y dirección antes de despachar.</div></li>'+
-      '<li><div><b>Recibe y paga</b>Pagas en efectivo al transportador cuando el pedido llega.</div></li></ol></div></div></section>';
+      '<li><div><b>Recibe tu pedido</b>Pagas el envío por adelantado y el producto al recibirlo, o pagas todo antes con '+discPct()+'% de descuento.</div></li></ol></div></div></section>';
   }
   h += quoteHtml();
   if(browsing){
@@ -610,7 +638,7 @@ function productUrl(p){ return SITE+"#p-"+p.id; }
 function cardHtml(p){
   var d=off(p);
   return '<div class="card-wrap"><button class="fav'+(isFav(p.id)?' on':'')+'" data-fav="'+esc(p.id)+'" aria-pressed="'+isFav(p.id)+'" aria-label="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'" title="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'">'+STAR+'</button><button class="card" data-view="'+esc(p.id)+'" aria-label="Ver '+esc(p.name)+'"><div class="badges">'+(p.demo?'<span class="badge demo">Ejemplo</span>':'')+(d?'<span class="badge">-'+d+'%</span>':'')+(p.featured&&!d?'<span class="badge hot">Viral</span>':'')+(!p.available?'<span class="badge out">Agotado</span>':'')+'</div>'+photo(p)+
-    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+'</div><span class="cod">Envío aparte · paga al recibir</span></div></button>'+(p.available?'<button class="quick" data-quick="'+esc(p.id)+'" aria-label="Agregar '+esc(p.name)+' al carrito" title="Agregar al carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/><path d="M14 4v6M11 7h6"/></svg></button>':'')+'</div>';
+    '<div class="card-body"><span class="card-cat">'+esc(p.category)+'</span><span class="card-name">'+esc(p.name)+'</span><div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span>':'')+'</div><span class="cod">Envío aparte · '+discPct()+'% off pagando antes</span></div></button>'+(p.available?'<button class="quick" data-quick="'+esc(p.id)+'" aria-label="Agregar '+esc(p.name)+' al carrito" title="Agregar al carrito"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2 3h3l2.6 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.5L21.5 8H6"/><path d="M14 4v6M11 7h6"/></svg></button>':'')+'</div>';
 }
 
 /* carousel */
@@ -639,10 +667,10 @@ function productModal(p){
     '<div class="info"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><span class="card-cat">'+esc(p.category)+'</span><button class="x" data-act="close-view" aria-label="Cerrar">×</button></div>'+
     '<h3>'+esc(p.name)+'</h3>'+(p.demo?'<span class="small">Producto de ejemplo</span>':'')+
     '<div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span><span class="save">Ahorras '+cop(p.oldPrice-p.price)+'</span>':'')+'</div>'+
-    (p.available?'<div class="ship-note">'+ICON.truck.replace('width="34" height="34"','width="22" height="22"')+'<div><b>El envío no está incluido en este precio.</b><span>Se calcula según tu municipio al hacer el pedido y lo pagas junto con el producto cuando lo recibas.</span></div></div>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
+    (p.available?'<div class="ship-note">'+ICON.truck.replace('width="34" height="34"','width="22" height="22"')+'<div><b>El envío no está incluido en este precio.</b><span>Se calcula según tu municipio al hacer el pedido y se paga por adelantado para despachar.</span></div></div>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
     (p.available&&p.options?'<div class="field"><label for="p-opt">'+esc(p.options.label)+'</label><select id="p-opt">'+p.options.values.map(function(v){return '<option>'+esc(v)+'</option>';}).join('')+'</select></div>':'')+
-    (p.available?'<div class="cta"><button class="btn" data-buy="'+esc(p.id)+'">Comprar ahora · paga al recibir</button><button class="btn ghost" data-add="'+esc(p.id)+'">Agregar al carrito</button></div>':'<button class="btn ghost" disabled>Agotado por ahora</button>')+
-    '<div class="trust"><span>'+ICON.check+'Pagas en efectivo cuando lo recibes</span><span>'+ICON.check+esc(S.shippingNote)+'</span><span>'+ICON.check+'Confirmamos tu pedido por WhatsApp antes de enviarlo</span></div>'+
+    (p.available?'<div class="cta"><button class="btn" data-buy="'+esc(p.id)+'">Comprar ahora</button><button class="btn ghost" data-add="'+esc(p.id)+'">Agregar al carrito</button></div>':'<button class="btn ghost" disabled>Agotado por ahora</button>')+
+    '<div class="trust"><span>'+ICON.check+'Pagas el producto al recibir o todo antes con '+discPct()+'% de descuento</span><span>'+ICON.check+esc(S.shippingNote)+'</span><span>'+ICON.check+'Confirmamos tu pedido por WhatsApp antes de enviarlo</span></div>'+
     '<div class="share"><span class="small">Compartir:</span><a class="share-btn" href="https://wa.me/?text='+encodeURIComponent("Mira esto en "+S.name+": "+p.name+" a "+cop(p.price)+" "+productUrl(p))+'" target="_blank" rel="noopener">'+ICON.wa.replace('width="28" height="28"','width="16" height="16"')+'WhatsApp</a><button class="share-btn" data-copy="'+esc(p.id)+'">Copiar enlace</button></div></div>'+
     (function(){ var rel=relatedFor(p); return rel.length?'<div class="related"><h4>También te puede interesar</h4><div class="rel-grid">'+rel.map(function(r){ return '<button class="rel" data-view="'+esc(r.id)+'">'+photo(r)+'<span class="rel-n">'+esc(r.name)+'</span><span class="price num" style="font-size:15px">'+cop(r.price)+'</span></button>'; }).join('')+'</div></div>':''; })()+
     '</div></div>';
@@ -655,7 +683,7 @@ function cartDrawer(){
       '<div class="field"><label for="c-dept">Departamento</label><select id="c-dept"><option value="">Elige…</option>'+DEPTS.map(function(d){return '<option'+(customer.dept===d?' selected':'')+'>'+d+'</option>';}).join('')+'</select></div>'+
       cityField()+fld("c-addr","Dirección",customer.addr,"text","street-address")+fld("c-barrio","Barrio",customer.barrio,"text","")+
       '<div class="field"><label for="c-carrier">Transportadora de preferencia (opcional)</label><select id="c-carrier">'+CARRIERS.map(function(c){return '<option'+(customer.carrier===c?' selected':'')+'>'+c+'</option>';}).join('')+'</select><span class="small">La usamos si tiene cobertura en tu ciudad. Si no, te proponemos otra.</span></div>'+
-      '<div class="field"><label for="c-notes">Indicaciones (opcional)</label><textarea id="c-notes" placeholder="Ej.: casa de rejas blancas, llamar antes">'+esc(customer.notes||"")+'</textarea></div><div id="c-err" class="err" role="alert"></div>';
+      ''+payChoiceHtml()+'<div class="field"><label for="c-notes">Indicaciones (opcional)</label><textarea id="c-notes" placeholder="Ej.: casa de rejas blancas, llamar antes">'+esc(customer.notes||"")+'</textarea></div><div id="c-err" class="err" role="alert"></div>';
     foot = shipSummaryHtml()+
       '<button class="btn wa" data-act="send">'+ICON.wa.replace('width="28" height="28"','width="20" height="20"')+'Cerrar pedido por WhatsApp</button><button class="btn ghost" data-act="back">Volver al carrito</button>';
   } else {
@@ -673,12 +701,15 @@ function addToCart(id, n, opt){ opt=opt||""; var c=cart.filter(function(x){retur
 function lineName(x){ return x.p.name+(x.c.opt?" ("+(x.p.options?x.p.options.label+": ":"")+x.c.opt+")":""); }
 function chosenOpt(p){ if(!p.options) return ""; var s=document.getElementById("p-opt"); return s?s.value:""; }
 function orderText(){
-  var lines=cartLines(), t="¡Hola "+S.name+"! Quiero hacer este pedido (pago contra entrega):\n\n";
+  var lines=cartLines(), c=payCalc(), t="¡Hola "+S.name+"! Quiero hacer este pedido:\n\n";
   lines.forEach(function(x){ t+="• "+x.c.qty+" x "+lineName(x)+" — "+cop(x.p.price*x.c.qty)+"\n"; });
-  var q=shipQuote(customer.dept, customer.city);
-  t+="\nProductos: "+cop(cartTotal());
-  if(q.state==="ok") t+="\nEnvío estimado: "+cop(q.value)+"\n*Total a pagar al recibir: "+cop(cartTotal()+q.value)+"*";
-  else t+="\nEnvío: por confirmar";
+  t+="\nProductos: "+cop(c.sub);
+  if(c.disc) t+="\nDescuento pago anticipado ("+discPct()+"%): -"+cop(c.disc);
+  t+="\nEnvío estimado: "+(c.ship!==null?cop(c.ship):"por confirmar");
+  t+="\n\n*Forma de pago:* "+(c.mode==="full"?"Pago total por adelantado ("+discPct()+"% de descuento)":"Pago del envío por adelantado");
+  t+="\n*Pago ahora:* "+(c.now!==null?cop(c.now):(c.mode==="full"?cop(c.prod)+" + envío":"valor del envío"));
+  t+="\n*Pago al recibir:* "+(c.mode==="full"?"$0":cop(c.later));
+  t+="\n\nQuedo atento(a) a los datos de pago.";
   t+="\n\n*Datos de envío*\nNombres: "+customer.name+"\nApellidos: "+customer.last+"\nCelular: "+customer.phone+(customer.email?"\nCorreo: "+customer.email:"")+"\nDepartamento: "+customer.dept+"\nCiudad: "+customer.city+"\nDirección: "+customer.addr+(customer.barrio?"\nBarrio: "+customer.barrio:"")+(customer.carrier&&customer.carrier.indexOf("Me da igual")!==0?"\nTransportadora sugerida: "+customer.carrier:"")+(customer.notes?"\nIndicaciones: "+customer.notes:"");
   return t;
 }
@@ -892,6 +923,7 @@ document.addEventListener("change", async function(ev){
   if(ev.target.id==="sort"){ ui.sort=ev.target.value; render(); }
   if(ev.target.id==="c-dept"){ readCustomer(); var cw=document.getElementById("c-city-wrap"); if(cw) cw.outerHTML=cityField(); refreshCheckout(); }
   if(ev.target.id==="c-city"){ readCustomer(); refreshCheckout(); }
+  if(ev.target.name==="pay"){ customer.pay=ev.target.value; try{ localStorage.setItem("toddo-cliente", JSON.stringify(customer)); }catch(e){} var pb=document.getElementById("pay-box"); if(pb) pb.outerHTML=payChoiceHtml(); refreshCheckout(); }
   if(ev.target.id==="e-pics"){
     var p=currentEdit(); readEditor(p); var files=[].slice.call(ev.target.files||[]).slice(0,5-p.images.length);
     for(var i=0;i<files.length;i++){ try{ p.images.push(await compress(files[i],900,0.74)); }catch(e){ toast("Una foto no se pudo leer. Prueba con JPG o PNG."); } }

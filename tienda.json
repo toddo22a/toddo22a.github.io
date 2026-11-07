@@ -4,8 +4,8 @@
   "slogan": "Productos virales y útiles. Solo lo que está funcionando de verdad.",
   "whatsapp": "573133058948",
   "instagram": "",
-  "strip": "Envíos a toda Colombia · Paga cuando recibes",
-  "shippingNote": "Envíos a toda Colombia. El valor del envío se calcula con tu ciudad y lo pagas al recibir.",
+  "strip": "Envíos a toda Colombia · 5% de descuento pagando por adelantado",
+  "shippingNote": "Envíos a toda Colombia. El envío se calcula según tu municipio y se paga por adelantado.",
   "city": "Fundación, Magdalena",
   "shipping": {
    "local": 16000,
@@ -14,22 +14,24 @@
    "municipioExtra": 4000,
    "defaultOrigin": "Bogotá D.C."
   },
-  "facebook": "https://www.facebook.com/profile.php?id=61589959941285"
+  "facebook": "https://www.facebook.com/profile.php?id=61589959941285",
+  "prepayDiscount": 5
  },
  "brand": {
   "logo": "img/logo.png",
   "banners": [
    "img/banner-1.jpg",
-   "img/banner-2.jpg",
    "img/banner-3.jpg"
   ],
   "alts": [
    "Productos virales y útiles: solo lo que está funcionando de verdad",
-   "Paga cuando recibas: sin riesgos, sin pagos adelantados",
    "Envíos rápidos en Colombia: tu pedido llega directo a tu casa"
   ],
   "secure": "img/compra-segura.jpg",
-  "logoLight": "img/logo-oscuro.png"
+  "logoLight": "img/logo-oscuro.png",
+  "bannersOff": [
+   "img/banner-2.jpg"
+  ]
  },
  "products": [
   {
