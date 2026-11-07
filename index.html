@@ -133,6 +133,34 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .fav svg path{fill:transparent;stroke:#8d8d88}
 .fav:hover svg path{stroke:#fdba09}
 .fav.on svg path{fill:#fdba09;stroke:#d99a00}
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 16px}
+.faq details[open]{border-color:var(--y)}
+.faq summary{cursor:pointer;list-style:none;padding:15px 28px 15px 0;font-weight:600;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:22px;color:var(--y-fg);font-weight:700}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:0 0 16px;color:var(--muted)}
+.flink{background:none;border:0;padding:0;color:var(--muted);text-align:left;font-size:14px}
+.flink:hover{color:var(--y-fg);text-decoration:underline}
+.page-modal{display:block;width:min(720px,100%)}
+.page-in{padding:22px;display:grid;gap:16px}
+.page-in h3{font-family:var(--f-display);font-weight:800;font-size:26px;margin:0}
+.page-in h4{margin:0 0 4px;font-size:16px}
+.page-in p{margin:0;color:var(--muted)}
+.share{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);background:transparent;color:var(--fg);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;text-decoration:none}
+.share-btn:hover{border-color:var(--y)}
+.share-btn svg{color:var(--wa)}
+.related{grid-column:1/-1;border-top:1px solid var(--line);padding:16px 20px 20px}
+.related h4{margin:0 0 12px;font-family:var(--f-display);font-size:17px}
+.rel-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.rel{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:0 0 10px;display:grid;gap:4px;text-align:left;overflow:hidden;color:var(--fg)}
+.rel:hover{border-color:var(--y)}
+.rel .ph{border-radius:0}.rel .ph .glyph{font-size:30px}
+.rel-n{font-size:13px;font-weight:600;line-height:1.25;padding:4px 10px 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rel .price{padding:0 10px}
+@media (max-width:860px){.rel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.related{padding:14px 16px 18px}}
 .rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,260px);gap:16px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;position:relative;color:var(--fg)}
 .card:hover{border-color:var(--y);box-shadow:0 10px 40px -18px var(--y-glow)}
@@ -359,6 +387,36 @@ function shipSummaryHtml(){
 var CARRIERS = ["Me da igual, la que llegue más rápido","Interrapidísimo","Servientrega","Coordinadora","Envía","Domina","Veloces","99minutos","Otra (la escribo en indicaciones)"];
 var ui = { cat:"Todo", q:"", sort:"destacados", view:null, imgIdx:0, cartOpen:false, checkout:false, admin:false, editId:null, canEdit:false, dirty:false, saving:false, slide:0 };
 var draft = null;
+var SITE="https://toddo22a.github.io/";
+var FAQ=[
+ ["¿Cómo pago mi pedido?","Pagas en efectivo cuando el pedido llega a tu casa (pago contra entrega). No tienes que pagar nada por adelantado ni dar datos de tarjetas."],
+ ["¿Cuánto cuesta el envío?","Depende de tu municipio y del producto. Lo ves calculado antes de cerrar tu pedido, en el resumen. Te confirmamos el valor final por WhatsApp antes de despachar."],
+ ["¿Cuánto tarda en llegar?","Normalmente entre 2 y 6 días hábiles, según tu ciudad. A zonas apartadas puede tardar un poco más. Cuando se despache, te compartimos la guía para que sigas tu pedido."],
+ ["¿Cómo hago mi pedido?","Agrega los productos al carrito, llena tus datos de envío y toca \"Cerrar pedido por WhatsApp\". Se abre WhatsApp con tu pedido listo: solo tienes que enviarlo. Nosotros te escribimos para confirmar."],
+ ["¿Hacen envíos a todo el país?","Sí, enviamos a casi todos los municipios de Colombia por transportadoras como Interrapidísimo, Servientrega, Coordinadora y Envía. Para zonas muy apartadas confirmamos la cobertura por WhatsApp."],
+ ["¿Puedo revisar el producto antes de pagar?","Las transportadoras normalmente piden el pago antes de entregar el paquete. Al recibirlo, revísalo de inmediato: si llega dañado o incompleto, escríbenos por WhatsApp dentro de las siguientes 48 horas con fotos y te ayudamos."],
+ ["¿Qué pasa si el producto sale defectuoso?","Todos nuestros productos tienen garantía por defectos de fábrica. Escríbenos por WhatsApp con fotos o video del problema y gestionamos el cambio. Revisa los detalles en nuestra política de garantía."],
+ ["¿Puedo cancelar o cambiar mi pedido?","Sí, mientras no se haya despachado. Escríbenos por WhatsApp lo antes posible. Si ya salió, puedes ejercer el derecho de retracto como explicamos en la política de devoluciones."]
+];
+var POLICIES={
+ "envios":["Política de envíos",[
+  ["Cobertura","Enviamos a casi todos los municipios de Colombia a través de transportadoras aliadas. En zonas apartadas confirmamos la cobertura por WhatsApp antes de despachar."],
+  ["Costo","El costo del envío depende del municipio de destino, del producto y del peso. Lo ves calculado en el resumen de tu pedido y lo pagas junto con el producto al recibirlo. El valor final se confirma por WhatsApp."],
+  ["Tiempos","Despachamos después de confirmar tu pedido por WhatsApp. La entrega suele tardar entre 2 y 6 días hábiles según la ciudad. Los tiempos dependen de la transportadora y pueden variar en temporadas altas, días festivos o por situaciones de orden público o clima."],
+  ["Varios productos","Algunos productos salen de bodegas diferentes. En ese caso pueden llegar en paquetes separados y cada uno tiene su propio envío, como se muestra en tu resumen."],
+  ["Recepción","Al recibir, paga al transportador y revisa el paquete. Si llega dañado o incompleto, escríbenos dentro de las siguientes 48 horas con fotos. Si nadie recibe el pedido o el pedido es rechazado sin motivo, podremos negar futuros pedidos contra entrega."]]],
+ "garantia":["Garantía y devoluciones",[
+  ["Garantía por defectos de fábrica","Todos los productos tienen garantía por defectos de fábrica. El tiempo de garantía depende de cada producto; si tienes dudas, pregúntanos antes de comprar. La garantía no cubre daños por mal uso, golpes, humedad, instalación incorrecta ni el desgaste normal."],
+  ["Cómo hacer efectiva la garantía","Escríbenos por WhatsApp con tu nombre, el producto y fotos o video del problema. Revisamos tu caso y te indicamos cómo enviar el producto. Debe estar completo, con sus accesorios y, en lo posible, en su empaque original."],
+  ["Derecho de retracto","Como es una compra a distancia, puedes retractarte dentro de los 5 días hábiles siguientes a la entrega, según el artículo 47 de la Ley 1480 de 2011 (Estatuto del Consumidor). El producto debe devolverse sin usar, en el mismo estado en que lo recibiste y en su empaque original. Los costos de transporte de la devolución corren por cuenta del comprador. Una vez recibamos el producto, devolvemos el dinero pagado."],
+  ["Productos que no aplican para retracto","Productos de uso personal o higiene una vez abiertos o usados, y productos personalizados, por razones de salud e higiene."],
+  ["Reembolsos","Cuando se apruebe una devolución, hacemos el reembolso por transferencia o Nequi, en máximo 30 días calendario."]]],
+ "privacidad":["Privacidad y datos personales",[
+  ["Qué datos usamos","Usamos tu nombre, celular, correo y dirección solo para procesar, enviar y hacer seguimiento a tu pedido, y para atenderte por WhatsApp."],
+  ["Con quién los compartimos","Solo con el proveedor y la transportadora encargados de despachar y entregar tu pedido. No vendemos ni compartimos tus datos con terceros para publicidad."],
+  ["Tus derechos","Puedes pedirnos en cualquier momento que actualicemos, corrijamos o eliminemos tus datos escribiéndonos por WhatsApp, conforme a la Ley 1581 de 2012 de protección de datos personales."],
+  ["En este dispositivo","Tu carrito, tus favoritos y tus datos de envío se guardan solo en tu navegador para que no tengas que escribirlos de nuevo. Puedes borrarlos limpiando los datos de tu navegador."]]]
+};
 var favs = [];
 try { favs = JSON.parse(localStorage.getItem("toddo-favs") || "[]") || []; } catch(e){ favs = []; }
 function isFav(id){ return favs.indexOf(id)>-1; }
@@ -455,14 +513,34 @@ function render(){
       '<li><div><b>Te confirmamos</b>Te escribimos para confirmar datos y dirección antes de despachar.</div></li>'+
       '<li><div><b>Recibe y paga</b>Pagas en efectivo al transportador cuando el pedido llega.</div></li></ol></div></div></section>';
   }
+  if(browsing){
+    h += '<section class="sec wrap gut" id="faq" aria-label="Preguntas frecuentes"><div class="sec-head"><div><span class="eyebrow">Resolvemos tus dudas</span><h2>Preguntas <span class="y">frecuentes</span></h2><div class="rule"></div></div></div><div class="faq">'+
+      FAQ.map(function(f){ return '<details><summary>'+esc(f[0])+'</summary><p>'+esc(f[1])+'</p></details>'; }).join('')+
+      '<p class="small">¿Otra pregunta? '+(S.whatsapp?'<a href="'+waUrl("¡Hola "+S.name+"! Tengo una pregunta.")+'" target="_blank" rel="noopener" style="color:var(--y-fg);font-weight:600">Escríbenos por WhatsApp</a>':'Escríbenos por WhatsApp')+'.</p></div></section>';
+  }
   h += '</main><footer class="gut"><div class="wrap"><div>'+logo(28)+'<p>'+esc(S.slogan)+'</p><p>'+esc(S.shippingNote)+'</p></div>'+
-    '<div><h5>Compra</h5><ul><li>Pago contra entrega</li><li>Envíos nacionales</li><li>'+esc(S.city)+'</li></ul></div>'+
+    '<div><h5>Ayuda</h5><ul><li><button class="flink" data-page="envios">Política de envíos</button></li><li><button class="flink" data-page="garantia">Garantía y devoluciones</button></li><li><button class="flink" data-page="privacidad">Privacidad y datos</button></li><li><button class="flink" data-act="go-faq">Preguntas frecuentes</button></li></ul></div>'+
     '<div><h5>Contacto</h5><ul>'+(S.whatsapp?'<li>WhatsApp: <span class="num" style="user-select:all">+'+esc(S.whatsapp)+'</span></li><li><a href="'+waUrl("¡Hola "+S.name+"! Tengo una pregunta.")+'" target="_blank" rel="noopener" style="color:var(--y-fg)">Escríbenos</a></li>':'<li>Pronto habilitaremos WhatsApp</li>')+(S.instagram?'<li>Instagram: '+esc(S.instagram)+'</li>':'')+'</ul></div></div></footer>';
   if(S.whatsapp) h += '<a class="fab" href="'+waUrl("¡Hola "+S.name+"! Quiero información.")+'" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">'+ICON.wa+'</a>';
   app.innerHTML = h;
   var so=document.getElementById("sort"); if(so) so.value=ui.sort;
   renderOverlays();
 }
+function policyHtml(k){
+  var pol=POLICIES[k];
+  return '<div class="scrim center" data-act="close-page"><div class="modal page-modal" role="dialog" aria-modal="true" aria-label="'+esc(pol[0])+'"><div class="page-in"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h3>'+esc(pol[0])+'</h3><button class="x" data-act="close-page" aria-label="Cerrar">×</button></div>'+
+    pol[1].map(function(s){ return '<section><h4>'+esc(s[0])+'</h4><p>'+esc(s[1])+'</p></section>'; }).join('')+
+    '<p class="small">Última actualización: noviembre de 2026. '+esc(S.name)+' · '+esc(S.city)+'.</p></div></div></div>';
+}
+function relatedFor(p){
+  var same=P.filter(function(x){return x.id!==p.id && x.available && x.category===p.category;});
+  var other=P.filter(function(x){return x.id!==p.id && x.available && x.category!==p.category && x.featured;});
+  var rest=P.filter(function(x){return x.id!==p.id && x.available && same.indexOf(x)<0 && other.indexOf(x)<0;});
+  return same.concat(other,rest).slice(0,4);
+}
+function openFromHash(){ var m=(location.hash||"").match(/^#p-([A-Za-z0-9-]+)$/); if(m && byId(m[1])){ ui.view=m[1]; ui.imgIdx=0; } }
+window.addEventListener("hashchange", function(){ openFromHash(); renderOverlays(); });
+function productUrl(p){ return SITE+"#p-"+p.id; }
 function cardHtml(p){
   var d=off(p);
   return '<div class="card-wrap"><button class="fav'+(isFav(p.id)?' on':'')+'" data-fav="'+esc(p.id)+'" aria-pressed="'+isFav(p.id)+'" aria-label="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'" title="'+(isFav(p.id)?'Quitar de favoritos':'Guardar en favoritos')+'">'+STAR+'</button><button class="card" data-view="'+esc(p.id)+'" aria-label="Ver '+esc(p.name)+'"><div class="badges">'+(p.demo?'<span class="badge demo">Ejemplo</span>':'')+(d?'<span class="badge">-'+d+'%</span>':'')+(p.featured&&!d?'<span class="badge hot">Viral</span>':'')+(!p.available?'<span class="badge out">Agotado</span>':'')+'</div>'+photo(p)+
@@ -482,6 +560,7 @@ var overlay = document.createElement("div"); overlay.id="overlays"; document.bod
 function renderOverlays(){
   var h='';
   if(ui.view){ var p=byId(ui.view); if(p) h+=productModal(p); }
+  if(ui.page && POLICIES[ui.page]) h+=policyHtml(ui.page);
   if(ui.cartOpen) h+=cartDrawer();
   if(ui.admin && draft) h+=adminHtml();
   overlay.innerHTML=h;
@@ -497,7 +576,10 @@ function productModal(p){
     (p.available?'<span class="small">+ envío según tu ciudad · pagas todo al recibir</span>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
     (p.available&&p.options?'<div class="field"><label for="p-opt">'+esc(p.options.label)+'</label><select id="p-opt">'+p.options.values.map(function(v){return '<option>'+esc(v)+'</option>';}).join('')+'</select></div>':'')+
     (p.available?'<div style="display:grid;gap:10px"><button class="btn" data-buy="'+esc(p.id)+'">Comprar ahora · paga al recibir</button><button class="btn ghost" data-add="'+esc(p.id)+'">Agregar al carrito</button></div>':'<button class="btn ghost" disabled>Agotado por ahora</button>')+
-    '<div class="trust"><span>'+ICON.check+'Pagas en efectivo cuando lo recibes</span><span>'+ICON.check+esc(S.shippingNote)+'</span><span>'+ICON.check+'Confirmamos tu pedido por WhatsApp antes de enviarlo</span></div></div></div></div>';
+    '<div class="trust"><span>'+ICON.check+'Pagas en efectivo cuando lo recibes</span><span>'+ICON.check+esc(S.shippingNote)+'</span><span>'+ICON.check+'Confirmamos tu pedido por WhatsApp antes de enviarlo</span></div>'+
+    '<div class="share"><span class="small">Compartir:</span><a class="share-btn" href="https://wa.me/?text='+encodeURIComponent("Mira esto en "+S.name+": "+p.name+" a "+cop(p.price)+" "+productUrl(p))+'" target="_blank" rel="noopener">'+ICON.wa.replace('width="28" height="28"','width="16" height="16"')+'WhatsApp</a><button class="share-btn" data-copy="'+esc(p.id)+'">Copiar enlace</button></div></div>'+
+    (function(){ var rel=relatedFor(p); return rel.length?'<div class="related"><h4>También te puede interesar</h4><div class="rel-grid">'+rel.map(function(r){ return '<button class="rel" data-view="'+esc(r.id)+'">'+photo(r)+'<span class="rel-n">'+esc(r.name)+'</span><span class="price num" style="font-size:15px">'+cop(r.price)+'</span></button>'; }).join('')+'</div></div>':''; })()+
+    '</div></div>';
 }
 function cartDrawer(){
   var lines=cartLines(), body, foot;
@@ -669,14 +751,16 @@ async function publish(){
 /* ---------- EVENTS ---------- */
 document.addEventListener("click", function(ev){
   if(ui.catMenu && !ev.target.closest(".menu-wrap")){ ui.catMenu=false; render(); }
-  var t=ev.target.closest("[data-fav],[data-act],[data-cat],[data-view],[data-add],[data-buy],[data-inc],[data-dec],[data-img],[data-edit],[data-delpic],[data-delban],[data-up],[data-slide]");
+  var t=ev.target.closest("[data-fav],[data-page],[data-copy],[data-act],[data-cat],[data-view],[data-add],[data-buy],[data-inc],[data-dec],[data-img],[data-edit],[data-delpic],[data-delban],[data-up],[data-slide]");
   if(!t) return;
   if(t.classList.contains("scrim") && ev.target!==t) return;
   var a=t.dataset;
   if(a.fav){ toggleFav(a.fav); var keep=window.scrollY; render(); window.scrollTo(0,keep); toast(isFav(a.fav)?"Guardado en favoritos":"Quitado de favoritos"); return; }
   if(a.slide){ goSlide(Number(a.slide)); startAuto(); return; }
   if(a.cat){ ui.cat=a.cat; ui.catMenu=false; render(); var cat=document.getElementById("catalogo"); if(cat && a.cat!=="Todo") cat.scrollIntoView({block:"start"}); return; }
-  if(a.view){ ui.view=a.view; ui.imgIdx=0; renderOverlays(); return; }
+  if(a.view){ ui.view=a.view; ui.imgIdx=0; renderOverlays(); var md=document.querySelector(".modal"); if(md) md.scrollTop=0; return; }
+  if(a.page){ ui.page=a.page; renderOverlays(); return; }
+  if(a.copy){ var pp=byId(a.copy); if(pp){ var u=productUrl(pp); if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(u).then(function(){toast("Enlace copiado");},function(){toast(u);}); } else toast(u); } return; }
   if(a.img){ ui.imgIdx=Number(a.img); renderOverlays(); return; }
   if(a.add){ addToCart(a.add,1,chosenOpt(byId(a.add))); ui.view=null; toast("Agregado al carrito"); render(); return; }
   if(a.buy){ addToCart(a.buy,1,chosenOpt(byId(a.buy))); ui.view=null; ui.cartOpen=true; ui.checkout=true; loadMun(); render(); return; }
@@ -695,7 +779,9 @@ document.addEventListener("click", function(ev){
     case "next": goSlide(ui.slide+1); startAuto(); break;
     case "cart": ui.cartOpen=true; ui.checkout=false; renderOverlays(); break;
     case "close-cart": if(ui.checkout) readCustomer(); ui.cartOpen=false; ui.checkout=false; render(); break;
-    case "close-view": ui.view=null; renderOverlays(); break;
+    case "close-view": ui.view=null; try{ if(location.hash.indexOf("#p-")===0) history.replaceState(null,"",location.pathname+location.search); }catch(e){} renderOverlays(); break;
+    case "close-page": ui.page=null; renderOverlays(); break;
+    case "go-faq": ui.cat="Todo"; ui.q=""; render(); var fq=document.getElementById("faq"); if(fq) fq.scrollIntoView({block:"start"}); break;
     case "checkout": ui.checkout=true; loadMun(); renderOverlays(); break;
     case "back": readCustomer(); ui.checkout=false; renderOverlays(); break;
     case "send": sendOrder(); break;
@@ -748,13 +834,13 @@ document.addEventListener("change", async function(ev){
     renderOverlays();
   }
 });
-document.addEventListener("keydown", function(ev){ if(ev.key==="Escape"&&ui.catMenu){ ui.catMenu=false; render(); return; } if(ev.key==="Escape"){ if(ui.view){ui.view=null;renderOverlays();} else if(ui.cartOpen){ui.cartOpen=false;ui.checkout=false;render();} } });
+document.addEventListener("keydown", function(ev){ if(ev.key==="Escape"&&ui.page){ ui.page=null; renderOverlays(); return; } if(ev.key==="Escape"&&ui.catMenu){ ui.catMenu=false; render(); return; } if(ev.key==="Escape"){ if(ui.view){ui.view=null;renderOverlays();} else if(ui.cartOpen){ui.cartOpen=false;ui.checkout=false;render();} } });
 
 if(DATA.src){
   app.innerHTML='<div class="empty" style="padding:120px 16px">Cargando la tienda…</div>';
-  fetch(DATA.src+"?v="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(d){ DATA=d; S=d.settings; P=d.products; B=d.brand||{banners:[]}; render(); startAuto(); })
+  fetch(DATA.src+"?v="+Date.now(),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).then(function(d){ DATA=d; S=d.settings; P=d.products; B=d.brand||{banners:[]}; openFromHash(); render(); startAuto(); })
   .catch(function(){ app.innerHTML='<div class="empty" style="padding:120px 16px">No pudimos cargar los productos. Revisa tu conexión y recarga la página.</div>'; });
-} else { render(); startAuto(); }
+} else { openFromHash(); render(); startAuto(); }
 (async function(){
   try{
     if(!window.claude || !window.claude.use) return;
