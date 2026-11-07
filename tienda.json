@@ -76,6 +76,23 @@
    ]
   },
   {
+   "id": "T020",
+   "name": "Organizador perchero y zapatero 5 niveles",
+   "category": "Hogar",
+   "price": 84900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Organiza zapatos, ropa, bolsos y accesorios en un solo mueble, ideal para la entrada, el cuarto o el closet.\n\n• 5 niveles para zapatos, cajas o ropa doblada\n• Doble fila de ganchos para chaquetas, bolsos, sombreros y llaves\n• Estructura de acero resistente\n• Medidas: 60 × 28 × 175 cm aprox.\n• Fácil de armar, sin herramientas complicadas\n\nColor negro.",
+   "images": [
+    "img/productos/T020-1.jpg",
+    "img/productos/T020-2.jpg",
+    "img/productos/T020-3.jpg",
+    "img/productos/T020-4.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
