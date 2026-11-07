@@ -36,6 +36,23 @@
  },
  "products": [
   {
+   "id": "T044",
+   "name": "Rizador automático de cabello con pantalla y 6 temperaturas",
+   "category": "Belleza",
+   "price": 69900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Ondas y rizos en minutos, sin tener que enrollar el cabello a mano: el rizador lo toma y lo gira solo.\n\n• Rizado automático: acercas un mechón, presionas el botón y el rizador lo enrolla\n• 6 temperaturas ajustables para diferentes tipos de cabello y de rizo\n• 2 direcciones de giro, para rizos hacia adentro o hacia afuera\n• Pantalla digital que muestra la temperatura\n• Calentamiento rápido y protección contra sobrecalentamiento\n• Fácil de usar en casa, sin experiencia\n\nRecomendaciones: úsalo sobre el cabello seco y desenredado, empieza con la temperatura más baja y mantén la ranura lejos del cuero cabelludo. Guárdalo lejos del alcance de los niños mientras esté caliente.",
+   "images": [
+    "img/productos/T044-1.jpg",
+    "img/productos/T044-2.jpg",
+    "img/productos/T044-3.jpg"
+   ]
+  },
+  {
    "id": "T043",
    "name": "Crispetera eléctrica de aire caliente sin aceite",
    "category": "Cocina",
