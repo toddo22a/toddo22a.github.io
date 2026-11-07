@@ -166,6 +166,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .ship-note svg{flex:none;color:var(--y-fg);margin-top:1px}
 .ship-note b{display:block;font-size:14px;color:var(--fg)}
 .ship-note span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.ship-note.multi{margin-top:2px}
 .quote{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;background:var(--surface);border:1px solid var(--y);border-radius:24px;padding:28px;box-shadow:0 18px 50px -30px var(--y-glow)}
 .quote-txt{display:grid;gap:10px;align-content:start}
 .quote-txt h2{font-family:var(--f-display);font-weight:800;font-size:clamp(24px,3.2vw,34px);line-height:1.08;margin:0;letter-spacing:-.02em;text-wrap:balance}
@@ -411,6 +412,11 @@ function cityField(){
   if(MUN && !customer.dept) return '<div class="field" id="c-city-wrap"><label for="c-city">Municipio</label><select id="c-city" disabled><option value="">Primero elige el departamento</option></select></div>';
   return '<div class="field" id="c-city-wrap"><label for="c-city">Ciudad o municipio</label><input id="c-city" type="text" autocomplete="address-level2" value="'+esc(customer.city||"")+'"></div>';
 }
+function distinctCount(){ var seen={}; cartLines().forEach(function(x){ seen[x.p.id]=1; }); return Object.keys(seen).length; }
+function multiNoteHtml(){
+  var n=distinctCount(); if(n<2) return '';
+  return '<div class="ship-note multi" id="multi-note">'+ICON.truck.replace('width="34" height="34"','width="22" height="22"')+'<div><b>Llevas '+n+' productos diferentes: cada uno se envía por separado.</b><span>Nuestros productos salen de bodegas distintas, así que por lo general cada producto es un pedido aparte, con su propio envío y su propia guía. Si algunos se pueden enviar juntos, te avisamos por WhatsApp y te ajustamos el valor.</span></div></div>';
+}
 function orderSumHtml(){
   var q=shipQuote(customer.dept, customer.city), lines=cartLines();
   return '<div class="osum" id="order-sum"><div class="osum-h"><b>Tu pedido</b><button class="admin-link osum-edit" data-act="back">Editar</button></div>'+lines.map(function(x){
@@ -440,7 +446,7 @@ function payChoiceHtml(){
 function shipSummaryHtml(){
   var c=payCalc(), q=c.q, h='<div class="ship-box" id="ship-box"><div class="tot sm"><span>Productos</span><span class="num">'+cop(c.sub)+'</span></div>';
   if(c.disc) h+='<div class="tot sm disc"><span>Descuento pago anticipado ('+discPct()+'%)</span><span class="num">− '+cop(c.disc)+'</span></div>';
-  if(q.state==="ok") h+='<div class="tot sm"><span>Envío a '+esc(customer.city)+(q.lines>1?' ('+q.lines+' paquetes)':'')+'</span><span class="num">'+cop(c.ship)+'</span></div>';
+  if(q.state==="ok") h+='<div class="tot sm"><span>Envío a '+esc(customer.city)+(q.lines>1?' ('+q.lines+' envíos)':'')+'</span><span class="num">'+cop(c.ship)+'</span></div>';
   else if(q.state==="confirm") h+='<div class="tot sm"><span>Envío</span><span>Por confirmar</span></div>';
   else h+='<div class="tot sm"><span>Envío</span><span class="small">Elige departamento y municipio</span></div>';
   h+='<div class="pay-split"><div class="tot"><span>Pagas ahora</span><span class="price num">'+(c.now!==null?cop(c.now):(c.mode==="full"?cop(c.prod)+' + envío':'Valor del envío'))+'</span></div>'+
@@ -456,6 +462,7 @@ var FAQ=[
  ["¿Cómo pago mi pedido?","Tienes dos opciones: 1) Pagas solo el envío por adelantado y el producto cuando lo recibas, o 2) pagas todo por adelantado y te damos un descuento en los productos. Recibimos Nequi, Daviplata y transferencia Bancolombia; te enviamos los datos por WhatsApp al confirmar tu pedido."],
  ["¿Por qué debo pagar el envío por adelantado?","Porque las transportadoras cobran el envío aunque el pedido no se reciba. Al pagarlo antes, nos aseguras que el pedido sí será recibido y podemos ofrecerte mejores precios. El producto lo sigues pagando cuando te llega."],
  ["¿Cuánto cuesta el envío?","Depende de tu municipio y del producto. Lo ves calculado antes de cerrar tu pedido, en el resumen, y se paga por adelantado. Te confirmamos el valor final por WhatsApp."],
+ ["¿Puedo pedir varios productos en un solo envío?","Puedes pedirlos todos en el mismo pedido, pero por lo general cada producto se envía por separado, porque salen de bodegas diferentes. Por eso cada producto lleva su propio envío. Si algunos se pueden enviar juntos, te avisamos por WhatsApp y te ajustamos el valor."],
  ["¿Cuánto tarda en llegar?","Normalmente entre 2 y 6 días hábiles, según tu ciudad. A zonas apartadas puede tardar un poco más. Cuando se despache, te compartimos la guía para que sigas tu pedido."],
  ["¿Cómo hago mi pedido?","Agrega los productos al carrito, llena tus datos de envío y toca \"Cerrar pedido por WhatsApp\". Se abre WhatsApp con tu pedido listo: solo tienes que enviarlo. Nosotros te escribimos para confirmar."],
  ["¿Hacen envíos a todo el país?","Sí, enviamos a casi todos los municipios de Colombia por transportadoras como Interrapidísimo, Servientrega, Coordinadora y Envía. Para zonas muy apartadas confirmamos la cobertura por WhatsApp."],
@@ -468,7 +475,7 @@ var POLICIES={
   ["Cobertura","Enviamos a casi todos los municipios de Colombia a través de transportadoras aliadas. En zonas apartadas confirmamos la cobertura por WhatsApp antes de despachar."],
   ["Costo","El costo del envío depende del municipio de destino, del producto y del peso. Lo ves calculado en el resumen de tu pedido y se paga por adelantado por Nequi, Daviplata o transferencia. El valor final se confirma por WhatsApp."],
   ["Tiempos","Despachamos después de confirmar tu pedido y recibir el pago del envío (o el pago total). La entrega suele tardar entre 2 y 6 días hábiles según la ciudad. Los tiempos dependen de la transportadora y pueden variar en temporadas altas, días festivos o por situaciones de orden público o clima."],
-  ["Varios productos","Algunos productos salen de bodegas diferentes. En ese caso pueden llegar en paquetes separados y cada uno tiene su propio envío, como se muestra en tu resumen."],
+  ["Un producto, un envío","Nuestros productos salen de bodegas diferentes. Por eso, por lo general, cada producto se despacha como un pedido aparte, con su propio envío y su propia guía, y pueden llegar en días distintos. Si compras varias unidades del mismo producto, normalmente van juntas. Si dos productos diferentes se pueden enviar en un solo paquete, te lo confirmamos por WhatsApp y te ajustamos el valor del envío."],
   ["Recepción","Al recibir, paga al transportador el valor pendiente (si lo hay) y revisa el paquete. Si llega dañado o incompleto, escríbenos dentro de las siguientes 48 horas con fotos. Si el pedido no se recibe o se rechaza sin motivo, el valor del envío pagado no es reembolsable, porque la transportadora ya hizo el servicio."]]],
  "garantia":["Garantía y devoluciones",[
   ["Garantía por defectos de fábrica","Todos los productos tienen garantía por defectos de fábrica. El tiempo de garantía depende de cada producto; si tienes dudas, pregúntanos antes de comprar. La garantía no cubre daños por mal uso, golpes, humedad, instalación incorrecta ni el desgaste normal."],
@@ -477,7 +484,7 @@ var POLICIES={
   ["Productos que no aplican para retracto","Productos de uso personal o higiene una vez abiertos o usados, y productos personalizados, por razones de salud e higiene."],
   ["Reembolsos","Cuando se apruebe una devolución, hacemos el reembolso por transferencia o Nequi, en máximo 30 días calendario."]]],
  "privacidad":["Privacidad y datos personales",[
-  ["Qué datos usamos","Usamos tu nombre, celular, correo y dirección solo para procesar, enviar y hacer seguimiento a tu pedido, y para atenderte por WhatsApp."],
+  ["Qué datos usamos","Usamos tu nombre, celular, correo y dirección solo para procesar, enviar y hacer seguimiento a tu pedido, y para atenderte por WhatsApp. Cuando haces un pedido, sus datos quedan guardados en un registro privado de la tienda al que solo nosotros tenemos acceso."],
   ["Con quién los compartimos","Solo con el proveedor y la transportadora encargados de despachar y entregar tu pedido. No vendemos ni compartimos tus datos con terceros para publicidad."],
   ["Tus derechos","Puedes pedirnos en cualquier momento que actualicemos, corrijamos o eliminemos tus datos escribiéndonos por WhatsApp, conforme a la Ley 1581 de 2012 de protección de datos personales."],
   ["En este dispositivo","Tu carrito, tus favoritos y tus datos de envío se guardan solo en tu navegador para que no tengas que escribirlos de nuevo. Puedes borrarlos limpiando los datos de tu navegador."]]]
@@ -671,7 +678,7 @@ function productModal(p){
     '<div class="info"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><span class="card-cat">'+esc(p.category)+'</span><button class="x" data-act="close-view" aria-label="Cerrar">×</button></div>'+
     '<h3>'+esc(p.name)+'</h3>'+(p.demo?'<span class="small">Producto de ejemplo</span>':'')+
     '<div class="price-row"><span class="price num">'+cop(p.price)+'</span>'+(d?'<span class="old num">'+cop(p.oldPrice)+'</span><span class="save">Ahorras '+cop(p.oldPrice-p.price)+'</span>':'')+'</div>'+
-    (p.available?'<div class="ship-note">'+ICON.truck.replace('width="34" height="34"','width="22" height="22"')+'<div><b>El envío no está incluido en este precio.</b><span>Se calcula según tu municipio al hacer el pedido y se paga por adelantado para despachar.</span></div></div>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
+    (p.available?'<div class="ship-note">'+ICON.truck.replace('width="34" height="34"','width="22" height="22"')+'<div><b>El envío no está incluido en este precio.</b><span>Se calcula según tu municipio al hacer el pedido y se paga por adelantado para despachar. Cada producto se envía por separado, con su propio envío.</span></div></div>':'')+(p.desc?'<div class="desc">'+esc(p.desc)+'</div>':'')+
     (p.available&&p.options?'<div class="field"><label for="p-opt">'+esc(p.options.label)+'</label><select id="p-opt">'+p.options.values.map(function(v){return '<option>'+esc(v)+'</option>';}).join('')+'</select></div>':'')+
     (p.available?'<div class="cta"><button class="btn" data-buy="'+esc(p.id)+'">Comprar ahora</button><button class="btn ghost" data-add="'+esc(p.id)+'">Agregar al carrito</button></div>':'<button class="btn ghost" disabled>Agotado por ahora</button>')+
     '<div class="trust"><span>'+ICON.check+'Pagas el producto al recibir o todo antes con '+discPct()+'% de descuento</span><span>'+ICON.check+esc(S.shippingNote)+'</span><span>'+ICON.check+'Confirmamos tu pedido por WhatsApp antes de enviarlo</span></div>'+
@@ -682,7 +689,7 @@ function productModal(p){
 function cartDrawer(){
   var lines=cartLines(), body, foot;
   if(ui.checkout){
-    body = orderSumHtml()+'<p class="small" style="margin:0">Llena tus datos de envío. Te llevamos a WhatsApp con el pedido listo y lo confirmamos contigo.</p>'+
+    body = orderSumHtml()+multiNoteHtml()+'<p class="small" style="margin:0">Llena tus datos de envío. Te llevamos a WhatsApp con el pedido listo y lo confirmamos contigo.</p>'+
       '<div class="row2">'+fld("c-name","Nombres",customer.name,"text","given-name")+fld("c-last","Apellidos",customer.last,"text","family-name")+'</div>'+fld("c-phone","Celular (WhatsApp)",customer.phone,"tel","tel")+fld("c-email","Correo electrónico (opcional)",customer.email,"email","email")+
       '<div class="field"><label for="c-dept">Departamento</label><select id="c-dept"><option value="">Elige…</option>'+DEPTS.map(function(d){return '<option'+(customer.dept===d?' selected':'')+'>'+d+'</option>';}).join('')+'</select></div>'+
       cityField()+fld("c-addr","Dirección",customer.addr,"text","street-address")+fld("c-barrio","Barrio",customer.barrio,"text","")+
@@ -694,6 +701,7 @@ function cartDrawer(){
     body = lines.length ? lines.map(function(x){ return '<div class="line">'+photo(x.p)+'<div style="min-width:0"><div style="font-weight:600;line-height:1.3">'+esc(lineName(x))+'</div><div class="small num">'+cop(x.p.price)+'</div></div>'+
       '<div class="qty"><button data-dec="'+cart.indexOf(x.c)+'" aria-label="Quitar uno">−</button><span class="num">'+x.c.qty+'</span><button data-inc="'+cart.indexOf(x.c)+'" aria-label="Agregar uno">+</button></div></div>'; }).join('')
       : '<div class="empty">Tu carrito está vacío.<br>Agrega productos para hacer tu pedido.</div>';
+    if(lines.length) body += multiNoteHtml();
     foot = '<div class="tot"><span>Subtotal</span><span class="price num">'+cop(cartTotal())+'</span></div><span class="small">El envío se calcula en el siguiente paso con tu ciudad.</span>'+
       '<button class="btn" data-act="checkout"'+(lines.length?'':' disabled')+'>Continuar con el pedido</button>';
   }
@@ -704,12 +712,24 @@ function fld(id,label,val,type,ac){ return '<div class="field"><label for="'+id+
 function addToCart(id, n, opt){ opt=opt||""; var c=cart.filter(function(x){return x.id===id && (x.opt||"")===opt;})[0]; if(c) c.qty+=n||1; else cart.push({id:id,qty:n||1,opt:opt}); cart=cart.filter(function(x){return x.qty>0;}); saveCart(); }
 function lineName(x){ return x.p.name+(x.c.opt?" ("+(x.p.options?x.p.options.label+": ":"")+x.c.opt+")":""); }
 function chosenOpt(p){ if(!p.options) return ""; var s=document.getElementById("p-opt"); return s?s.value:""; }
+var lastOrder={sig:"",code:""};
+function newCode(){ var d=new Date(), ch="ABCDEFGHJKLMNPQRSTUVWXYZ23456789", r=""; for(var i=0;i<3;i++) r+=ch[Math.floor(Math.random()*ch.length)]; return "TD-"+String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0")+"-"+r; }
+function orderSig(){ return JSON.stringify([cart,customer.dept,customer.city,customer.phone,customer.addr,payMode()]); }
+function orderCode(){ var sg=orderSig(); if(lastOrder.sig!==sg){ lastOrder={sig:sg,code:newCode(),sent:false}; } return lastOrder.code; }
+function registerOrder(){
+  if(!S.ordersUrl || lastOrder.sent || !window.fetch) return;
+  var c=payCalc(), body={action:"new", code:orderCode(), name:customer.name, last:customer.last, phone:customer.phone, email:customer.email||"", dept:customer.dept, city:customer.city, addr:customer.addr, barrio:customer.barrio||"", carrier:customer.carrier||"", notes:customer.notes||"",
+    items:cartLines().map(function(x){ return {code:x.p.id, name:x.p.name, opt:x.c.opt||"", qty:x.c.qty, price:x.p.price}; }),
+    sub:c.sub, disc:c.disc, ship:c.ship, mode:c.mode, now:c.now, later:c.later, shipments:distinctCount()};
+  lastOrder.sent=true;
+  try{ fetch(S.ordersUrl,{method:"POST",mode:"no-cors",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(body)}).catch(function(){ lastOrder.sent=false; }); }catch(e){ lastOrder.sent=false; }
+}
 function orderText(){
-  var lines=cartLines(), c=payCalc(), t="¡Hola "+S.name+"! Quiero hacer este pedido:\n\n";
+  var lines=cartLines(), c=payCalc(), t="¡Hola "+S.name+"! Quiero hacer este pedido:\n*Pedido N.° "+orderCode()+"*\n\n";
   lines.forEach(function(x){ t+="• "+x.c.qty+" x "+lineName(x)+" — "+cop(x.p.price*x.c.qty)+"\n"; });
   t+="\nProductos: "+cop(c.sub);
   if(c.disc) t+="\nDescuento pago anticipado ("+discPct()+"%): -"+cop(c.disc);
-  t+="\nEnvío estimado: "+(c.ship!==null?cop(c.ship):"por confirmar");
+  t+="\nEnvío estimado: "+(c.ship!==null?cop(c.ship):"por confirmar")+(distinctCount()>1?" ("+distinctCount()+" envíos, uno por producto)":"");
   t+="\n\n*Forma de pago:* "+(c.mode==="full"?"Pago total por adelantado ("+discPct()+"% de descuento)":"Pago del envío por adelantado");
   t+="\n*Pago ahora:* "+(c.now!==null?cop(c.now):(c.mode==="full"?cop(c.prod)+" + envío":"valor del envío"));
   t+="\n*Pago al recibir:* "+(c.mode==="full"?"$0":cop(c.later));
@@ -727,6 +747,7 @@ function sendOrder(){
   var err=document.getElementById("c-err");
   if(miss.length){ err.textContent="Falta completar: "+miss.join(", ")+"."; return; }
   var text=orderText();
+  registerOrder();
   if(!S.whatsapp){ err.textContent="La tienda aún no tiene WhatsApp configurado. Copiamos tu pedido para que lo envíes a la tienda."; copy(text); return; }
   var a=document.createElement("a"); a.href=waUrl(text); a.target="_blank"; a.rel="noopener"; document.body.appendChild(a); a.click(); a.remove();
   err.innerHTML='<span class="ok">Abrimos WhatsApp con tu pedido.</span> Si no se abrió, <button class="admin-link" data-act="copy-order" style="background:none;border:0;color:var(--y-fg);text-decoration:underline;padding:0">copia el pedido</button> y envíalo al <span class="num" style="user-select:all">+'+esc(S.whatsapp)+'</span>.';

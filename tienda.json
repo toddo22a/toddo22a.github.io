@@ -15,7 +15,8 @@
    "defaultOrigin": "Bogotá D.C."
   },
   "facebook": "https://www.facebook.com/profile.php?id=61589959941285",
-  "prepayDiscount": 5
+  "prepayDiscount": 5,
+  "ordersUrl": ""
  },
  "brand": {
   "logo": "img/logo.png",
