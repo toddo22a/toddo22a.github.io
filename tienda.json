@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T035",
+   "name": "Espejo de maquillaje con luz LED para el parasol del carro",
+   "category": "Vehículos",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Retócate el maquillaje en el carro con buena luz, de día o de noche.\n\n• Se sujeta al parasol del carro\n• Luz LED alrededor del espejo con 3 tonos: blanca, cálida y natural\n• Brillo ajustable con botón táctil\n• Recargable por cable USB (incluido): no usa pilas\n• Delgado y liviano: no estorba al subir o bajar el parasol\n\nÚsalo solo con el carro detenido.",
+   "images": [
+    "img/productos/T035-1.jpg",
+    "img/productos/T035-2.jpg",
+    "img/productos/T035-3.jpg"
+   ]
+  },
+  {
    "id": "T034",
    "name": "Cafetera espresso portátil recargable 3 en 1",
    "category": "Cocina",
