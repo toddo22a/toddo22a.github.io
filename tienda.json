@@ -36,6 +36,23 @@
  },
  "products": [
   {
+   "id": "T066",
+   "name": "Linterna frontal LED recargable con sensor de movimiento",
+   "category": "Herramientas",
+   "price": 29900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Luz en la cabeza y las manos libres: para trabajar en el carro, hacer arreglos en casa, salir a caminar, pescar, acampar o cuando se va la luz.\n\n• Barra de luz COB con ángulo amplio (230°) y luz LED de foco para ver lejos\n• Sensor de movimiento: la prendes y la apagas pasando la mano, sin tocarla\n• Varios modos: fuerte, suave y parpadeo\n• Recargable por USB tipo C (unas 2 a 2,5 horas de carga, de 3 a 8 horas de uso según el modo)\n• Resistente a salpicaduras y lluvia (IPX4)\n• Banda elástica ajustable, liviana (unos 100 g)\n\nIncluye: linterna frontal y cable de carga USB.",
+   "images": [
+    "img/productos/T066-1.jpg",
+    "img/productos/T066-2.jpg",
+    "img/productos/T066-3.jpg"
+   ]
+  },
+  {
    "id": "T065",
    "name": "Tenis de malla con velcro, livianos y cómodos",
    "category": "Moda",
