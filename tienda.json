@@ -93,6 +93,21 @@
    ]
   },
   {
+   "id": "T021",
+   "name": "Aro de luz RGB 30 cm con trípode de 2,1 m",
+   "category": "Tecnología",
+   "price": 62900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Luz profesional para tus videos, fotos, transmisiones en vivo y maquillaje.\n\n• Aro de 30 cm con luz blanca (cálida y fría) y luces de colores RGB\n• 7 colores y hasta 15 combinaciones de iluminación\n• Intensidad y tono regulables desde el control del cable\n• Trípode que alcanza hasta 2,1 m de altura\n• Soporte para celular incluido\n• Se conecta por USB de 5 V (no incluye adaptador de pared)\n\nIdeal para TikTok, Reels, clases virtuales y emprendimientos.",
+   "images": [
+    "img/productos/T021-1.jpg",
+    "img/productos/T021-2.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
