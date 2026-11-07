@@ -32,6 +32,21 @@
  },
  "products": [
   {
+   "id": "T017",
+   "name": "Combo cepillo secador 5 en 1 + borrador de vello de cristal",
+   "category": "Belleza",
+   "price": 79900,
+   "oldPrice": 0,
+   "featured": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Dos productos virales de belleza en un solo combo.\n\nCepillo secador de aire caliente 5 en 1:\n• Seca, alisa, da volumen y hace ondas con un solo aparato\n• Incluye 2 rizadores, cepillo redondo, cepillo plano y peine de aire caliente\n• 3 niveles de temperatura\n• Cable de 2 m con giro de 360°\n• Nota: el cepillo no gira solo, se usa como un cepillo tradicional\n\nBorrador de vello de cristal:\n• Retira el vello sin dolor y exfolia la piel\n• Se frota en movimientos circulares sobre la piel seca\n• Sin baterías y reutilizable\n• No se recomienda en piel muy sensible",
+   "images": [
+    "img/productos/T017-1.jpg",
+    "img/productos/T017-2.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
