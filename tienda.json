@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T047",
+   "name": "Mini impresora de etiquetas Bluetooth portátil",
+   "category": "Tecnología",
+   "price": 84900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Imprime etiquetas desde tu celular para organizar la casa o darle una imagen profesional a tu emprendimiento.\n\n• Se conecta al celular por Bluetooth y se usa con una app gratuita (Android y iPhone)\n• Impresión térmica: no usa tinta ni cartuchos\n• Imprime textos, precios, fechas, códigos de barras y códigos QR\n• Ideal para frascos de cocina, cajas, carpetas, productos de emprendimiento y regalos\n• Batería recargable por USB tipo C\n• Pequeña y liviana: cabe en la mano\n\nIncluye: impresora, cable USB y manual. Usa rollos de etiquetas térmicas, que se consiguen por aparte.",
+   "images": [
+    "img/productos/T047-1.jpg",
+    "img/productos/T047-2.jpg"
+   ]
+  },
+  {
    "id": "T046",
    "name": "Proyector de luces galaxia con parlante Bluetooth y control",
    "category": "Hogar",
