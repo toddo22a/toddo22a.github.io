@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T053",
+   "name": "Cepillo eléctrico giratorio de limpieza 9 en 1 con mango extensible",
+   "category": "Hogar",
+   "price": 56900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Limpia baños, cocina, pisos y vidrios sin agacharte ni frotar a mano: el cepillo gira solo.\n\n• 9 cabezales intercambiables: cepillos redondo, plano y de esquinas, esponjas y paño para vidrios\n• 2 velocidades: una suave para el día a día y otra más fuerte para grasa y mugre pegada\n• Mango telescópico de acero ajustable (de unos 61 a 120 cm): alcanza paredes altas y el piso sin escalera\n• Recargable por USB tipo C: 30 a 50 minutos de uso por carga\n• Liviano (unos 450 g) y silencioso\n• Cabezal resistente al agua: se enjuaga bajo la llave\n\nIncluye: cepillo eléctrico, mango extensible, 9 cabezales y cable USB.\n\nNo sumerjas el cuerpo del aparato en agua.",
+   "images": [
+    "img/productos/T053-1.jpg",
+    "img/productos/T053-2.jpg"
+   ]
+  },
+  {
    "id": "T052",
    "name": "Olla eléctrica calentadora de cera para depilación",
    "category": "Belleza",
