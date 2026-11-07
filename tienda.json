@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T042",
+   "name": "Masajeador corporal eléctrico Relax & Spin Tone con 5 cabezales",
+   "category": "Salud y bienestar",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Relaja los músculos cansados después del trabajo o del ejercicio con un masaje giratorio en casa.\n\n• Movimiento giratorio para un masaje profundo y relajante\n• 5 cabezales intercambiables para diferentes sensaciones y zonas\n• Sirve para espalda, hombros, cuello, brazos, cintura, glúteos, piernas y pies\n• Diseño ergonómico con mango para alcanzar zonas difíciles\n• Funciona conectado a la corriente\n\nIncluye: masajeador y 5 cabezales.\n\nEs un masajeador para relajación muscular: no reemplaza dieta, ejercicio ni tratamientos médicos. No lo uses sobre heridas, várices, zonas inflamadas ni durante el embarazo. Si tienes alguna condición de salud, consulta antes con un médico.",
+   "images": [
+    "img/productos/T042-1.jpg",
+    "img/productos/T042-2.jpg",
+    "img/productos/T042-3.jpg"
+   ]
+  },
+  {
    "id": "T041",
    "name": "Kit facial de vitamina C Bioaqua 6 piezas en caja de regalo",
    "category": "Belleza",
