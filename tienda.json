@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T048",
+   "name": "Toma corriente inteligente WiFi compatible con Alexa y Google",
+   "category": "Tecnología",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Prende y apaga tus aparatos desde el celular o con la voz, estés en casa o fuera de ella.\n\n• Se conecta al WiFi de tu casa (red de 2,4 GHz): no necesita equipos adicionales\n• Controla desde la app del celular la lámpara, el ventilador, la cafetera, el cargador o el árbol de Navidad\n• Compatible con Alexa y Google Assistant para usarlo con la voz\n• Programa horarios para que se prenda o se apague solo\n• Botón en el costado para usarlo también a mano\n• Enchufe tipo americano, como los de Colombia\n\nImportante: funciona solo con WiFi de 2,4 GHz (la mayoría de routers la tienen). Alexa o Google Home se compran por aparte; sin ellos se usa igual desde el celular.",
+   "images": [
+    "img/productos/T048-1.jpg"
+   ]
+  },
+  {
    "id": "T047",
    "name": "Mini impresora de etiquetas Bluetooth portátil",
    "category": "Tecnología",
