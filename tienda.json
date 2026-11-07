@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T025",
+   "name": "Ejercitador de resistencia con pedales y barra",
+   "category": "Deportes",
+   "price": 54900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Entrena abdomen, piernas, brazos y espalda en casa, sin máquinas ni gimnasio. Solo necesitas el espacio de un tapete de yoga.\n\n• Banda de látex de alta elasticidad, con hasta 25 kg de resistencia\n• Barra con espuma antideslizante para un agarre cómodo\n• Pedales anchos con almohadillas que sujetan bien los pies\n• Sirve para abdominales, remo, sentadillas, patadas de glúteo y estiramientos\n• Liviano y compacto: lo guardas en un bolso y entrenas donde quieras\n\nColor según disponibilidad.",
+   "images": [
+    "img/productos/T025-1.jpg",
+    "img/productos/T025-2.jpg",
+    "img/productos/T025-3.jpg"
+   ]
+  },
+  {
    "id": "T017",
    "name": "Combo cepillo secador 5 en 1 + borrador de vello de cristal",
    "category": "Belleza",
