@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T051",
+   "name": "Set x3 bandas de resistencia en tela para glúteos y piernas",
+   "category": "Deportes",
+   "price": 32900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Entrena glúteos, piernas y cadera en casa con 3 niveles de resistencia. Son de tela, así que no se enrollan ni pellizcan la piel como las de látex.\n\n• Verde: resistencia suave (15 a 25 lb)\n• Rosada: resistencia media (25 a 35 lb)\n• Morada: resistencia fuerte (35 a 45 lb)\n• Medidas de cada banda: 38 cm de largo × 8 cm de ancho\n• Tela con agarre interno antideslizante\n• Sirven para sentadillas, puentes de glúteo, patadas, aperturas y estiramientos\n\nIncluye: 3 bandas, bolsa para guardarlas y manual de ejercicios. El diseño (liso o a rayas) puede variar según disponibilidad.",
+   "images": [
+    "img/productos/T051-1.jpg",
+    "img/productos/T051-2.jpg"
+   ]
+  },
+  {
    "id": "T050",
    "name": "Bolso pechera antirrobo con candado y puerto USB",
    "category": "Accesorios",
