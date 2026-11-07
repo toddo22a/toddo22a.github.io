@@ -131,6 +131,22 @@
    ]
   },
   {
+   "id": "T023",
+   "name": "Kit irrigador limpiador de oídos",
+   "category": "Salud y bienestar",
+   "price": 73900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Limpieza de oídos con agua tibia, sin copitos.\n\n• Usa un chorro suave de agua para ablandar y retirar el exceso de cerumen\n• Boquillas de repuesto suaves e intercambiables, para que cada persona use la suya\n• Protector transparente que evita salpicaduras\n• Depósito transparente para ver el nivel de agua\n• Se usa con una sola mano, con botón de encendido\n\nIncluye: irrigador, boquillas de repuesto, manguera y recipiente.\n\nImportante: no lo uses si tienes dolor de oído, infección, perforación del tímpano o una cirugía reciente en el oído. Usa siempre agua tibia. Ante cualquier duda, consulta a tu médico.",
+   "images": [
+    "img/productos/T023-1.jpg",
+    "img/productos/T023-2.jpg",
+    "img/productos/T023-3.jpg"
+   ]
+  },
+  {
    "id": "T016",
    "name": "Máquina de barbería profesional VGR V-001 9000 RPM",
    "category": "Cuidado personal",
