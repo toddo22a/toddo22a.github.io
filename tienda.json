@@ -36,6 +36,21 @@
  },
  "products": [
   {
+   "id": "T055",
+   "name": "Candado antirrobo de volante al cinturón de seguridad",
+   "category": "Vehículos",
+   "price": 57900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una barrera extra contra el robo de tu carro: bloquea el volante amarrándolo al anclaje del cinturón de seguridad.\n\n• Cable de acero trenzado con funda de tela que no raya el volante\n• Se engancha en segundos: pasas el lazo por el volante, insertas la hebilla en el anclaje del cinturón y cierras con llave\n• Se ve desde afuera, así que también sirve para desanimar a los ladrones\n• Compatible con la mayoría de carros y camionetas (si queda corto, corre un poco el asiento)\n• Flexible: se guarda en la guantera o debajo del asiento\n• Medidas: cable de unos 60 cm y cabezal de 11 cm\n\nIncluye: candado y 2 llaves.\n\nEs un elemento de seguridad adicional: úsalo junto con las demás medidas de protección de tu vehículo.",
+   "images": [
+    "img/productos/T055-1.jpg"
+   ]
+  },
+  {
    "id": "T054",
    "name": "Jean levanta cola tiro alto con correa para dama",
    "category": "Moda",
