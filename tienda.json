@@ -36,6 +36,22 @@
  },
  "products": [
   {
+   "id": "T034",
+   "name": "Cafetera espresso portátil recargable 3 en 1",
+   "category": "Cocina",
+   "price": 164900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Prepara un espresso caliente en la casa, la oficina, el carro o de viaje, sin conectarla a la corriente.\n\n• 3 en 1: funciona con café molido, cápsulas pequeñas (tipo Nespresso) y cápsulas grandes (tipo Dolce Gusto), con un adaptador para cada una\n• Calienta el agua sola: el café está listo en unos 5 minutos\n• Batería recargable por USB tipo C\n• Tanque de agua de unos 80 ml, ideal para una taza de espresso\n• Funciona con un solo botón\n• Compacta y liviana, con vaso incluido\n\nLas cápsulas y el café no vienen incluidos.",
+   "images": [
+    "img/productos/T034-1.jpg",
+    "img/productos/T034-2.jpg",
+    "img/productos/T034-3.jpg"
+   ]
+  },
+  {
    "id": "T033",
    "name": "Cámara de seguridad solar WiFi con doble lente y sirena",
    "category": "Tecnología",
