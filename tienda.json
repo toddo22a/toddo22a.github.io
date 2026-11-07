@@ -36,6 +36,23 @@
  },
  "products": [
   {
+   "id": "T043",
+   "name": "Crispetera eléctrica de aire caliente sin aceite",
+   "category": "Cocina",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "deal": true,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Crispetas calientes en 3 minutos para ver películas en familia, sin aceite ni mantequilla.\n\n• Funciona con aire caliente: solo pones el maíz, la enciendes y las crispetas salen solas por la boquilla\n• No necesita aceite (si quieres, les pones sal o mantequilla después)\n• Botón de encendido y apagado\n• Compacta: 11 × 27 × 18,5 cm\n• Potencia de 1200 W, para corriente de 110 V\n\nCuidado de uso: úsala máximo 3 minutos seguidos y deja que se enfríe 15 minutos antes de volver a usarla, para que dure más. Pon un recipiente debajo de la boquilla antes de encenderla.\n\nNo incluye maíz ni recipiente.",
+   "images": [
+    "img/productos/T043-1.jpg",
+    "img/productos/T043-2.jpg",
+    "img/productos/T043-3.jpg"
+   ]
+  },
+  {
    "id": "T042",
    "name": "Masajeador corporal eléctrico Relax & Spin Tone con 5 cabezales",
    "category": "Salud y bienestar",
