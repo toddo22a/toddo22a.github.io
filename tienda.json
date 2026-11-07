@@ -36,6 +36,20 @@
  },
  "products": [
   {
+   "id": "T037",
+   "name": "Máquina para sándwiches y hamburguesas de desayuno",
+   "category": "Cocina",
+   "price": 129900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Arma un sándwich o una hamburguesa de desayuno caliente, con huevo, en unos 5 minutos y sin ensuciar sartenes.\n\n¿Cómo funciona?\n1. Pon una tapa de pan con tus ingredientes (jamón, queso, carne…)\n2. Agrega un huevo en la placa de arriba\n3. Cubre con la otra tapa de pan y cierra\n4. Desliza la placa, abre y sirve\n\n• Prepara todo al mismo tiempo: el huevo se cocina mientras se calienta el pan\n• Ideal para desayunos rápidos antes del trabajo o el colegio\n• Placas antiadherentes, fáciles de limpiar\n• Luces que indican cuándo está encendida y cuándo está lista\n\nMarca Sokany.",
+   "images": [
+    "img/productos/T037-1.jpg"
+   ]
+  },
+  {
    "id": "T036",
    "name": "Guadaña inalámbrica telescópica con 2 baterías y accesorios",
    "category": "Herramientas",
