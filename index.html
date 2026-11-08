@@ -145,6 +145,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .socials a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-2);border-radius:999px;padding:7px 12px;color:var(--fg);text-decoration:none;font-weight:600;font-size:13px}
 .socials a:hover{border-color:var(--y);color:var(--y-fg)}
 .socials svg{color:#1877f2}
+.socials a.ig svg{color:#e1306c}
 .flink{background:none;border:0;padding:0;color:var(--muted);text-align:left;font-size:14px}
 .flink:hover{color:var(--y-fg);text-decoration:underline}
 .page-modal{display:block;width:min(720px,100%)}
@@ -634,7 +635,7 @@ function render(){
   h += '</main><footer class="gut"><div class="wrap"><div>'+logo(28)+'<p>'+esc(S.slogan)+'</p><p>'+esc(S.shippingNote)+'</p></div>'+
     '<div><h5>Ayuda</h5><ul><li><button class="flink" data-page="envios">Política de envíos</button></li><li><button class="flink" data-page="garantia">Garantía y devoluciones</button></li><li><button class="flink" data-page="privacidad">Privacidad y datos</button></li><li><button class="flink" data-act="go-faq">Preguntas frecuentes</button></li></ul></div>'+
     '<div><h5>Contacto</h5><ul>'+(S.whatsapp?'<li>WhatsApp: <span class="num" style="user-select:all">+'+esc(S.whatsapp)+'</span></li><li><a href="'+waUrl("¡Hola "+S.name+"! Tengo una pregunta.")+'" target="_blank" rel="noopener" style="color:var(--y-fg)">Escríbenos</a></li>':'<li>Pronto habilitaremos WhatsApp</li>')+(S.instagram?'<li>Instagram: '+esc(S.instagram)+'</li>':'')+'</ul>'+
-      ((S.facebook||S.instagramUrl||S.tiktok)?'<div class="socials">'+(S.facebook?'<a href="'+esc(S.facebook)+'" target="_blank" rel="noopener" aria-label="TODDO en Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg>Facebook</a>':'')+'</div>':'')+
+      ((S.facebook||S.instagramUrl||S.tiktok)?'<div class="socials">'+(S.facebook?'<a href="'+esc(S.facebook)+'" target="_blank" rel="noopener" aria-label="TODDO en Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21z"/></svg>Facebook</a>':'')+(S.instagramUrl?'<a class="ig" href="'+esc(S.instagramUrl)+'" target="_blank" rel="noopener" aria-label="TODDO en Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a>':'')+'</div>':'')+
       '</div></div></footer>';
   if(S.whatsapp) h += '<a class="fab" href="'+waUrl("¡Hola "+S.name+"! Quiero información.")+'" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">'+ICON.wa+'</a>';
   app.innerHTML = h;
