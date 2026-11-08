@@ -1058,14 +1058,7 @@
    "featured": true,
    "available": true,
    "origin": "Bogotá D.C.",
-   "options": {
-    "label": "Color",
-    "values": [
-     "Blanca",
-     "Negra"
-    ]
-   },
-   "desc": "Luz para leer en la cama, iluminar un pasillo o decorar, sin hacer instalaciones eléctricas.\n\n• Doble luz: enciende un lado o los dos a la vez\n• Base magnética que gira 360° para dirigir la luz\n• Control remoto y táctil: brillo, tono de luz y temporizador\n• Recargable por USB\n\nDisponible en blanca y negra.",
+   "desc": "Luz para leer en la cama, iluminar un pasillo o decorar, sin hacer instalaciones eléctricas.\n\n• Doble luz: enciende un lado o los dos a la vez\n• Base magnética que gira 360° para dirigir la luz\n• Control remoto y táctil: brillo, tono de luz y temporizador\n• Recargable por USB\n\nDisponible en blanca y negra.\n\nColor: blanca.",
    "images": [
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1904237/1755751635IMG_4046.jpg",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1904237/1757098267IMG_4307.jpg",
