@@ -1178,6 +1178,192 @@
    "id": "T015",
    "oldPrice": 0,
    "available": true
+  },
+  {
+   "id": "T067",
+   "name": "Monitor para bebé con cámara robótica y pantalla 4.3\"",
+   "category": "Bebés",
+   "price": 239900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Mira y escucha a tu bebé desde otra habitación, de día y de noche.\n\n• Pantalla de 4.3 pulgadas a color\n• Cámara que gira para seguir al bebé por todo el cuarto\n• Visión nocturna para verlo con la luz apagada\n• Audio de dos vías: puedes hablarle y calmarlo a distancia\n• Funciona sin internet, conexión directa entre cámara y pantalla",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1997826/1763444449Image_2025-11-18_00-40-15.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1997826/22d415aa-ed55-469e-b314-1d0fe02fc916.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1997826/00eb3f68-6542-4e8d-89a1-866e73196247.png"
+   ]
+  },
+  {
+   "id": "T068",
+   "name": "Esterilizador y calentador de biberones 5 en 1",
+   "category": "Bebés",
+   "price": 89900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Teteros siempre limpios y a la temperatura justa, sin ollas ni microondas.\n\n• Esteriliza biberones y chupos con vapor\n• Calienta leche y comidas para bebé\n• Mantiene la temperatura lista para la toma\n• Descongela leche materna\n• Fácil de usar y de limpiar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2313194/5746cd7f-67d9-49b6-a283-b7a29ca84e3b.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2313194/659751ca-4c68-4441-ad9d-bb52d8bc43a2.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2313194/b2231555-a35d-4d94-834c-d8c65b9b328f.webp"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Rosado",
+     "Azul"
+    ]
+   }
+  },
+  {
+   "id": "T069",
+   "name": "Calentador de biberones USB portátil (para carro y viajes)",
+   "category": "Bebés",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "El tetero tibio en cualquier lugar: en el carro, de paseo o en la oficina.\n\n• Se conecta por USB al carro, power bank o computador\n• Funda que envuelve el biberón y mantiene el calor\n• Liviano y fácil de guardar en la pañalera\n• Ideal para salidas y viajes largos",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2251730/img_6a9c96b5f20b61.82955821_0.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2251730/img_6a9c96b625b2d4.50069736_1.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2251730/img_6a9c96b64e3003.13769148_2.png"
+   ]
+  },
+  {
+   "id": "T070",
+   "name": "Morral antirrobo con puerto USB",
+   "category": "Accesorios",
+   "price": 114900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Lleva tus cosas seguras en el bus, la universidad o el trabajo.\n\n• Cremalleras ocultas contra el lado de la espalda: nadie la abre sin que te des cuenta\n• Puerto USB para cargar el celular con tu power bank mientras caminas\n• Compartimento acolchado para portátil\n• Material resistente al agua\n• Varios bolsillos internos para organizarte",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1246787/1727292469Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202024-09-25T142256.722.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1246787/1727292469Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202024-09-25T142513.378.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1246787/1727292470Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202024-09-25T142543.644.png"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro",
+     "Gris",
+     "Beige",
+     "Rosado"
+    ]
+   }
+  },
+  {
+   "id": "T071",
+   "name": "Aspiradora recargable para carro 4 en 1",
+   "category": "Vehículos",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Deja el carro limpio sin ir al lavadero: arena, migas, polvo y pelos.\n\n• Inalámbrica y recargable, sin cables que estorben\n• Aspira y también sopla para sacar el polvo de rendijas\n• Boquillas para esquinas, sillas y tapetes\n• Compacta, se guarda en la guantera o el baúl\n• También sirve para el escritorio o el sofá",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/46737/17030810991703081099Screenshot_64.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/46737/17030810991703081099Screenshot_65.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/46737/17030810991703081099Screenshot_66.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/46737/1709569031Screenshot_1098.jpg"
+   ]
+  },
+  {
+   "id": "T072",
+   "name": "Soporte de celular para carro con ventosa",
+   "category": "Vehículos",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "El celular a la vista para usar el GPS sin soltar el timón.\n\n• Ventosa de gel que se pega al tablero o al vidrio\n• Se lava y vuelve a pegar\n• Agarre automático: pones el celular y se asegura solo\n• Se suelta con un botón, con una sola mano\n• Sirve para casi cualquier celular",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1169270/1725647942Soporte%20Fred%20reemp%20treca%201.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1169270/1725647892Soporte%20Fred%20reemp%20treca%203.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1169270/1725647893Soporte%20Fred%20reemp%20treca%204.jpg"
+   ]
+  },
+  {
+   "id": "T073",
+   "name": "Manguera expandible de 60 metros con pistola de 7 chorros",
+   "category": "Jardín y exterior",
+   "price": 79900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Riega todo el jardín, lava el carro o el patio con una manguera que casi no pesa.\n\n• Se estira hasta 60 metros con la presión del agua\n• Al cerrar el agua se encoge y se guarda en poco espacio\n• No se enreda ni se dobla como las mangueras normales\n• Pistola con varios tipos de chorro: suave, ducha, fuerte y más\n• Incluye acoples para la llave",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2164402/1780325031manguera-expandible-a-60-metros-con-pulverizador%20(1).webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2164402/17803250317aa836b5-3244-4814-9252-2daa239588c7.webp"
+   ]
+  },
+  {
+   "id": "T074",
+   "name": "Pistola de silicona caliente con 2 barras",
+   "category": "Herramientas",
+   "price": 29900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Risaralda",
+   "desc": "Pega, arregla y decora en segundos.\n\n• Ideal para manualidades, decoración, tareas del colegio y arreglos en casa\n• Calienta rápido\n• Pega madera, cartón, tela, plástico y más\n• Incluye 2 barras de silicona para empezar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/348796/17018768061701876806b17df53c-bf1d-4284-b374-97a61e322fff-img_0419.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/348796/17018768061701876806f7e94370-1107-41c5-8f51-58cafe43ac8e-img_0420.jpg"
+   ]
+  },
+  {
+   "id": "T075",
+   "name": "Guantes para gimnasio con agarre antideslizante",
+   "category": "Deportes",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Entrena con más agarre y sin ampollas ni callos en las manos.\n\n• Palma acolchada que protege al levantar pesas\n• Agarre antideslizante para barras y mancuernas\n• Dedos descubiertos para más control\n• Cierre ajustable en la muñeca\n• Para gimnasio, crossfit o ciclismo",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/979957/17455153761721127893GUANTES%20PARA%20GIMNASIO%200724.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/979957/17455153751721127893GUANTES%20PARA%20GIMNASIO%200724%201_11zon.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/979957/17455153761721127893GUANTES%20PARA%20GIMNASIO%200724%203_11zon.jpg"
+   ]
+  },
+  {
+   "id": "T076",
+   "name": "Faja reductora moldeadora de abdomen",
+   "category": "Moda",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Moldea la cintura y estiliza la figura debajo de la ropa.\n\n• Compresión en abdomen y cintura\n• Ayuda a mejorar la postura\n• Se ajusta al cuerpo y no se nota debajo de la ropa\n• Para el día a día o para hacer ejercicio\n\nTallas S a XXXL. Si tienes dudas con tu talla, escríbenos por WhatsApp antes de pedir.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1626365/cb8ff629-84f4-439a-9a32-732294bd8040.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1626365/a54dd28b-b72a-4a40-ab47-cede7dafae8d.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1626365/64c28033-1966-44a8-8d09-b4375dcb1f1d.jpg"
+   ],
+   "options": {
+    "label": "Talla",
+    "values": [
+     "S",
+     "M",
+     "L",
+     "XL",
+     "XXL",
+     "XXXL"
+    ]
+   }
   }
  ]
 }
