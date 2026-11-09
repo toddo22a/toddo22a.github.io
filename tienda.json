@@ -2620,6 +2620,169 @@
      "Rosado"
     ]
    }
+  },
+  {
+   "id": "T147",
+   "name": "Almohada de viaje rellenable con tu propia ropa",
+   "category": "Hogar",
+   "price": 74900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Viaja cómodo y lleva más ropa sin pagar maleta extra.\n\n• Almohada para el cuello que se rellena con tu ropa\n• Te ahorra espacio en la maleta\n• Cómoda en bus, avión o carro\n• Para cualquier edad",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1752444/174443451471e5lf-2U6L._AC_SX679_.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1752444/174443451471DD95LM7zL._AC_SL1500_.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1752444/174443451471vIaFQxK2L._AC_SX679_.jpg"
+   ]
+  },
+  {
+   "id": "T148",
+   "name": "Candado de seguridad con huella digital recargable",
+   "category": "Hogar",
+   "price": 99900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Se abre con tu dedo: olvídate de las llaves y las claves.\n\n• Abre con huella digital en menos de 1 segundo\n• Registra varias huellas (para toda la familia)\n• Recargable por USB\n• Ideal para maletas, lockers, bicicletas, cajones y bodegas",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1681983/1740185420Candado%20Huella.PNG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1681983/1740185420Candado%20Huella%203.PNG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1681983/1740185420Candado%20Huella%202.PNG"
+   ]
+  },
+  {
+   "id": "T149",
+   "name": "Linterna táctica LED recargable con zoom",
+   "category": "Herramientas",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una linterna potente para la casa, la moto, el carro o el campo.\n\n• Luz LED potente con zoom para enfocar lejos o cerca\n• Batería recargable incluida, con cargador\n• Resistente, cabe en la mano\n• Incluye estuche protector",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2273040/493c4e00-6149-49c4-be32-e6d20b21ab8c.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2273040/718ca3d7-27f6-4427-af77-0d3f77a927ec.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2273040/6b165829-39ec-48e7-96f7-168d4d4456f2.jpg"
+   ]
+  },
+  {
+   "id": "T150",
+   "name": "Audífonos de diadema Bluetooth plegables",
+   "category": "Tecnología",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Colombia",
+   "desc": "Música y llamadas sin cables para el colegio, el trabajo o el gimnasio.\n\n• Conexión Bluetooth\n• Ajustables y plegables, fáciles de guardar\n• También leen música desde memoria micro SD\n• Micrófono para llamadas\n• El color se envía según disponibilidad",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/393731/170187155517018715551.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/393731/170187155517018715555.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/393731/170187155517018715552.jpg"
+   ]
+  },
+  {
+   "id": "T151",
+   "name": "Encendedor eléctrico de plasma con linterna recargable",
+   "category": "Hogar",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Prende la estufa, velas o el carbón sin gas ni fósforos, y además sirve de linterna.\n\n• Encendedor de plasma: no usa gas ni llama\n• Linterna LED incorporada\n• Recargable por USB\n• Resistente al agua, ideal para paseos y camping\n\nMantener fuera del alcance de los niños.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1930978/1758237103D_NQ_NP_993613-MLU78458243584_082024-O.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1930978/1758237103D_NQ_NP_2X_915049-MLU78458243622_082024-F.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1930978/1758237103D_NQ_NP_2X_961174-MLU78458507918_082024-F.webp"
+   ]
+  },
+  {
+   "id": "T152",
+   "name": "Silla plegable tipo butaco (soporta 130 kg)",
+   "category": "Hogar",
+   "price": 69900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una silla firme que se dobla y se lleva a donde sea.\n\n• Soporta hasta 130 kg\n• Plegable y liviana\n• Para paseos, pesca, playa, camping, eventos o el patio\n• Ocupa muy poco espacio guardada",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2144367/1777951513Captura%20de%20pantalla%202026-05-04%20222111.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2144367/1777951513Captura%20de%20pantalla%202026-05-04%20222129.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2144367/1777951513Captura%20de%20pantalla%202026-05-04%20221954.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2144367/1777951513Captura%20de%20pantalla%202026-05-04%20222052.png"
+   ]
+  },
+  {
+   "id": "T153",
+   "name": "Botiquín de emergencia familiar con 18 elementos",
+   "category": "Salud y bienestar",
+   "price": 79900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Que nunca te falte lo básico para una emergencia en la casa, el carro o el paseo.\n\n• 18 elementos de primeros auxilios en un solo estuche\n• Incluye linterna para cortes de luz o emergencias de noche\n• Organizado y fácil de llevar\n• Ideal para la casa, el carro, la moto o el trabajo",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2227285/96532a06-e717-467f-9304-85cc1f86017b.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2227285/3e044a47-b48c-4421-9161-d44dafc8a0c8.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2227285/608b6e3c-d201-4bfe-b261-889778cd0fba.png"
+   ]
+  },
+  {
+   "id": "T154",
+   "name": "Estuche organizador de cables y accesorios",
+   "category": "Tecnología",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Cargadores, cables, audífonos y memorias ordenados en un solo lugar.\n\n• 2 niveles con compartimentos y elásticos\n• Para cables, cargadores, power bank, mouse, memorias USB y más\n• Material resistente al agua\n• Compacto, ideal para viajar o el bolso",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1863233/1751122001Imagen%20de%20WhatsApp%202025-06-28%20a%20las%2009.33.35_fa57b38b.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1863233/1751122001Imagen%20de%20WhatsApp%202025-06-28%20a%20las%2009.34.38_4602d1db.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1863233/1751122001Imagen%20de%20WhatsApp%202025-06-28%20a%20las%2009.33.42_87444f11.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1863233/1751122001Imagen%20de%20WhatsApp%202025-06-28%20a%20las%2009.34.14_799c14de.jpg"
+   ]
+  },
+  {
+   "id": "T155",
+   "name": "Pastillero semanal día y noche (14 compartimentos)",
+   "category": "Salud y bienestar",
+   "price": 34900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Para no olvidar ni repetir las pastillas: perfecto para papás, abuelos o tratamientos.\n\n• 14 compartimentos: mañana y noche de cada día de la semana\n• Tapas fáciles de abrir\n• Colores que ayudan a diferenciar los días\n• Compacto, para la casa o para viajar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/618997/170630574717018731571701873157mdwqottVrJGSOVFPlEjuMnbcBfkvhWpG6AbUYeNc.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/618997/170630574717018731581701873158bkERJwMTiht5elcEGf8odcbZ4JQH9TYIXQxLZZ1a.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/618997/1706305747170187315817018731588CtKrs3Q8wexNJ3upgvmednhmpfP56DeLRqAmpzC.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/618997/170630574717018731571701873157O7Qo1ScIr1CmVI3dfNQEpPSyDMhjyl4voRNrjHhZ.jpg"
+   ]
+  },
+  {
+   "id": "T156",
+   "name": "Banquito plegable retráctil de bolsillo",
+   "category": "Hogar",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Un asiento que cabe en el bolso: ábrelo y siéntate donde estés.\n\n• Se recoge y queda del tamaño de un termo\n• Resistente y liviano\n• Ideal para filas, pesca, conciertos, paseos o el trabajo de campo\n• Fácil de abrir y cerrar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/273351/17018965621701896562Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202023-05-24T142418.957.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/273351/17018965611701896561Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202023-05-24T142511.878.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/273351/17018965611701896561Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202023-05-24T142434.251.png"
+   ]
   }
  ]
 }
