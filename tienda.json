@@ -2216,6 +2216,206 @@
      "3XL"
     ]
    }
+  },
+  {
+   "id": "T127",
+   "name": "Cortadora de vellos de nariz y orejas recargable para hombre",
+   "category": "Cuidado personal",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Elimina los vellos de nariz y orejas en segundos, sin pinzas ni dolor.\n\n• Cuchilla protegida: no corta ni pellizca la piel\n• Recargable, con pantalla que muestra la batería\n• Cuerpo metálico, compacta y fácil de llevar\n• Incluye tapa protectora",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2317402/e45b4047-f8dc-4562-adca-720c48a901bd.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2317402/09b395b9-d263-43b8-ab98-99e2d563bbb9.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2317402/77e106c2-dab2-44fb-b476-0caba85f3721.jpg"
+   ]
+  },
+  {
+   "id": "T128",
+   "name": "Rasuradora eléctrica para barba y cuerpo",
+   "category": "Cuidado personal",
+   "price": 54900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Una sola máquina para la barba y el vello del cuerpo.\n\n• Recargable por USB: 1 hora de carga, unos 60 minutos de uso\n• Incluye 3 peines guía para distintos largos\n• Para barba, pecho, axilas y piernas\n• Incluye cable de carga y cepillo de limpieza",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2149286/1778602702RASURADORA1.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2149286/1778602702RASURADORA4.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2149286/1778602702RASURADORA3.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2149286/1778602702RASURADORA2.webp"
+   ]
+  },
+  {
+   "id": "T129",
+   "name": "Afeitadora 3 en 1 para barba, patillas y nariz",
+   "category": "Cuidado personal",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Tres máquinas en una para mantener la barba y el cabello al día en casa.\n\n• Cabezales intercambiables: barba, cabello y nariz\n• Incluye 4 peines guía de diferentes tamaños\n• Ideal para perfilar barba y patillas\n• Recargable",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/513976/17005122623%20en%201%201.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/513976/17005122623%20en%201%202.jpeg"
+   ]
+  },
+  {
+   "id": "T130",
+   "name": "Afeitadora rotativa VGR V-337 para rostro y cabeza",
+   "category": "Cuidado personal",
+   "price": 119900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Afeitado al ras de la cara y la cabeza, para el que se rapa o lleva la barba limpia.\n\n• Cabezales rotativos que siguen la forma de la cara y la cabeza\n• Recargable e inalámbrica\n• Ideal para rasurar la cabeza (calva) o el rostro\n• Diseño práctico y moderno",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2204822/17842411835080388038893964267.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2204822/17842411835080388038893964269.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2204822/17842411835080388038893964266.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2204822/17842411825080388038893964268.jpg"
+   ]
+  },
+  {
+   "id": "T131",
+   "name": "Billetera para hombre en cuero 100%",
+   "category": "Accesorios",
+   "price": 79900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Colombia",
+   "desc": "Una billetera de cuero de verdad, para que te dure años.\n\n• Cuero 100% natural\n• Espacio para billetes, tarjetas y documentos\n• Delgada, cabe bien en el bolsillo\n• Excelente idea de regalo",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/598243/1705367451NEGRO%20108.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/598243/1705367448CAFE%20108.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/598243/1705367451MIEL%20108.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/598243/1705367448AZUL%20108.JPG"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro",
+     "Café",
+     "Miel",
+     "Azul"
+    ]
+   }
+  },
+  {
+   "id": "T132",
+   "name": "Pack x3 bóxer para hombre en tela transpirable",
+   "category": "Moda",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Colombia",
+   "desc": "Comodidad para todo el día con tela que deja respirar la piel.\n\n• 3 bóxer por paquete\n• Tela licrada con microperforaciones, fresca y transpirable\n• Elástico cómodo en la cintura\n• Colores surtidos\n\nTallas S, M, L, XL y XXL. Si tienes dudas con tu talla, escríbenos por WhatsApp antes de pedir.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1655811/1738844332Imagen%20de%20WhatsApp%202025-01-20%20a%20las%2012.46.52_38ba5e4c.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1655811/1738844333Imagen%20de%20WhatsApp%202024-10-29%20a%20las%2008.07.56_f16e499d.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1655811/1738844333Imagen%20de%20WhatsApp%202024-10-29%20a%20las%2008.07.56_16fb08ce.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1655811/1738844332Imagen%20de%20WhatsApp%202024-10-29%20a%20las%2008.07.56_e4ac5186.jpg"
+   ],
+   "options": {
+    "label": "Talla",
+    "values": [
+     "S",
+     "M",
+     "L",
+     "XL",
+     "XXL"
+    ]
+   }
+  },
+  {
+   "id": "T133",
+   "name": "Bolso bandolera para hombre en lona impermeable",
+   "category": "Accesorios",
+   "price": 69900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Colombia",
+   "desc": "Lleva el celular, la billetera y las llaves seguros y a la mano.\n\n• Lona impermeable y poliéster resistente\n• 5 bolsillos: 2 externos, 1 trasero y 2 internos\n• Medidas: 26 x 16 x 6 cm\n• Se usa cruzado o en la cintura",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155891/1725322187S1.JPEG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155891/1725322187S9.JPEG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155891/1725322187S5.JPEG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155891/1725322187S2.JPEG"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro",
+     "Azul",
+     "Gris"
+    ]
+   }
+  },
+  {
+   "id": "T134",
+   "name": "Maletín deportivo para gimnasio con compartimento para zapatos",
+   "category": "Deportes",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Todo lo del gimnasio en un solo bolso, con los zapatos aparte.\n\n• Compartimento separado para zapatos\n• Espacio para ropa, toalla y botella\n• Correa para llevar al hombro\n• Para gimnasio, fútbol, viajes cortos o trabajo",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2236456/c78efc29-ae09-4e19-b88c-e87526179b10.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2236456/65116c6c-8f60-48b3-be2f-97f7e92b74f2.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2236456/d3d6a68d-fb0d-468c-a150-f09373eed35f.jpg"
+   ]
+  },
+  {
+   "id": "T135",
+   "name": "Riñonera canguro multiusos para hombre",
+   "category": "Accesorios",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Colombia",
+   "desc": "Manos libres y tus cosas seguras: para la moto, el trabajo o salir.\n\n• Lona impermeable y poliéster\n• 4 bolsillos externos\n• Medidas: 33 x 18 x 8 cm\n• Correa ajustable, se usa en la cintura o cruzada",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155882/1725321751WhatsApp%20Image%202024-08-06%20at%209.22.45%20PM%20(1).JPEG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155882/1725321751WhatsApp%20Image%202024-08-06%20at%209.22.45%20PM%20(4).JPEG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155882/1725321751WhatsApp%20Image%202024-08-06%20at%209.22.59%20PM.JPEG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1155882/1725321751WhatsApp%20Image%202024-08-06%20at%209.22.45%20PM.JPEG"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro",
+     "Azul",
+     "Gris"
+    ]
+   }
+  },
+  {
+   "id": "T136",
+   "name": "Lápiz para barba con cepillo (rellena y define)",
+   "category": "Cuidado personal",
+   "price": 34900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una barba más pareja y definida: rellena los espacios vacíos al instante.\n\n• Rellena huecos en barba y bigote\n• Resistente al agua\n• Incluye cepillo para difuminar y peinar\n• Color negro, acabado natural",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1720025/1742011785480688343_1692480851680145_2698946407288602982_n.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1720025/1742011785480430561_994048602583820_6048638732504945838_n.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1720025/1742011785480480803_1326072225307333_2820129019431117963_n.jpg"
+   ]
   }
  ]
 }
