@@ -2633,7 +2633,6 @@
    "desc": "Viaja cómodo y lleva más ropa sin pagar maleta extra.\n\n• Almohada para el cuello que se rellena con tu ropa\n• Te ahorra espacio en la maleta\n• Cómoda en bus, avión o carro\n• Para cualquier edad",
    "images": [
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1752444/174443451471e5lf-2U6L._AC_SX679_.jpg",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1752444/174443451471DD95LM7zL._AC_SL1500_.jpg",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1752444/174443451471vIaFQxK2L._AC_SX679_.jpg"
    ]
   },
@@ -2703,14 +2702,14 @@
   },
   {
    "id": "T152",
-   "name": "Silla plegable tipo butaco (soporta 130 kg)",
+   "name": "Banquito plegable retráctil (soporta 130 kg)",
    "category": "Hogar",
    "price": 69900,
    "oldPrice": 0,
    "featured": false,
    "available": true,
    "origin": "Bogotá D.C.",
-   "desc": "Una silla firme que se dobla y se lleva a donde sea.\n\n• Soporta hasta 130 kg\n• Plegable y liviana\n• Para paseos, pesca, playa, camping, eventos o el patio\n• Ocupa muy poco espacio guardada",
+   "desc": "Un asiento firme que se recoge y cabe en el bolso.\n\n• Soporta hasta 130 kg\n• Se recoge y queda del tamaño de un termo\n• Incluye correa para llevarlo al hombro\n• Para filas, pesca, playa, camping, conciertos o el patio",
    "images": [
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2144367/1777951513Captura%20de%20pantalla%202026-05-04%20222111.png",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2144367/1777951513Captura%20de%20pantalla%202026-05-04%20222129.png",
@@ -2729,9 +2728,7 @@
    "origin": "Antioquia",
    "desc": "Que nunca te falte lo básico para una emergencia en la casa, el carro o el paseo.\n\n• 18 elementos de primeros auxilios en un solo estuche\n• Incluye linterna para cortes de luz o emergencias de noche\n• Organizado y fácil de llevar\n• Ideal para la casa, el carro, la moto o el trabajo",
    "images": [
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2227285/96532a06-e717-467f-9304-85cc1f86017b.png",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2227285/3e044a47-b48c-4421-9161-d44dafc8a0c8.png",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2227285/608b6e3c-d201-4bfe-b261-889778cd0fba.png"
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2227285/96532a06-e717-467f-9304-85cc1f86017b.png"
    ]
   },
   {
@@ -2770,18 +2767,18 @@
   },
   {
    "id": "T156",
-   "name": "Banquito plegable retráctil de bolsillo",
+   "name": "Silla plegable con espaldar para camping y playa",
    "category": "Hogar",
-   "price": 64900,
+   "price": 69900,
    "oldPrice": 0,
    "featured": false,
    "available": true,
    "origin": "Bogotá D.C.",
-   "desc": "Un asiento que cabe en el bolso: ábrelo y siéntate donde estés.\n\n• Se recoge y queda del tamaño de un termo\n• Resistente y liviano\n• Ideal para filas, pesca, conciertos, paseos o el trabajo de campo\n• Fácil de abrir y cerrar",
+   "desc": "Siéntate cómodo en la playa, el río, la finca o el estadio.\n\n• Estructura metálica que soporta hasta 100 kg\n• Asiento de poliéster fácil de limpiar\n• Se dobla y queda compacta para llevar\n• Ideal para paseos, camping, pesca y eventos al aire libre",
    "images": [
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/273351/17018965621701896562Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202023-05-24T142418.957.png",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/273351/17018965611701896561Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202023-05-24T142511.878.png",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/273351/17018965611701896561Dise%C3%B1o%20sin%20t%C3%ADtulo%20-%202023-05-24T142434.251.png"
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1863732/de6f279d-3993-467b-b8e9-06e1d86fdcfb.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1863732/aa9e4fb5-180c-4025-80b7-c4f98de9128f.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1863732/b8831356-bf1d-42d0-9b7a-eaf9bb111400.webp"
    ]
   }
  ]
