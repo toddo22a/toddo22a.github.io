@@ -1890,6 +1890,176 @@
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282545/0a6de6f8-3d0a-4213-9a1f-b7885a7a2c26.webp",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2282545/34bbc4e2-e918-46b5-80f1-a392a748c8df.webp"
    ]
+  },
+  {
+   "id": "T107",
+   "name": "Lámpara mata mosquitos con luz UV y conexión USB",
+   "category": "Hogar",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Duerme tranquilo sin zancudos y sin químicos ni olores.\n\n• Luz UV que atrae a mosquitos y zancudos\n• Sin químicos, sin humo y sin olor: segura para usar en el cuarto\n• Conexión USB: funciona con cargador, computador o power bank\n• Silenciosa, ideal para dormir\n• Para cuartos, sala, oficina o finca",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2206425/1784318667Captura%20de%20pantalla%202026-07-17%20150216.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2206425/1784318668Captura%20de%20pantalla%202026-07-17%20150307.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2206425/1784318668Captura%20de%20pantalla%202026-07-17%20150318.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2206425/1784318667Captura%20de%20pantalla%202026-07-17%20150327.jpg"
+   ]
+  },
+  {
+   "id": "T108",
+   "name": "Mini ventilador turbo portátil recargable",
+   "category": "Tecnología",
+   "price": 94900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Pequeño pero con un chorro de aire potente para el calor.\n\n• Motor sin escobillas: más potencia y más duración\n• Recargable, lo llevas a donde quieras\n• Varias velocidades\n• Cabe en la mano o el bolso\n• Ideal para el bus, la calle, el gimnasio o la oficina",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1885171/175347444965f4a0ca-3251-42ca-8ea9-d179d5fcf84f.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1885171/175347444957eb9e51-1c61-4f88-aa94-8f72a972a3ae.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1885171/1753474449efb5ca6a-e591-4347-96f4-910f299158f1.jpeg"
+   ]
+  },
+  {
+   "id": "T109",
+   "name": "Mini ventilador de escritorio con luz LED RGB",
+   "category": "Tecnología",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Frescura y estilo para tu escritorio, cuarto o estudio.\n\n• Luces LED de colores\n• Funciona por USB: computador, cargador o power bank\n• Silencioso\n• Compacto, ocupa poco espacio",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1887013/17537499562.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1887013/177696383717537499562%20(1).jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1887013/177696383717537499562.jpeg"
+   ]
+  },
+  {
+   "id": "T110",
+   "name": "Licuadora portátil recargable",
+   "category": "Cocina",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Batidos y jugos en cualquier lugar: la casa, el trabajo o el gimnasio.\n\n• Recargable por USB, sin cables\n• Licúas y te lo tomas en el mismo vaso\n• Compacta y liviana\n• Fácil de lavar\n• Color rosado",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1910528/17564802101.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1910528/177619032117578818032.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1910528/17578817682.png"
+   ]
+  },
+  {
+   "id": "T111",
+   "name": "Kit de 5 bolsas al vacío para ropa con bomba manual",
+   "category": "Hogar",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Guarda cobijas, edredones y ropa ocupando hasta 3 veces menos espacio.\n\n• 5 bolsas de almacenamiento al vacío\n• Incluye bomba manual para sacar el aire\n• Protegen de la humedad, el polvo y los insectos\n• Ideales para el closet, debajo de la cama o para viajar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2182131/17819745571779911028225.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2182131/17819745571779911028227.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2182131/17819745571779911028226.webp"
+   ]
+  },
+  {
+   "id": "T112",
+   "name": "Humidificador difusor de aromas efecto volcán 450 ml",
+   "category": "Hogar",
+   "price": 79900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Aromatiza y decora el ambiente con un efecto de llama que parece real.\n\n• Difunde aceites esenciales (aromaterapia)\n• Efecto de llama de colores, muy decorativo\n• Tanque de 450 ml\n• Ideal para el cuarto, la sala o la oficina\n• Excelente idea de regalo",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2101089/1772809302HUMIDIFICADOR%20VOLCAN%206.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2101089/1772809302HUMIDIFICADOR%20VOLCAN%2010.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2101089/1772809302HUMIDIFICADOR%20VOLCAN%2018.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2101089/1772809302HUMIDIFICADOR%20VOLCAN%2019.jpg"
+   ]
+  },
+  {
+   "id": "T113",
+   "name": "Espumador de leche eléctrico recargable",
+   "category": "Cocina",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Café con espuma cremosa como el de cafetería, en segundos.\n\n• Hace espuma de leche en menos de 15 segundos\n• Recargable, sin pilas\n• Para capuchinos, lattes, chocolate y batidos\n• Fácil de lavar y guardar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2080738/1770763664D_NQ_NP_2X_879149-MLA99564237038_122025-F.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2080738/1770763664D_NQ_NP_2X_829278-MLA100048561437_122025-F.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2080738/1770763664D_NQ_NP_2X_980480-MLA100048716937_122025-F.webp"
+   ]
+  },
+  {
+   "id": "T114",
+   "name": "Termo inteligente con pantalla de temperatura",
+   "category": "Cocina",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Sabes la temperatura de tu bebida con solo tocar la tapa.\n\n• Pantalla LED táctil que muestra la temperatura\n• Mantiene bebidas calientes o frías por horas\n• Acero inoxidable\n• Ideal para café, agua o aromáticas en el trabajo o la universidad",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2266993/4cf8b232-54d7-4979-a14a-4e5c2be36f16.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2266993/c18a0574-fedf-42ad-97a2-e466e9166444.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2266993/91c867f3-27c5-4586-bc1a-d35a0922c60d.webp"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro",
+     "Blanco"
+    ]
+   }
+  },
+  {
+   "id": "T115",
+   "name": "Cortador de papas en espiral manual",
+   "category": "Cocina",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Haz papas en espiral (papas tornado) en casa o para vender.\n\n• Corta la papa entera en espiral continua\n• Manual, fácil de usar\n• Ideal para fiestas, reuniones o emprendimientos de comida\n• También sirve con otras verduras",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2244052/edd6a3b5-89f1-448f-9cb9-0a2415f4f089.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2244052/cc63548e-f2d7-4cad-8635-493a8a818da0.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2244052/448898bc-df02-4316-8f24-acdb70bd9643.jpg"
+   ]
+  },
+  {
+   "id": "T116",
+   "name": "Organizador de maquillaje giratorio 360°",
+   "category": "Belleza",
+   "price": 54900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Todo tu maquillaje ordenado y a la mano, con solo girarlo.\n\n• Gira 360° para encontrar todo rápido\n• Transparente: ves lo que tienes\n• Niveles ajustables para productos de distintos tamaños\n• Para tocador, baño o escritorio",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1907797/c37addf3-8023-4d2b-800d-ebf55bf7e6c4.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1907797/c64a0b51-ed55-45ec-ad01-d76b7f352696.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1907797/43874c46-02b9-4333-b059-5ddf4efe27b1.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1907797/92ce4684-b4c4-4e9e-9821-3826c2736fd1.png"
+   ]
   }
  ]
 }
