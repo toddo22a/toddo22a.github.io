@@ -1546,6 +1546,181 @@
      "Con corazones"
     ]
    }
+  },
+  {
+   "id": "T087",
+   "name": "Audífonos inalámbricos Bluetooth con estuche de carga",
+   "category": "Tecnología",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Música y llamadas sin cables, en la calle, el bus o la oficina.\n\n• Conexión Bluetooth rápida con el celular\n• Estuche que los carga y los guarda\n• Pantalla en el estuche que muestra la batería\n• Controles táctiles para música y llamadas\n• Micrófono para hablar con manos libres",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1105450/17243629796.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1105450/17243629791.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1105450/17243629797.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1105450/17243629794.jpg"
+   ]
+  },
+  {
+   "id": "T088",
+   "name": "Reloj inteligente T900 con pantalla táctil",
+   "category": "Tecnología",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Notificaciones, salud y deporte en tu muñeca.\n\n• Pantalla táctil a color\n• Recibe notificaciones de llamadas y mensajes\n• Mide pasos, ritmo cardíaco y sueño\n• Varios modos deportivos\n• Recargable, se conecta con app al celular",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1169495/1725650362T900%20(1).webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1169495/1727717782CRYA%20(2).jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1169495/1725650362T900%20(1).jfif"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro y naranja",
+     "Negro y rosado",
+     "Negro y gris",
+     "Negro y azul"
+    ]
+   }
+  },
+  {
+   "id": "T089",
+   "name": "Picador y rallador de verduras multifunción 14 en 1",
+   "category": "Cocina",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Pica, rebana y ralla en segundos, sin llorar con la cebolla.\n\n• 14 piezas con cuchillas para distintos cortes\n• Corta en cubos, tiras, rodajas y ralla\n• Recipiente que recoge todo lo que cortas\n• Ahorra tiempo al cocinar\n• Fácil de lavar y guardar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1776013/1745951468JD-23071.jpg"
+   ]
+  },
+  {
+   "id": "T090",
+   "name": "Plancha de cabello a vapor profesional",
+   "category": "Belleza",
+   "price": 129900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Alisa sin maltratar: el vapor hidrata el cabello mientras planchas.\n\n• Función de vapor que ayuda a reducir el frizz\n• Ideal para cabello grueso o difícil de alisar\n• Deja el cabello suave y con brillo\n• Temperatura ajustable\n• Placas que se calientan rápido",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/242027/17019755381701975538Screenshot_21.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/242027/17019755381701975538Screenshot_22.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/242027/17019755381701975538Screenshot_18.jpg"
+   ]
+  },
+  {
+   "id": "T091",
+   "name": "Lámpara LED de escritorio recargable",
+   "category": "Hogar",
+   "price": 54900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Buena luz para estudiar, trabajar o leer, donde la necesites.\n\n• Luz LED que cuida la vista\n• Recargable: funciona sin estar conectada\n• Cuello flexible para dirigir la luz\n• Varios niveles de brillo\n• Ideal para escritorio, mesa de noche o cuando se va la luz",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1575000/1733590691S44a86c3244bc4d869b71852eb7f9a7603.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1575000/1733590691S4213465966a24be8a1c0c04002e57b9cM.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1575000/1733590691S37890f6ca4514c71a04b7e938e72e710F.jpg"
+   ]
+  },
+  {
+   "id": "T092",
+   "name": "Irrigador bucal recargable con 4 boquillas",
+   "category": "Cuidado personal",
+   "price": 54900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Limpia donde el cepillo no llega: entre los dientes, frenillos y encías.\n\n• Chorro de agua a presión con 3 niveles (suave, medio, fuerte)\n• 4 boquillas: clásica, para ortodoncia, para encías y limpiador de lengua\n• Recargable y portátil\n• Ideal si usas brackets, coronas o tienes encías sensibles",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1844879/17523553701737733699irrigador%205.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1844879/1766168988Irrigador%20Bucal%20Recargable.jpg"
+   ]
+  },
+  {
+   "id": "T093",
+   "name": "Tablero magnético didáctico con lápiz para niños",
+   "category": "Niños y juguetes",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Los niños dibujan y crean figuras moviendo bolitas de colores con un lápiz imán.\n\n• Estimula la creatividad y la concentración\n• Desarrolla la motricidad fina\n• Sin tinta ni pintura: no ensucia\n• Forma de animal: elige tortuga, ballena o cangrejo\n\nNo apto para menores de 3 años por piezas pequeñas. Usar con supervisión de un adulto.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1917927/1757087194REALES2.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1917927/1757087550REAL5.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1917927/1757087194TORTUGA.jpeg"
+   ],
+   "options": {
+    "label": "Figura",
+    "values": [
+     "Tortuga",
+     "Ballena",
+     "Cangrejo"
+    ]
+   }
+  },
+  {
+   "id": "T094",
+   "name": "Paraguas de bolsillo antiviento (negro)",
+   "category": "Accesorios",
+   "price": 39900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Pequeño para llevar siempre en el bolso, firme para cuando llueve fuerte.\n\n• Mide unos 55 cm y pesa unos 200 g\n• Estructura resistente al viento\n• Cabe en el bolso, la maleta o la guantera\n• Color negro",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/96464/17023938581702393858D_NQ_NP_615537-MCO46760903541_072021-O.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/96464/17023938581702393858D_NQ_NP_896781-MLM51237741642_082022-W.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/96464/17023938581702393858mini-paraguas-negro.jpeg"
+   ]
+  },
+  {
+   "id": "T095",
+   "name": "Kit de herramientas con rachet de 40 piezas",
+   "category": "Herramientas",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Lo básico para arreglos de la casa, la moto o el carro, en un solo estuche.\n\n• Rachet con copas de varios tamaños\n• Puntas para destornillador\n• Estuche para tener todo ordenado\n• Ideal para tener en la casa o el baúl",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1847626/1749763098BGZ%20ONLINE%20%20-%202025-06-12T161621.970.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1847626/1749763098IMGEN%204%20(96).png"
+   ]
+  },
+  {
+   "id": "T096",
+   "name": "Cargador de carro 4 en 1 con proyector de estrellas",
+   "category": "Vehículos",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Carga todos los celulares del carro y además ilumina el techo con un efecto de cielo estrellado.\n\n• Cables retráctiles: no se enredan\n• Carga varios dispositivos a la vez\n• Pantalla digital\n• Proyector de luz ambiental para el techo del carro\n• Se conecta en la toma de encendedor",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2089758/1771549563carg4en1%20domo.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2089758/1771549563carg4en2%20domo.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2089758/1771549563carg4en4%20domo.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2089758/1771549563carg4en6%20domo.png"
+   ]
   }
  ]
 }
