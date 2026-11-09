@@ -2068,7 +2068,6 @@
    "origin": "Bogotá D.C.",
    "desc": "Vigila tu casa o negocio desde el celular, instalándola como un bombillo.\n\n• Se enrosca en cualquier plafón: sin cables ni instalación complicada\n• Visión de 360° y giro desde la app\n• Video en vivo por WiFi desde cualquier lugar\n• Visión nocturna y audio de dos vías\n• Ideal para casa, local, bodega o finca",
    "images": [
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1982470/1762020802Captura%20de%20pantalla%202025-11-01%20115118.png",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1982470/1762020802Captura%20de%20pantalla%202025-11-01%20130303.png",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1982470/1762020802Captura%20de%20pantalla%202025-11-01%20130545.png",
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1982470/1762020802Captura%20de%20pantalla%202025-11-01%20130454.png"
@@ -2163,23 +2162,6 @@
    ]
   },
   {
-   "id": "T123",
-   "name": "Bloques magnéticos tipo pixel x50",
-   "category": "Niños y juguetes",
-   "price": 59900,
-   "oldPrice": 0,
-   "featured": false,
-   "available": true,
-   "origin": "Antioquia",
-   "desc": "Cubos con imán para construir lo que imagines.\n\n• 50 bloques magnéticos de 2 cm\n• Se pegan entre sí con facilidad\n• Estimulan la creatividad y la imaginación\n• Para jugar, construir o decorar\n\nNo apto para menores de 6 años: contiene imanes y piezas pequeñas. Usar con supervisión de un adulto.",
-   "images": [
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2163100/1780086442bloques%20magneticos%20.jpg",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2163100/1780086444bloques%20magneticos%203.jpg",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2163100/1780086442bloques%20magneticos%204.jpg",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2163100/1780086442bloques%20magneticos%205.jpg"
-   ]
-  },
-  {
    "id": "T124",
    "name": "Set de 7 recipientes herméticos para cocina",
    "category": "Cocina",
@@ -2191,8 +2173,7 @@
    "desc": "La alacena ordenada y los granos frescos por más tiempo.\n\n• 7 recipientes con cierre hermético\n• Transparentes: ves qué hay y cuánto queda\n• Libres de BPA\n• Ideales para arroz, granos, pasta, cereal, azúcar y café\n• Se apilan para ahorrar espacio",
    "images": [
     "https://d39ru7awumhhs2.cloudfront.net/colombia/products/920018/1718837382ORGANIZADOR%20DE%20GRANOS%207.jpg",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/920018/1718837382ORGANIZADOR%20DE%20GRANOS%207%202.jpg",
-    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/920018/1718837382ORGANIZADOR%20DE%20GRANOS%207%203.png"
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/920018/1718837382ORGANIZADOR%20DE%20GRANOS%207%202.jpg"
    ]
   },
   {
