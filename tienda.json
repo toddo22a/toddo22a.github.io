@@ -1361,6 +1361,197 @@
      "XXXL"
     ]
    }
+  },
+  {
+   "id": "T077",
+   "name": "Juguete sensorial Montessori 5 en 1 para bebés",
+   "category": "Niños y juguetes",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Santander",
+   "desc": "Un juguete que entretiene y a la vez estimula el desarrollo de los más pequeños.\n\n• 5 actividades en un solo juguete\n• Texturas, formas y colores para explorar con las manos\n• Ayuda a desarrollar la motricidad fina y la coordinación\n• Piezas grandes, pensadas para manos pequeñas\n• Ideal como regalo para bebés y niños pequeños\n\nUsar siempre con la supervisión de un adulto.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2003648/1763948814JUGUETE%20ESTIMULADOR%20MONTESORI%20.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2003648/1763948814Didactico%20de%20estimulacion%20.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2003648/1763948814didactico%20montesori%201.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2003648/1763948813didactico%20montesori.webp"
+   ]
+  },
+  {
+   "id": "T078",
+   "name": "Triqui electrónico con luces (tres en raya)",
+   "category": "Niños y juguetes",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "El clásico triqui de siempre, ahora con luces y botones: se juega sin papel ni lápiz.\n\n• Juego electrónico con luces y botones interactivos\n• Para jugar solo contra la máquina o de a dos\n• Desarrolla la lógica y la concentración\n• Portátil: ideal para viajes, salas de espera y paseos\n• Para niños y adultos",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1922880/1757606018Juego%20de%20Tic%20Tac%20Toe%20Triqui%202.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1922880/1757606018Juego%20de%20Tic%20Tac%20Toe%20Triqui%201.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1922880/1757606018Juego%20de%20Tic%20Tac%20Toe%20Triqui%203.JPG",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/1922880/1757606018Juego%20de%20Tic%20Tac%20Toe%20Triqui%20Amarillo%204.jpg"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Azul",
+     "Naranja",
+     "Verde",
+     "Rosado",
+     "Amarillo"
+    ]
+   }
+  },
+  {
+   "id": "T079",
+   "name": "Cartera para mujer en cuero 100% natural",
+   "category": "Accesorios",
+   "price": 59900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Una cartera de cuero de verdad, hecha para durar.\n\n• Cuero natural de buen grosor y resistencia\n• Acabado brillante que conserva el aspecto auténtico de la piel\n• Práctica para el día a día\n\nAl ser cuero natural con poco tratamiento, es normal que tenga variaciones de tono, marcas o pequeñas cicatrices propias de la piel: cada pieza es única.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2230132/1738b4d9-998e-4abc-92b8-dcfae856893b.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2230132/f7e2916d-6394-42ec-953b-4f4a0721052c.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2230132/e169533b-268c-43d8-b3c0-21f732bfa100.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2230132/45370e54-1da3-4126-b04b-d63ca4fafbb7.jpeg"
+   ]
+  },
+  {
+   "id": "T080",
+   "name": "Bolso elegante de hombro con cadena metálica (negro)",
+   "category": "Accesorios",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Un bolso pequeño y elegante para salir, ir a una cena o regalar.\n\n• Cadena metálica para llevar al hombro o cruzado\n• Diseño elegante que combina con todo\n• Tamaño práctico para celular, billetera y llaves\n• Color negro\n\nUna gran opción de regalo.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2244163/30fd83fa-749a-4d43-be38-4e81960aeb6d.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2244163/71614c64-db0f-4427-97a9-6355ef495026.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2244163/b667f80a-6341-4cbd-91c7-769cda58b6c9.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2244163/0cad9a83-48fc-4048-ace0-c42a7032f375.jpeg"
+   ]
+  },
+  {
+   "id": "T081",
+   "name": "Masajeador de cuello portátil eléctrico",
+   "category": "Salud y bienestar",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Valle del Cauca",
+   "desc": "Alivia la tensión del cuello después de un día largo de trabajo o estudio.\n\n• Masaje por pulsos eléctricos de baja frecuencia\n• Varios modos e intensidades\n• Liviano (unos 55 g), se pone en el cuello y listo\n• Recargable, para usar en casa, la oficina o de viaje\n\nNo lo deben usar personas con marcapasos, embarazadas ni personas con problemas de corazón. Si tienes una condición médica, consulta antes a tu médico.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/184086/17023043711702304371sdaf12.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/184086/17023043711702304371sdaf.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/184086/17023043711702304371sdaf1.jpg"
+   ]
+  },
+  {
+   "id": "T082",
+   "name": "Faja corrector de postura con soporte lumbar",
+   "category": "Salud y bienestar",
+   "price": 49900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Antioquia",
+   "desc": "Apoyo para la espalda baja cuando pasas muchas horas sentado, de pie o cargando peso.\n\n• Compresión firme en la zona lumbar\n• Ayuda a mantener una mejor postura\n• Ajustable con cierre de velcro\n• Se puede usar debajo de la ropa\n• Para el trabajo, la casa o el ejercicio\n\nSi tienes una lesión o dolor fuerte, consulta a tu médico.",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/898693/1727377034shopping.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/898693/17837071441719240378images%20(9)%20-%20copia.jpg"
+   ]
+  },
+  {
+   "id": "T083",
+   "name": "Cepillo de dientes eléctrico sónico recargable",
+   "category": "Cuidado personal",
+   "price": 64900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Una limpieza más profunda que con el cepillo normal, en solo 2 minutos.\n\n• Vibración sónica de alta frecuencia\n• 5 modos de limpieza\n• Recargable por USB\n• Resistente al agua\n• Ideal para un aliento fresco y dientes más limpios",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2306329/f95d1c70-cd77-4b1e-8cd6-4ae7b2ad580e.png",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2306329/9c31e00d-339d-4360-8820-850f309441a4.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2306329/5610a2dd-e877-4509-9074-0f0e3404a85a.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2306329/d48ff2cc-b327-4768-aee9-45f71f7a13be.png"
+   ],
+   "options": {
+    "label": "Color",
+    "values": [
+     "Negro",
+     "Blanco",
+     "Azul",
+     "Rosado"
+    ]
+   }
+  },
+  {
+   "id": "T084",
+   "name": "Fumigador eléctrico recargable de 5 litros",
+   "category": "Jardín y exterior",
+   "price": 94900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Riega y fumiga plantas sin bombear a mano.\n\n• Funciona con batería recargable por cable tipo C\n• Tanque de 5 litros\n• Lanza telescópica para llegar más lejos y más alto\n• Para jardín, matas, huerta, limpieza y desinfección\n• Liviano y fácil de llevar",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2116667/7f2b280c-a909-4724-95ec-55e5d3b20aad.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2116667/84245447-2c03-49f5-9783-7237efec353b.webp",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2116667/17797274951774547595D_NQ_NP_2X_611362-MLM87541297980_072025-F.webp"
+   ]
+  },
+  {
+   "id": "T085",
+   "name": "Cuerda para saltar inalámbrica con contador digital",
+   "category": "Deportes",
+   "price": 44900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "El cardio más efectivo, ahora sin enredos y sin golpear nada.\n\n• Funciona con o sin cuerda: ideal para espacios pequeños\n• Contador digital de saltos, tiempo y calorías\n• Mangos cómodos y antideslizantes\n• Para quemar grasa y mejorar la resistencia en casa",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2133349/1776709355descarga%20-%202026-04-20T131625.988.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2133349/1776709355descarga%20-%202026-04-20T131618.760.jpg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2133349/1776709355descarga%20-%202026-04-20T131613.904.jpg"
+   ]
+  },
+  {
+   "id": "T086",
+   "name": "Medias veladas térmicas translúcidas efecto piel",
+   "category": "Moda",
+   "price": 54900,
+   "oldPrice": 0,
+   "featured": false,
+   "available": true,
+   "origin": "Bogotá D.C.",
+   "desc": "Lucen como medias delgadas, pero abrigan como gruesas.\n\n• Efecto piel: se ven translúcidas\n• Por dentro son térmicas y abrigadas\n• No aumentan el tamaño de las piernas\n• Ideales para clima frío, oficina, viajes o salir de noche",
+   "images": [
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2023640/1765844697WhatsApp%20Image%202025-12-12%20at%204.19.32%20PM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2023640/1765844697WhatsApp%20Image%202025-12-12%20at%204.19.24%20PM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2023640/1765844697WhatsApp%20Image%202025-12-12%20at%204.19.17%20PM.jpeg",
+    "https://d39ru7awumhhs2.cloudfront.net/colombia/products/2023640/1765844697WhatsApp%20Image%202025-12-12%20at%204.18.40%20PM%20(2).jpeg"
+   ],
+   "options": {
+    "label": "Diseño",
+    "values": [
+     "Negras lisas",
+     "Con corazones"
+    ]
+   }
   }
  ]
 }
