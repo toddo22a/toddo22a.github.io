@@ -234,6 +234,7 @@ header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;backgroun
 .deal-note b{color:#e5322d;font-size:14px}
 .deal-note span{font-size:13px;color:var(--muted)}
 .badge.deal{background:#e5322d;color:#fff}
+.sn-btn.gift{color:var(--y-fg)}
 .sn-btn.deal{color:#fff;background:#e5322d;border-color:#e5322d}
 .sn-btn.deal[aria-pressed="true"]{outline:2px solid var(--y);outline-offset:1px}
 .deal-sec{background:linear-gradient(180deg,rgba(229,50,45,.10),transparent);border-radius:20px;padding-block:18px}
@@ -569,6 +570,7 @@ function render(){
   var list = P.filter(function(p){
     if(ui.cat==="__fav"){ if(!isFav(p.id)) return false; }
     else if(ui.cat==="__deal"){ if(!p.deal) return false; }
+    else if(ui.cat==="__gift"){ if(!p.gift) return false; }
     else if(ui.cat!=="Todo" && p.category!==ui.cat) return false;
     if(ui.q){ var q=ui.q.toLowerCase(); return (p.name+" "+p.category+" "+(p.desc||"")).toLowerCase().indexOf(q)>-1; }
     return true;
@@ -593,7 +595,7 @@ function render(){
   '<nav class="subnav" aria-label="Navegación de la tienda"><div class="wrap gut subnav-in">'+
     '<div class="menu-wrap"><button class="sn-btn" data-act="catmenu" aria-expanded="'+(!!ui.catMenu)+'" aria-haspopup="true">Categorías <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>'+
     (ui.catMenu?'<div class="catmenu" role="menu"><button role="menuitem" data-cat="Todo">Todos los productos<small>'+P.length+'</small></button>'+c.map(function(x){ return '<button role="menuitem" data-cat="'+esc(x[0])+'"><span class="cm-ico">'+catIcon(x[0])+esc(x[0])+'</span><small>'+x[1]+'</small></button>'; }).join('')+'</div>':'')+'</div>'+
-    (deals.length?'<button class="sn-btn deal" data-cat="__deal" aria-pressed="'+(ui.cat==="__deal")+'">Ofertas</button>':'')+
+    (P.some(function(p){return p.gift;})?'<button class="sn-btn gift" data-cat="__gift" aria-pressed="'+(ui.cat==="__gift")+'">🎁 Regalos</button>':'')+(deals.length?'<button class="sn-btn deal" data-cat="__deal" aria-pressed="'+(ui.cat==="__deal")+'">Ofertas</button>':'')+
     '<button class="sn-btn" data-cat="__fav" aria-pressed="'+(ui.cat==="__fav")+'">'+STAR+' Favoritos'+(favs.length?' <span class="sn-count num">'+favs.length+'</span>':'')+'</button>'+
     (featured.length?'<button class="sn-btn" data-act="go-viral">Lo más viral</button>':'')+
     '<button class="sn-btn" data-act="go-quote">Te lo conseguimos</button>'+
@@ -614,7 +616,7 @@ function render(){
       h += '<section class="sec wrap gut" id="virales" aria-label="Destacados"><div class="sec-head"><div><span class="eyebrow">Lo que está funcionando</span><h2>Productos <span class="y">virales</span></h2><div class="rule"></div></div></div><div class="rail">'+featured.map(cardHtml).join('')+'</div></section>';
     }
   }
-  h += '<section class="sec wrap gut" id="catalogo" aria-label="Catálogo"><div class="sec-head"><div><span class="eyebrow">Catálogo</span><h2>'+(ui.q?'Resultados para “'+esc(ui.q)+'”':esc(ui.cat==="Todo"?"Todo en TODDO":ui.cat==="__fav"?"Tus favoritos":ui.cat==="__deal"?"Ofertas TODDO":ui.cat))+'</h2><div class="rule"></div></div>'+
+  h += '<section class="sec wrap gut" id="catalogo" aria-label="Catálogo"><div class="sec-head"><div><span class="eyebrow">Catálogo</span><h2>'+(ui.q?'Resultados para “'+esc(ui.q)+'”':esc(ui.cat==="Todo"?"Todo en TODDO":ui.cat==="__fav"?"Tus favoritos":ui.cat==="__deal"?"Ofertas TODDO":ui.cat==="__gift"?"🎁 Regalos de Navidad":ui.cat))+'</h2><div class="rule"></div></div>'+
     '<select id="sort" aria-label="Ordenar"><option value="destacados">Destacados</option><option value="menor">Menor precio</option><option value="mayor">Mayor precio</option><option value="descuento">Mayor descuento</option></select></div>';
   h += '<nav class="chips" aria-label="Categorías"><button class="chip" data-cat="Todo" aria-pressed="'+(ui.cat==="Todo")+'">Todo<small>'+P.length+'</small></button>'+
     c.map(function(x){ return '<button class="chip" data-cat="'+esc(x[0])+'" aria-pressed="'+(ui.cat===x[0])+'">'+esc(x[0])+'<small>'+x[1]+'</small></button>'; }).join('')+'</nav>';
@@ -677,8 +679,8 @@ function relatedFor(p){
   var rest=P.filter(function(x){return x.id!==p.id && x.available && same.indexOf(x)<0 && other.indexOf(x)<0;});
   return same.concat(other,rest).slice(0,4);
 }
-function openFromHash(){ var m=(location.hash||"").match(/^#p-([A-Za-z0-9-]+)$/); if(m && byId(m[1])){ ui.view=m[1]; ui.imgIdx=0; } }
-window.addEventListener("hashchange", function(){ openFromHash(); renderOverlays(); });
+function openFromHash(){ if(location.hash==="#regalos"){ ui.cat="__gift"; ui.q=""; } var m=(location.hash||"").match(/^#p-([A-Za-z0-9-]+)$/); if(m && byId(m[1])){ ui.view=m[1]; ui.imgIdx=0; } }
+window.addEventListener("hashchange", function(){ var c=ui.cat; openFromHash(); if(ui.cat!==c) render(); else renderOverlays(); });
 function productUrl(p){ return SITE+"#p-"+p.id; }
 function cardHtml(p){
   var d=off(p);
